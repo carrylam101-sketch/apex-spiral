@@ -4,6 +4,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Rust](https://img.shields.io/badge/Rust-1.70+-orange.svg)](https://www.rust-lang.org)
+[![CI](https://github.com/ApexSpiral/apex-spiral/actions/workflows/ci.yml/badge.svg)](https://github.com/ApexSpiral/apex-spiral/actions/workflows/ci.yml)
+[![Python Tests](https://img.shields.io/badge/Python-38%20tests-green.svg)](tests/test_apex_v10.py)
+[![APEX V10.2](https://img.shields.io/badge/APEX-V10.2-blueviolet.svg)](APEX_V10_FORMULA.md)
 
 ---
 
