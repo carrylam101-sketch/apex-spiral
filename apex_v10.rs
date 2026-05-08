@@ -1943,6 +1943,98 @@ mod v8_2_tests {
         assert_eq!(v82.lambda_root, v8_params.lambda_root);
         assert_eq!(v82.h_real, v8_params.h_real);
     }
+
+    #[test]
+    fn test_evolution_score_positive() {
+        // evolution_score = delta_g / (delta_g + h_real + 1e-10)
+        let score = evolution_score(10.0, 0.5);
+        assert!(score > 0.0 && score < 1.0);
+        // delta_g=0 → score=0
+        assert!((evolution_score(0.0, 0.5) - 0.0).abs() < 1e-10);
+        // large delta_g → score→1
+        let score_large = evolution_score(1000.0, 0.5);
+        assert!(score_large > 0.999);
+    }
+
+    #[test]
+    fn test_from_xuanji_system() {
+        let inputs = XuanjiRawInputs::from_xuanji_system();
+        assert_eq!(inputs.retry_rate, 0.05);
+        assert_eq!(inputs.rate_limit_freq, 0.02);
+        assert_eq!(inputs.conn_stable, 0.98);
+        assert_eq!(inputs.code_change_rate, 0.5);
+        assert_eq!(inputs.hollow_threshold, 0.01);
+        assert_eq!(inputs.restart_freq, 0.01);
+        assert_eq!(inputs.env_loss_rate, 0.02);
+        assert_eq!(inputs.recovery_success, 0.95);
+        assert_eq!(inputs.alive_procs, 1);
+        assert_eq!(inputs.total_procs, 1);
+        assert_eq!(inputs.zombie_rate, 0.0);
+        assert_eq!(inputs.callback_success, 1.0);
+        assert_eq!(inputs.free_disk_ratio, 0.8);
+        assert_eq!(inputs.write_fail_rate, 0.001);
+        assert_eq!(inputs.integrity, 0.999);
+    }
+
+    #[test]
+    fn test_git_sync_perfect() {
+        let params = GitSyncParams {
+            delta_version_diff: 0.0,
+            rho_sync_fail: 0.0,
+            tau_auto_merge: 1.0,
+        };
+        let result = calculate_git_sync(&params);
+        // (1-0)*(1-0)*1 = 1.0
+        assert!((result - 1.0).abs() < 1e-6);
+    }
+
+    #[test]
+    fn test_git_sync_zero() {
+        let params = GitSyncParams {
+            delta_version_diff: 1.0,
+            rho_sync_fail: 1.0,
+            tau_auto_merge: 0.0,
+        };
+        let result = calculate_git_sync(&params);
+        // (1-1)*(1-1)*0 = 0.0
+        assert!((result - 0.0).abs() < 1e-6);
+    }
+
+    #[test]
+    fn test_auto_learn_fast_learning() {
+        let params = AutoLearnParams {
+            l_extract: 0.9,
+            g_generalize: 0.95,
+            s_summarize: 0.95,
+            t_time: 0.01,
+        };
+        let result = calculate_auto_learn(&params);
+        // (0.9 * 0.95 * 0.95) / (0.01 + 1.0) ≈ 0.81225 / 1.01 ≈ 0.804
+        assert!((result - 0.804).abs() < 0.01);
+    }
+
+    #[test]
+    fn test_dawn_omega_normal() {
+        let git_sync = GitSyncParams {
+            delta_version_diff: 0.0,
+            rho_sync_fail: 0.0,
+            tau_auto_merge: 1.0,
+        };
+        let auto_learn = AutoLearnParams {
+            l_extract: 0.9,
+            g_generalize: 0.9,
+            s_summarize: 0.9,
+            t_time: 0.1,
+        };
+        let params = DawnParams {
+            omega_dawn: 0.8,
+            git_sync,
+            auto_learn,
+        };
+        let result = calculate_dawn_omega(&params);
+        // 0.8 * 1.0 * (0.9*0.9*0.9)/(0.1+1.0) ≈ 0.8 * 0.729/1.1 ≈ 0.530
+        assert!((result - 0.530).abs() < 0.01);
+    }
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

@@ -143,6 +143,80 @@ pub fn calculate_grasp_compile(skills: &SkillSet) -> DagSkillGraph
 pub fn grasp_local_fix(graph: &mut DagSkillGraph, operator: FixOperator) -> bool
 ```
 
+---
+
+## LaTeX 渲染版本（可直接复制到 Overleaf）
+
+```latex
+% ===== 主公式 =====
+\Delta G = \frac{\Lambda_{root} \times \Theta \times K \times \xi \times \Psi_{host} \times \Phi_{cycle}}{
+    H \times T \times \varepsilon}
+
+% ===== 子公式 =====
+\Theta = \frac{\lambda \times \mu \times \sigma}{\gamma + 1}
+
+K = K_{code} \times (1 + \Sigma \tau) \times \upsilon
+
+\varepsilon = 1 + \left|\frac{G_t - G_a}{G_a}\right| \times \delta \times \psi \times \kappa
+
+\Phi = e^{\min(\eta \times \rho, 7.0)}
+
+\Psi = \Psi_{mem} \times \Psi_{app} \times \Psi_{disk} \times \Omega_{dawn}
+
+% ===== Σ_unified 四维统一标准 =====
+\Sigma_{unified} = \Sigma_{data} \times \Sigma_{code} \times \Sigma_{struct} \times \Sigma_{native}
+
+% ===== GraSP 技能图编译 =====
+\Phi_{GraSP}: \ \mathcal{S} \xrightarrow{\text{Compile}} \text{DAG} \xrightarrow{\text{Verify}, \text{LocalFix}} \mathcal{O}^*
+
+% ===== 复杂度主公式 =====
+\mathcal{O}(N) \rightarrow \mathcal{O}(d^h)
+
+% ===== 性能主公式 =====
+\mathcal{P} \propto \mathcal{C}(\mathcal{G}) \gg |\mathcal{S}|
+
+% ===== 局部修复算子 =====
+\mathcal{G}' = \mathcal{G} \odot \{\text{RETRY}, \text{SUBSTITUTE}, \text{INSERT}, \text{DELETE}, \text{BACKTRACK}\}
+
+% ===== TPGO 端到端优化 =====
+\Delta G_{total} = \Delta G_{task} \times \Omega_{self} \times (1 + \Gamma_{reflect})
+
+\Omega_{self} = \sigma_{coherence} \times (1 - \delta_{drift}) \times \rho_{alignment}
+
+\Gamma_{reflect} = \frac{\sum(w_i \times \Delta Q_i)}{\sum w_i}
+
+% ===== Σ_memory =====
+\Sigma_{memory} = \text{Learn} \times \text{Search} \times \text{MultiModal} \times \text{Profile}
+
+% ===== τ_trace =====
+\tau_{trace} = \frac{1}{N} \times \frac{\sum(\text{Decision} + \text{Reason} + \text{Result})}{3}
+```
+
+### Overleaf 渲染说明
+
+| 符号 | 说明 |
+|------|------|
+| `\Delta` | 希腊字母 Δ（大写Delta） |
+| `\Sigma` | 求和/标准符号（大写Sigma） |
+| `\mathcal{O}` | 手写体 O，用于复杂度类 |
+| `\mathcal{S}` | 手写体 S，表示技能集合 |
+| `\mathcal{G}` | 手写体 G，表示技能图 |
+| `\xrightarrow` | 化学箭头，用于 GraSP 编译路径 |
+| `\propto` | 正比符号 ∝ |
+| `\left|\frac{a}{b}\right|` | 绝对值包裹分式 |
+| `e^{\min(x,y)}` | 指数函数，带条件上限 |
+
+### 推荐 Overleaf 模板配置
+
+```latex
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}  % for \xrightarrow
+\usepackage{braket}      % for \set{} notation
+```
+
+---
+
 ## 许可证
 
 © 2026 璇玑帝国 版权所有
