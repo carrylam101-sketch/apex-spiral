@@ -1,9 +1,9 @@
-# APEX V10 极简终极公式
+# APEX V10.2 极简终极公式
 
 ## 核心公式
 
 ```
-ΔG = (Λ_root × Θ × K × ξ × Ψ_host × Φ_cycle) / (H × T × ε)
+ΔG = (Λ_root × Θ × K × ξ × Ψ_host × Φ_cycle × Σ_unified) / (H × T × ε)
 ```
 
 ## 子公式
@@ -14,9 +14,68 @@ K = K_code × (1 + Σ τ) × υ
 ε = 1 + |(G_t - G_a)/G_a| × δ × ψ × κ
 Φ = e^(min(η × ρ, 7.0))
 Ψ = Ψ_mem × Ψ_app × Ψ_disk × Ω_dawn
+Σ_unified = Σ_data × Σ_code × Σ_struct × Σ_native
 ```
 
-## V10.1 新增模块
+## V10.2 新增：统一标准融合模块
+
+### Σ_unified（璇玑四维统一标准）
+
+```
+Σ_unified = Σ_data × Σ_code × Σ_struct × Σ_native
+```
+
+| 维度 | 含义 | 公式 |
+|------|------|------|
+| Σ_data | 统一数据标准 | Verify(schema_version=1.0) × Converge(data) |
+| Σ_code | 统一代码标准 | Validate(code_standard) × Annotate(apex_block) |
+| Σ_struct | 统一结构标准 | Verify(gene/event/state) × Enforce(schema) |
+| Σ_native | 系统原生能力 | Compile(S) → DAG → LocalFix → O* |
+
+### GraSP技能图融合（系统原生能力）
+
+```
+Φ_{GraSP} = Compile(𝓢) \xrightarrow{Verify, LocalFix} 𝒪^*
+```
+
+| 符号 | 含义 |
+|------|------|
+| 𝓢 | 技能集合 |
+| Compile(𝓢) | 编译为类型化DAG技能图 |
+| Verify, LocalFix | 节点验证+局部修复 |
+| 𝒪^* | 最优执行策略 |
+
+### 复杂度主公式
+
+```
+𝒪(N) → 𝒪(d^h)
+```
+
+| 符号 | 含义 |
+|------|------|
+| N | 全任务步数 |
+| d | DAG深度 |
+| h | DAG高度 |
+
+### 性能主公式
+
+```
+𝒫 ∝ 𝒞(𝒢) ≫ |𝓢|
+```
+
+| 符号 | 含义 |
+|------|------|
+| 𝒫 | Agent性能 |
+| 𝒞(𝒢) | 技能图编排质量 |
+| |𝓢| | 技能数量 |
+
+### 局部修复算子
+
+```
+𝒢' = 𝒢 ⊙ {RETRY, SUBSTITUTE, INSERT, DELETE, BACKTRACK}
+```
+
+## V10.1 模块（继承）
 
 ### Σ_memory（全域记忆）
 ```
@@ -63,11 +122,13 @@ K = K_code × (1 + Σ τ) × υ
 | T | 2.0 | >0 |
 | η | 0.5 | [0,1] |
 | ρ | 0.5 | [0,1] |
+| Σ_unified | 1.0 | [0,1] |
 
 ## 收敛保证
 
 - **K_master safe**: τ/(1-τ)，τ∈[0,0.99)
 - **Φ_cycle safe**: e^(min(η×ρ, 7.0))，上限1096
+- **Σ_unified safe**: ≥0.95（标准合规时），≤0.8（标准缺失时）
 
 ## Rust实现
 
@@ -77,6 +138,9 @@ pub fn calculate_sigma_memory(params: &SuperMemoryParams) -> f64
 pub fn calculate_tau_trace(params: &TraceParams) -> f64
 pub fn calculate_omega_self(params: &SelfAwarenessParams) -> f64
 pub fn calculate_gamma_reflect(params: &ReflectionParams) -> f64
+pub fn calculate_sigma_unified(params: &UnifiedStandardParams) -> f64
+pub fn calculate_grasp_compile(skills: &SkillSet) -> DagSkillGraph
+pub fn grasp_local_fix(graph: &mut DagSkillGraph, operator: FixOperator) -> bool
 ```
 
 ## 许可证
