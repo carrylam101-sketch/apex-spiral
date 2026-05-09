@@ -2657,4 +2657,357 @@ mod tests_v10_gamma {
         let result = calculate_delta_g_total(&params);
         assert!(result > 300.0); // 约326
     }
+
+    // === V10.3 HERRO 基因组纠错测试 ===
+    #[test]
+    fn test_herro_correction_normal() {
+        let params = HerroParams {
+            r_raw_quality: 0.85,
+            pileup_coverage: 20.0,
+            theta_info: 0.90,
+            haplotype_aware: 0.95,
+        };
+        let result = calculate_herro_correction(&params);
+        assert!(result > 0.0 && result <= 1.0);
+    }
+
+    #[test]
+    fn test_herro_correction_low_coverage() {
+        // 低覆盖度时纠错能力下降
+        let params = HerroParams {
+            r_raw_quality: 0.85,
+            pileup_coverage: 0.1,
+            theta_info: 0.90,
+            haplotype_aware: 0.95,
+        };
+        let result = calculate_herro_correction(&params);
+        let high_cov = calculate_herro_correction(&HerroParams {
+            pileup_coverage: 20.0, ..params
+        });
+        assert!(result < high_cov);
+    }
+
+    #[test]
+    fn test_map_herro_to_delta_r() {
+        let r_corr = 0.9;
+        let delta_r_orig = 0.8;
+        let result = map_herro_to_delta_r(r_corr, delta_r_orig);
+        assert!(result > 0.0 && result <= delta_r_orig);
+    }
+
+    // === V10.3 CoEVoSkills 自进化测试 ===
+    #[test]
+    fn test_coevo_score_normal() {
+        let params = CoevoParams {
+            skill_generator_quality: 0.85,
+            feedback_quality: 0.80,
+            test_diversity: 0.90,
+            verification_strength: 0.88,
+            evolution_iterations: 50,
+        };
+        let result = calculate_coevo_score(&params);
+        assert!(result > 0.0 && result <= 1.0);
+    }
+
+    #[test]
+    fn test_coevo_score_converges() {
+        // 迭代次数增加，得分应该提升（但有上限）
+        let params_low = CoevoParams {
+            skill_generator_quality: 0.85,
+            feedback_quality: 0.80,
+            test_diversity: 0.90,
+            verification_strength: 0.88,
+            evolution_iterations: 1,
+        };
+        let params_high = CoevoParams {
+            skill_generator_quality: 0.85,
+            feedback_quality: 0.80,
+            test_diversity: 0.90,
+            verification_strength: 0.88,
+            evolution_iterations: 100,
+        };
+        let score_low = calculate_coevo_score(&params_low);
+        let score_high = calculate_coevo_score(&params_high);
+        assert!(score_high >= score_low);
+    }
+
+    #[test]
+    fn test_coevo_score_bounded() {
+        let extreme = CoevoParams {
+            skill_generator_quality: 1.0,
+            feedback_quality: 1.0,
+            test_diversity: 1.0,
+            verification_strength: 1.0,
+            evolution_iterations: 1000,
+        };
+        let result = calculate_coevo_score(&extreme);
+        assert!(result <= 1.0 && result >= 0.0);
+    }
+
+    // === V10.3 APEX 总融合测试 ===
+    #[test]
+    fn test_apex_fusion_equal_components() {
+        // H_err = C_evo 时，乘积项主导
+        let params = ApexFusionParams { h_err: 0.8, c_evo: 0.8 };
+        let result = calculate_apex_fusion(&params);
+        let product_only = 0.8 * 0.8;
+        // β ≈ 0，所以 result ≈ product_only
+        assert!((result - product_only).abs() < 0.01);
+    }
+
+    #[test]
+    fn test_apex_fusion_uneven_components() {
+        // H_err >> C_evo 时，线性融合项主导
+        let params = ApexFusionParams { h_err: 0.95, c_evo: 0.1 };
+        let result = calculate_apex_fusion(&params);
+        // β → 1，result → (0.95 + 0.1) / 2 = 0.525
+        assert!(result > 0.4 && result < 0.6);
+    }
+
+    #[test]
+    fn test_apex_fusion_both_zero() {
+        // 两者为0时，应安全处理
+        let params = ApexFusionParams { h_err: 0.0, c_evo: 0.0 };
+        let result = calculate_apex_fusion(&params);
+        assert!(result >= 0.0);
+    }
+
+    #[test]
+    fn test_apex_fusion_both_one() {
+        // 两者为1时，结果应为1
+        let params = ApexFusionParams { h_err: 1.0, c_evo: 1.0 };
+        let result = calculate_apex_fusion(&params);
+        assert!((result - 1.0).abs() < 0.001);
+    }
+
+    #[test]
+    fn test_calculate_apex_total() {
+        let result = calculate_apex_total(0.8, 0.85, 0.9, 0.8);
+        assert!(result > 0.0 && result <= 1.0);
+    }
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// V10.3 新增: HERRO 基因组纠错公式
+// R_corr = H(Pileup(R_raw, O), Theta_info)
+// 目标: 将ONT原始读段错误率从~10%压到接近HiFi <0.1%
+// ═══════════════════════════════════════════════════════════════════════
+
+/// HERRO 纠错参数
+#[derive(Debug, Clone)]
+pub struct HerroParams {
+    pub r_raw_quality: f64,      // R_raw 原始质量分数 [0,1]
+    pub pileup_coverage: f64,    // 覆盖度 O
+    pub theta_info: f64,         // Theta_info CNN+Transformer 精修分 [0,1]
+    pub haplotype_aware: f64,    // 单倍型感知系数 [0,1]
+}
+
+/// 计算 HERRO 纠错得分
+/// R_corr = H(Pileup(R_raw, O), Theta_info)
+pub fn calculate_herro_correction(params: &HerroParams) -> f64 {
+    let r_raw = params.r_raw_quality.max(0.001);
+    let pileup = params.pileup_coverage.max(0.001);
+    let theta = params.theta_info.max(0.001);
+    let hap = params.haplotype_aware.max(0.001);
+
+    // H 纠错算子: 综合原始质量 × 覆盖度 × 信息精修 × 单倍型感知
+    let h_operator = r_raw * (pileup / (pileup + 1.0)) * theta * hap;
+
+    // 纠错增益: 理想情况下 H → 1（完美纠错）
+    // 实际: H ∈ [0, 1]，直接作为 ΔR 的生物学锚点
+    h_operator.min(1.0)
+}
+
+/// 将 HERRO R_corr 映射到 APEX ΔR
+pub fn map_herro_to_delta_r(r_corr: f64, delta_r_orig: f64) -> f64 {
+    // ΔR_new = ΔR_orig × R_corr^γ
+    // γ ∈ [0,1]，控制基因组纠错对内核的影响权重
+    let gamma = 0.5;
+    delta_r_orig * r_corr.powf(gamma)
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// V10.3 新增: CoEVoSkills 自进化公式
+// S* = argmax_S V(G(S,F), T)
+// 目标: AI自进化技能 > 人类手写技能
+// ═══════════════════════════════════════════════════════════════════════
+
+/// CoEVoSkills 进化参数
+#[derive(Debug, Clone)]
+pub struct CoevoParams {
+    pub skill_generator_quality: f64,  // G 技能生成器质量 [0,1]
+    pub feedback_quality: f64,          // F 结构化反馈质量 [0,1]
+    pub test_diversity: f64,            // T 合成测试集多样性 [0,1]
+    pub verification_strength: f64,     // V 验证器强度 [0,1]
+    pub evolution_iterations: usize,    // 共进化迭代次数
+}
+
+/// 计算 CoEVoSkills 自进化得分
+/// S* = argmax_S V(G(S,F), T)
+pub fn calculate_coevo_score(params: &CoevoParams) -> f64 {
+    let g = params.skill_generator_quality.max(0.001);
+    let f = params.feedback_quality.max(0.001);
+    let t = params.test_diversity.max(0.001);
+    let v = params.verification_strength.max(0.001);
+    let n = (params.evolution_iterations as f64).max(1.0);
+
+    // V(G(S,F), T) = 验证器(生成器×反馈, 测试集)
+    let v_gf_t = v * (g * f).sqrt() * t;
+
+    // 共进化收敛因子: 迭代次数越多越接近最优，但有收益递减
+    // 使用对数收敛: log(n+1)/log(n_max+1)
+    let n_max: f64 = 100.0;
+    let convergence = (n.ln() + 1.0) / (n_max.ln() + 1.0);
+
+    // S* 得分: 验证结果 × 收敛程度
+    let s_star = v_gf_t * (0.5 + 0.5 * convergence);
+
+    s_star.min(1.0).max(0.0)
+}
+
+/// 将 CoEVoSkills S* 映射到 APEX P
+pub fn map_coevo_to_p(s_star: f64, p_orig: f64, alpha: f64) -> f64 {
+    // P_new = P_orig × (S* / S_human)^α
+    // S_human = 0.7 (人类手写技能基准)
+    let s_human = 0.7;
+    let ratio = (s_star / s_human).max(0.0);
+    p_orig * ratio.powf(alpha)
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// V10.3 新增: APEX 总融合公式
+// Φ_APEX = H_err ⊕ C_evo
+// ⊕ = 乘积+交叉项融合算子
+// ═══════════════════════════════════════════════════════════════════════
+
+/// APEX 总融合参数
+#[derive(Debug, Clone)]
+pub struct ApexFusionParams {
+    pub h_err: f64,   // HERRO 基因组纠错得分 [0,1]
+    pub c_evo: f64,   // CoEVoSkills AI进化得分 [0,1]
+}
+
+/// 计算 β 差异调节因子
+fn calc_beta(h_err: f64, c_evo: f64) -> f64 {
+    let sum = h_err + c_evo;
+    if sum < 0.001 {
+        return 1.0; // 两者都为0时，默认线性融合
+    }
+    let diff = (h_err - c_evo).abs();
+    let beta = diff / sum;
+    beta.min(1.0).max(0.0)
+}
+
+/// APEX 总融合公式
+/// Φ_APEX = H_err ⊕ C_evo = H_err × C_evo + β × (H_err + C_evo) / 2
+pub fn calculate_apex_fusion(params: &ApexFusionParams) -> f64 {
+    let h = params.h_err.clamp(0.0, 1.0);
+    let c = params.c_evo.clamp(0.0, 1.0);
+
+    let product = h * c;
+    let beta = calc_beta(h, c);
+    let linear_blend = (h + c) / 2.0;
+
+    let fusion = product + beta * linear_blend;
+    fusion.min(1.0).max(0.0)
+}
+
+/// 计算完整的 APEX_total
+/// Φ_total = Φ_bio × Φ_ai × (H_err ⊕ C_evo)
+pub fn calculate_apex_total(
+    phi_bio: f64,
+    phi_ai: f64,
+    h_err: f64,
+    c_evo: f64,
+) -> f64 {
+    let fusion = calculate_apex_fusion(&ApexFusionParams { h_err, c_evo });
+    phi_bio * phi_ai * fusion
+}
+
+
+// ═══════════════════════════════════════════════════════════════════════
+// V10.3 扩展: Prime Assembly 大片段精准组装
+// P_asm = N_nick · F_flap · M_match · A_self
+// 作用: 大片段无DSB精准替换
+// ═══════════════════════════════════════════════════════════════════════
+
+/// Prime Assembly 参数
+#[derive(Debug, Clone)]
+pub struct PrimeAssemblyParams {
+    pub n_nick: f64,       // 单链切口定位精度 [0,1]
+    pub f_flap: f64,      // 突出端互补系数 [0,1]
+    pub m_match: f64,     // 供体匹配度 [0,1]
+    pub a_self: f64,      // 细胞自组装活性 [0,1]
+}
+
+/// 计算 Prime Assembly 得分
+pub fn calculate_prime_assembly(params: &PrimeAssemblyParams) -> f64 {
+    let n = params.n_nick.clamp(0.0, 1.0).max(0.001);
+    let f = params.f_flap.clamp(0.0, 1.0).max(0.001);
+    let m = params.m_match.clamp(0.0, 1.0).max(0.001);
+    let a = params.a_self.clamp(0.0, 1.0).max(0.001);
+    (n * f * m * a).min(1.0)
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// V10.3 扩展: DRT3 蛋白模板DNA合成
+// D_pro = T_prot · R_rev · S_syn · D_dup
+// 作用: 无核酸模板、从头合成指定序列
+// ═══════════════════════════════════════════════════════════════════════
+
+/// DRT3 蛋白模板DNA合成参数
+#[derive(Debug, Clone)]
+pub struct Drt3Params {
+    pub t_prot: f64,   // 蛋白质模板亲和度 [0,1]
+    pub r_rev: f64,   // 逆转录核心酶活性 [0,1]
+    pub s_syn: f64,   // 重复序列合成精度 [0,1]
+    pub d_dup: f64,   // 双链DNA生成效率 [0,1]
+}
+
+/// 计算 DRT3 蛋白模板DNA合成得分
+pub fn calculate_drt3(params: &Drt3Params) -> f64 {
+    let t = params.t_prot.clamp(0.0, 1.0).max(0.001);
+    let r = params.r_rev.clamp(0.0, 1.0).max(0.001);
+    let s = params.s_syn.clamp(0.0, 1.0).max(0.001);
+    let d = params.d_dup.clamp(0.0, 1.0).max(0.001);
+    (t * r * s * d).min(1.0)
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// V10.3 扩展: APEX 三合一总公式
+// Φ_APEX = H_err × P_asm × D_pro
+// ═══════════════════════════════════════════════════════════════════════
+
+/// APEX 三合一参数
+#[derive(Debug, Clone)]
+pub struct ApexTrinityParams {
+    pub h_err: f64,   // HERRO 纠错得分
+    pub p_asm: f64,   // Prime Assembly 组装得分
+    pub d_pro: f64,   // DRT3 合成得分
+}
+
+/// 计算 APEX 三合一总公式
+/// Φ_APEX = H_err × P_asm × D_pro
+pub fn calculate_apex_trinity(params: &ApexTrinityParams) -> f64 {
+    let h = params.h_err.clamp(0.0, 1.0);
+    let p = params.p_asm.clamp(0.0, 1.0);
+    let d = params.d_pro.clamp(0.0, 1.0);
+    h * p * d
+}
+
+/// 计算完整 APEX 总公式（含HERRO+CoEvoSkills+Trinity）
+pub fn calculate_apex_complete(
+    phi_bio_base: f64,
+    phi_ai: f64,
+    h_err: f64,
+    p_asm: f64,
+    d_pro: f64,
+    c_evo: f64,
+) -> f64 {
+    // Φ_trinity = H_err × P_asm × D_pro
+    let trinity = calculate_apex_trinity(&ApexTrinityParams { h_err, p_asm, d_pro });
+    // Φ_fusion = H_err ⊕ C_evo
+    let fusion = calculate_apex_fusion(&ApexFusionParams { h_err, c_evo });
+    // Φ_total = Φ_bio × Φ_ai × Φ_trinity × Φ_fusion
+    phi_bio_base * phi_ai * trinity * fusion
 }
