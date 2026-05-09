@@ -2482,3 +2482,93 @@ fn main() {
     println!("║   APEX V10.1 计算完成                 ║");
     println!("╚══════════════════════════════════════════╝");
 }
+
+// ═══════════════════════════════════════════════════════════════
+// APEX-AMC: 记忆结晶化增益系数 Γ_AMC
+// 公式: Γ_AMC = (ΔForward / ΔFootprint) × Crystal_ratio
+// ═══════════════════════════════════════════════════════════════
+
+
+
+// ═══════════════════════════════════════════════════════════════
+// APEX-ΔG-TOTAL: V10完整主公式（9项分子）
+// ΔG_total = (C_total·Λ_gene·Ω_entropy·Φ_all·Θ_bio·Φ_img·ΔG_finance·Γ_AMC·Γ_FAN) / (H_info·t)
+// ═══════════════════════════════════════════════════════════════
+
+pub struct DeltaGParamsV10 {
+    pub c_total: f64,         // 总计算量
+    pub lambda_gene: f64,    // 基因融合度
+    pub omega_entropy: f64,   // 熵减系数
+    pub phi_all: f64,         // 全能融合
+    pub theta_bio: f64,      // 生物调控
+    pub phi_img: f64,         // 图像分析
+    pub delta_g_finance: f64, // 金融周期
+    pub gamma_amc: f64,       // AMC增益
+    pub gamma_fan: f64,       // FAN增益
+    pub h_info: f64,          // 信息熵
+    pub t: f64,               // 时间步
+}
+
+pub fn calculate_delta_g_total(params: &DeltaGParamsV10) -> f64 {
+    if params.h_info <= 0.0 || params.t <= 0.0 {
+        return 0.0;
+    }
+    let numerator = params.c_total
+        * params.lambda_gene
+        * params.omega_entropy
+        * params.phi_all
+        * params.theta_bio
+        * params.phi_img
+        * params.delta_g_finance
+        * params.gamma_amc
+        * params.gamma_fan;
+    numerator / (params.h_info * params.t)
+}
+
+#[cfg(test)]
+mod tests_v10_gamma {
+    use super::*;
+
+    #[test]
+    fn test_gamma_amc_normal() {
+        let params = GammaAMCParams { delta_forward: 0.38, delta_footprint: 0.62, crystal_ratio: 0.8 };
+        let result = calculate_gamma_amc(&params);
+        assert!(result > 0.0);
+        assert!(result <= 1.0);
+    }
+
+    #[test]
+    fn test_gamma_amc_zero_footprint() {
+        let params = GammaAMCParams { delta_forward: 0.38, delta_footprint: 0.0, crystal_ratio: 0.8 };
+        // 防除零保护：delta_footprint.max(0.001)
+        let result = calculate_gamma_amc(&params);
+        assert!(result > 0.0); // 应该返回有效值而非0
+    }
+
+    #[test]
+    fn test_gamma_fan_normal() {
+        let params = GammaFANParams { apoptosis_score: 0.85, intrastain_quality: 0.90, bsl_risk: 1.5, cv: 0.1 };
+        let result = calculate_gamma_fan(&params);
+        assert!(result > 0.0);
+    }
+
+    #[test]
+    fn test_gamma_fan_zero_bsl() {
+        let params = GammaFANParams { apoptosis_score: 0.85, intrastain_quality: 0.90, bsl_risk: 0.0, cv: 0.1 };
+        // 防除零保护
+        let result = calculate_gamma_fan(&params);
+        assert!(result > 0.0); // 应该返回有效值而非0
+    }
+
+    #[test]
+    fn test_delta_g_total_v10() {
+        let params = DeltaGParamsV10 {
+            c_total: 1000.0, lambda_gene: 0.85, omega_entropy: 0.72,
+            phi_all: 0.88, theta_bio: 0.75, phi_img: 0.70,
+            delta_g_finance: 0.65, gamma_amc: 1.15, gamma_fan: 1.08,
+            h_info: 0.35, t: 2.0,
+        };
+        let result = calculate_delta_g_total(&params);
+        assert!(result > 300.0); // 约326
+    }
+}
