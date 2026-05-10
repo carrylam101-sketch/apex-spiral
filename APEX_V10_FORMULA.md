@@ -77,41 +77,70 @@ Epi_reg = G_base ⊕ C_open ⊗ T_3D
 S_atac = Tn5(C_access) → Map_peak
 ```
 
-### 11. QuadPE基因编辑
-```
-η_quad = η_prime · ∏_{i=1}^4 F_flap^i
-L_edit ∈ [1.6, 26] kb
-R_eff ∈ [0.4, 0.6]
-```
-
-### 12. 消息调度流量稳控
+### 11. 消息调度流量稳控
 ```
 M_flow = T_topic ∥ P_part ∥ R_replica ∥ O_offset
 Q_stable = M_in - M_out + ΔQ_buffer
 ```
 
-### 13. 生成式细胞隐空间对齐
+### 12. 生成式细胞隐空间对齐
 ```
 ℒ_ae = ℒ_recon + ℒ_manifold + ℒ_align
 V_cell = Enc(MultiOmics) → Decode → Pheno_virtual
 ```
 
-### 14. LncRNA染色质沉默
+### 13. LncRNA染色质沉默
 ```
 S_silence = Xist ⊗ Spen ⟹ ΔChr_3D
 I_rna-pro = ChIRP-MS ∩ PARIS_struct
 ```
 
-### 15. 端侧轻量化推理
+### 14. 端侧轻量化推理
 ```
 Inf_lite = Model_q4km · 1/C_mem · η_cpu
 Latency ↓, Accuracy → Stable
 ```
 
-### 16. 金融量化回测迭代
+### 15. 金融量化回测迭代
 ```
 R_strat = R_backtest · α_trend · β_risk
 Param_opt = argmax_p R_strat(p)
+```
+
+### 16. QuadPE 基因写入
+```
+QuadPE = PrimeEditor + {flapA/C, flapB/D}
+L ∈ [1.6, 26] kb, η ∈ [0.4, 0.6]
+```
+
+### 17. 组蛋白修饰调控
+```
+Mod_H3 = {K4me, K9me, K27ac, K27me} → Writer/Eraser/Reader → Open/Silent
+H3K27M ⊥ PRC2 ⟹ Silence_loss
+```
+
+### 18. 减数分裂染色体运动
+```
+Pairing_chrom = PC ⊗ ZYG-12 ⊗ SUN-KASH → Dynein → RapidMotion
+```
+
+### 19. 仿生AI通信协议
+```
+S = [L]^n / (K_d^n + [L]^n)  (Hill路由评分)
+C(t) = 1 - e^{-kt}  (指数恢复熔断)
+v = V_max[S] / (K_m + [S])  (米氏并发限制)
+```
+
+### 20. PVT1-MYC启动子竞争
+```
+P(Enh→MYC) = 1 - P(Enh→PVT1)
+MYC ∝ 1/PVT1_promoter
+```
+
+### 21. 代谢塑造酶结构演化
+```
+v_evo ∝ 1 / (Flux · Abundance · Cost · Connectivity)
+ρ(Flux, v_evo) = -0.48, P<10^{-27}
 ```
 
 ---
@@ -121,8 +150,6 @@ Param_opt = argmax_p R_strat(p)
 ```
 H_err = H_ap · P_pile · S_info · C_corr
 ```
-
-### 符号定义
 
 | 符号 | 含义 |
 |------|------|
@@ -183,6 +210,8 @@ H_err ⊕ C_evo = H_err×C_evo + β×(H_err+C_evo)/2
 | Φ_APEX | 0.51 | [0,1] |
 | Λ_effective | 1.500 | [0,∞) |
 | Ψ_cross | G_prac·G_quan·G_eternal | [0,1] |
+| η_quad | 0.4-0.6 | [0,1] |
+| ρ(Flux,v_evo) | -0.48 | [-1,1] |
 
 ---
 
@@ -203,6 +232,12 @@ H_err ⊕ C_evo = H_err×C_evo + β×(H_err+C_evo)/2
 
 % ===== APEX 三合一 =====
 \Phi_{APEX} = \mathcal{H}_{err} \times \mathcal{P}_{asm} \times \mathcal{D}_{pro}
+
+% ===== Hill路由评分 =====
+S = \frac{[L]^n}{K_d^n + [L]^n}
+
+% ===== 代谢塑造 =====
+v_{evo} \propto \frac{1}{\text{Flux} \cdot \text{Abundance} \cdot \text{Cost} \cdot \text{Connectivity}}
 ```
 
 ---
