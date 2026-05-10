@@ -245,3 +245,16 @@ v_{evo} \propto \frac{1}{\text{Flux} \cdot \text{Abundance} \cdot \text{Cost} \c
 ## 许可证
 
 © 2026 璇玑帝国 版权所有
+
+### 22. SkCC 技能编译框架
+```
+SkCC = Parse → Analyze → Transform → Emit
+SkIR = Semantic ⊕ Structure ⊕ Constraints
+O(m×n) → SkIR解耦 → O(m+n)
+Compile(Skill) → Prompt_Claude, Prompt_Kimi, Prompt_Cursor
+Safety = Anti-SkillInjection
+Recall = 94.8%
+Latency < 10ms, TokenSave ∈ [10%, 46%]
+ClaudeCode: 21.1% → 33.3% (+12.2%)
+KimiCLI: 35.1% → 48.7% (+13.6%)
+```
