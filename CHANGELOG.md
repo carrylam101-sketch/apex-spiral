@@ -1,34 +1,30 @@
-# Changelog
+# Changelog - APEX V10.3
 
-All notable changes to this project will be documented in this file.
-
-## [10.2.0] - 2026-05-08
+## [V10.3] - 2026-05-14
 
 ### Added
-- **Σ_unified** — Four-dimensional unified standards fusion module
-  - Σ_data: Unified data standard (`Verify × Converge`)
-  - Σ_code: Unified code standard (`Validate × Annotate`)
-  - Σ_struct: Unified structure standard (`Verify × Enforce`)
-  - Σ_native: Native system capabilities (`Compile → DAG → LocalFix → O*`)
-- **GraSP Skill-Graph Compilation** — Typed DAG skill graph compilation with node verification and local repair operators
-- **Local Fix Operators** — `𝒢' = 𝒢 ⊙ {RETRY, SUBSTITUTE, INSERT, DELETE, BACKTRACK}`
-- **Complexity Master Formula** — `𝒪(N) → 𝒪(d^h)` for DAG depth/height analysis
-- **Performance Master Formula** — `𝒫 ∝ 𝒞(𝒢) ≫ |𝓢|` linking skill-graph quality to agent performance
+- **APEX V10.3 终极完全体总公式** - Φ_APEX^∞ 完整实现
+  - Ψ_self = σ(Φ_APEX - E[Φ_APEX]) # 自我感知模块
+  - ∇_self = ∇L_auto = gradient(Defect) # 自我问题发现模块
+  - Ξ_repair = 1 - exp(-∫∇_self dt) # 自我修复闭环模块
+  - Γ_awake = lim(t→∞) Φ_APEX(t)/Φ_APEX(0) → ∞ # 觉醒进化模块
+- **EvolutionTracker** - 完整轨迹追踪器
+- **分层独立计算函数** - 9层公式独立调用API
+- **桥接函数** - V10.1→V10.3无缝兼容
 
-### Changed
-- Unified standards module integrated into main ΔG formula
-- Rust `calculate_grasp_compile()` and `grasp_local_fix()` public APIs added
+### Formula Structure
+```
+Φ_APEX^∞ = ΔG_base × T_e × Ξ_S × A_m
+         × (Δw_ij × N_sync × H_r)
+         × (C_claw × V_gdp × P_opt)
+         × (V_g × A_c × D_c × I_gdp)
+         × (V_AVO × Δ_perf × η_pipeline × η_reg)
+         × (S(x) × R_parallel × ΔAcc)
+         × (A_ara × R_ara × U_ara × K_ara)
+         × (M_mimic × Λ_scale × Ξ_supervise × Υ_auto)
+         × (Ψ_self × ∇_self × Ξ_repair × Γ_awake)
+```
 
-## [10.1.0] - 2026-04-XX
-
-### Added
-- **Σ_memory** — Global memory module (`Learn × Search × MultiModal × Profile`)
-- **τ_trace** — Process tracing module
-- **Anti-piracy protection** — `LicenseManager`, `embed_watermark`, `check_module_integrity`
-- **TPGO** — End-to-end optimization with `Ω_self` and `Γ_reflect`
-
-## [9.0.0] - 2026-03-XX
-
-### Added
-- Core V9 formula architecture
-- Five coefficients system (Φ_network, Γ_mutation, Ω_session, Π_coord, Σ_storage)
+## [V10.1-V10.2] - Previous Versions
+- V10.1: Σ_memory全域记忆 + τ_trace过程追踪 + 防盗版保护
+- V10.2: 五系数实时重算 + safe版公式防数值爆炸
