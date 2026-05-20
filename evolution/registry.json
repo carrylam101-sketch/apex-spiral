@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "created": "2026-05-21T00:22:00Z",
+  "cycles": {
+    "cycle_87": {
+      "delta_g": 2.2713,
+      "selected_gene": "gene_gep_repair_from_errors",
+      "gini_gain": 0.0,
+      "ig_gain": 0.0,
+      "oob_accuracy": 0.5,
+      "combined_score": 0.15,
+      "n_candidates": 12,
+      "shortboard": "Shannon plateau, evolver timeout, Hub ref only",
+      "github_commit": "PENDING"
+    }
+  },
+  "gene_pool_stats": {
+    "total_genes": 12,
+    "by_category": {
+      "repair": 0,
+      "optimize": 12,
+      "innovate": 0
+    },
+    "bootstrap_ratio": 0.632,
+    "oob_ratio": 0.368
+  }
+}
