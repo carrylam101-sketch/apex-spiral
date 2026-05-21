@@ -1,0 +1,44 @@
+name: APEX Gene Verify CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'py/apex_spiral/gini_gene_selector.py'
+      - 'src/apex_gini_gene.rs'
+      - 'genes.json'
+      - 'evolution/**'
+  pull_request:
+    paths:
+      - 'py/apex_spiral/gini_gene_selector.py'
+      - 'src/apex_gini_gene.rs'
+      - 'genes.json'
+      - 'evolution/**'
+  workflow_dispatch:
+
+jobs:
+  gini-selector-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Run Gini Gene Selector
+        run: python3 py/apex_spiral/gini_gene_selector.py --json 2>&1
+
+  rust-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test --manifest-path apex-spiral/Cargo.toml 2>&1 | tail -20
+
+  gene-count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Count genes
+        run: |
+          echo "## Gene Pool" >> $GITHUB_STEP_SUMMARY
+          python3 -c "import json; d=json.load(open('genes.json')); print(len(d) if isinstance(d,list) else len(d.get('genes',[])))" >> $GITHUB_STEP_SUMMARY
