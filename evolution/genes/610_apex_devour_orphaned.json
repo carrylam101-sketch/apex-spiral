@@ -1,0 +1,19 @@
+{
+  "id": 610,
+  "gene_id": "gene_610",
+  "name": "apex_gate_health_evm_integration",
+  "category": "optimize",
+  "status": "implemented_rust_module",
+  "description": "EVM health gate: integrates Python EVM_FORMULA.EVMCore via subprocess, computes G_evm, gates Neuro+Self+EVM+Devour into delta_g_candidate. 4-gate pass (G_neuro=1.1142, G_self=1.0908, G_evm=1.0600, G_devour=1.0000). delta_g_candidate=1.3631.",
+  "apex_dimensions": {
+    "Psi": "cross-gene optimization"
+  },
+  "evm_channels": [
+    "Agt",
+    "Run"
+  ],
+  "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/apex_gate_health.rs",
+  "cli_subcommand": "gate",
+  "created_cycle": "cycle_108",
+  "verification_commands": []
+}
