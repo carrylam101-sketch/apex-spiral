@@ -359,12 +359,11 @@ class GiniGeneSelector:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def load_genes_from_json(json_path: Path) -> List[GeneCandidate]:
-    """从 genes.json 加载候选基因"""
+    """从 genes.json 加载候选基因（legacy fallback）"""
     if not json_path.exists():
         return []
     data = json.loads(json_path.read_text())
     candidates: List[GeneCandidate] = []
-    # genes.json structure: {genes: [...]}
     gene_list = data if isinstance(data, list) else data.get("genes", [])
     for g in gene_list:
         signals = g.get("learning_signals", [])
@@ -389,9 +388,116 @@ def load_genes_from_json(json_path: Path) -> List[GeneCandidate]:
     return candidates
 
 
-def load_outcome_history(history_dir: Path = Path("/home/ubuntu/apex-spiral/memory/evolution")
+def load_genes_from_registry_pool(
+    registry_path: Path = Path("/home/ubuntu/apex-spiral/evolution/registry.json"),
+    genes_dir: Path = Path("/home/ubuntu/apex-spiral/evolution/genes")
+) -> List[GeneCandidate]:
+    """
+    从 gene_pool 数组（优先）或 evolution/genes/*.json（备选）加载候选基因。
+    替代 load_genes_from_json，解决 Trap 9（legacy genes.json 路径问题）。
+    优先级: gene_pool array > evolution/genes/*.json > legacy genes.json
+    """
+    candidates: List[GeneCandidate] = []
+    gene_id_to_outcome = _build_gene_outcome_map(registry_path)
+
+    # 策略1：从 gene_pool 数组加载
+    if registry_path.exists():
+        try:
+            reg = json.loads(registry_path.read_text())
+            pool = reg.get("gene_pool", [])
+            if pool:
+                for g in pool:
+                    gid = g.get("gene_id", "")
+                    outs = gene_id_to_outcome.get(gid, [])
+                    success_rate = (sum(1 for o in outs if o) / max(len(outs), 1)) if outs else 0.5
+                    candidates.append(GeneCandidate(
+                        id=gid,
+                        name=g.get("name", gid),
+                        signal_patterns=[],
+                        category=g.get("category", "optimize"),
+                        preconditions=g.get("preconditions", []) if isinstance(g.get("preconditions"), list) else [],
+                        strategy=[],
+                        gini_score=0.0,
+                        ig_score=0.0,
+                        usage_count=len(outs),
+                        success_rate=success_rate,
+                        last_used=gene_outcome_last_used(gid, outs),
+                        raw_data=g
+                    ))
+                return candidates
+        except Exception as e:
+            print(f"[Gini] gene_pool load failed: {e}, falling back to genes dir", flush=True)
+
+    # 策略2：从 evolution/genes/*.json 加载
+    if genes_dir.exists():
+        seen = set()
+        for f in sorted(genes_dir.glob("*.json")):
+            try:
+                d = json.loads(f.read_text())
+                gid = d.get("gene_id", "")
+                if not gid or gid in seen:
+                    continue
+                seen.add(gid)
+                outs = gene_id_to_outcome.get(gid, [])
+                success_rate = (sum(1 for o in outs if o) / max(len(outs), 1)) if outs else 0.5
+                candidates.append(GeneCandidate(
+                    id=gid,
+                    name=d.get("name", gid),
+                    signal_patterns=d.get("signal_patterns", []),
+                    category=d.get("category", "optimize"),
+                    preconditions=d.get("preconditions", []) if isinstance(d.get("preconditions"), list) else [],
+                    strategy=d.get("strategy", []) if isinstance(d.get("strategy"), list) else [],
+                    gini_score=0.0,
+                    ig_score=0.0,
+                    usage_count=len(outs),
+                    success_rate=success_rate,
+                    last_used=gene_outcome_last_used(gid, outs),
+                    raw_data=d
+                ))
+            except Exception:
+                continue
+        if candidates:
+            return candidates
+
+    # 策略3：回退 legacy genes.json
+    return load_genes_from_json(Path("/home/ubuntu/apex-spiral/genes.json"))
+
+
+def _build_gene_outcome_map(
+    registry_path: Path = Path("/home/ubuntu/apex-spiral/evolution/registry.json")
+) -> Dict[str, List[bool]]:
+    """从 registry cycles 构建 gene_id → [success outcomes] 映射"""
+    outcome_map: Dict[str, List[bool]] = {}
+    if not registry_path.exists():
+        return outcome_map
+    try:
+        reg = json.loads(registry_path.read_text())
+        for cname, cinfo in reg.get("cycles", {}).items():
+            sel = cinfo.get("selected_gene")
+            if not sel:
+                continue
+            # delta_g > 0 means success
+            dg = cinfo.get("delta_g")
+            success = (dg is not None) and (dg > 0)
+            if sel not in outcome_map:
+                outcome_map[sel] = []
+            outcome_map[sel].append(success)
+    except Exception:
+        pass
+    return outcome_map
+
+
+def gene_outcome_last_used(gene_id: str, outcomes: List[bool]) -> Optional[str]:
+    """从 outcomes 列表推断最后使用时间戳（基于索引深度）"""
+    if not outcomes:
+        return None
+    # 不保存真实时间戳，用 usage_count 作为代理
+    return f"used_{len(outcomes)}x"
+
+
+def load_outcome_history_legacy(history_dir: Path = Path("/home/ubuntu/apex-spiral/memory/evolution")
                          ) -> List[Tuple[str, bool]]:
-    """从 evolver asset_log 加载历史使用结果"""
+    """从 evolver asset_log 加载历史使用结果（legacy 备选）"""
     outcomes: List[Tuple[str, bool]] = []
     log_path = history_dir / "asset_call_log.jsonl"
     if log_path.exists():
@@ -401,7 +507,6 @@ def load_outcome_history(history_dir: Path = Path("/home/ubuntu/apex-spiral/memo
             try:
                 entry = json.loads(line)
                 action = entry.get("action", "")
-                # asset_reference = 使用基因
                 if action == "asset_reference":
                     outcomes.append((entry.get("asset_id", "unknown"), True))
                 elif action == "asset_publish_skip":
@@ -414,20 +519,30 @@ def load_outcome_history(history_dir: Path = Path("/home/ubuntu/apex-spiral/memo
 def run_gene_selection(
     genes_path: Path = Path("/home/ubuntu/apex-spiral/genes.json"),
     history_dir: Path = Path("/home/ubuntu/apex-spiral/memory/evolution"),
-    n_trees: int = 10
+    n_trees: int = 10,
+    use_registry_pool: bool = True
 ) -> Dict[str, Any]:
     """
-    主入口：从 genes.json 加载候选基因，运行 Gini 选择器，
-    返回最优基因和评分。
+    主入口：优先从 gene_pool/evolution/genes 加载候选基因（Trap 9 修复），
+    回退到 genes.json。返回最优基因和评分。
     """
-    candidates = load_genes_from_json(genes_path)
-    history = load_outcome_history(history_dir)
+    if use_registry_pool:
+        candidates = load_genes_from_registry_pool()
+    else:
+        candidates = load_genes_from_json(genes_path)
+    history = load_outcome_history_legacy(history_dir)
 
     if not candidates:
         return {"selected_gene_id": None, "error": "no candidates found"}
 
     selector = GiniGeneSelector(n_trees=n_trees)
-    result = selector.select(candidates, history)
+    # 注入 registry outcomes 作为历史（优先）或 legacy asset_log（备选）
+    registry_outcomes = [
+        (gid, success) for gid, outs in _build_gene_outcome_map().items()
+        for success in outs
+    ]
+    all_history = registry_outcomes if registry_outcomes else history
+    result = selector.select(candidates, all_history)
 
     return {
         "selected_gene_id": result.gene_id if result.selected else None,
@@ -437,7 +552,10 @@ def run_gene_selection(
         "combined_score": round(result.combined_score, 6),
         "n_candidates": len(candidates),
         "n_trees": n_trees,
-        "n_outcome_history": len(history),
+        "n_outcome_history": len(all_history),
+        "n_registry_outcomes": len(registry_outcomes),
+        "n_legacy_outcomes": len(history),
+        "source": "gene_pool" if use_registry_pool else "legacy_genes_json",
         "timestamp": datetime.now().isoformat()
     }
 
@@ -463,7 +581,8 @@ if __name__ == "__main__":
     if not history_path.is_absolute():
         history_path = Path("/home/ubuntu/apex-spiral") / history_path
 
-    result = run_gene_selection(genes_path, history_path, args.n_trees)
+    result = run_gene_selection(genes_path, history_path, args.n_trees,
+                                use_registry_pool=True)
 
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -474,6 +593,7 @@ if __name__ == "__main__":
         print(f"  候选基因数: {result['n_candidates']}")
         print(f"  随机森林树数: {result['n_trees']}")
         print(f"  历史使用记录: {result['n_outcome_history']}")
+        print(f"  来源: {result.get('source', 'unknown')}")
         print()
         print(f"  选中基因ID: {result['selected_gene_id']}")
         print(f"  Gini 增益:   {result.get('gini_gain', 'N/A')}")

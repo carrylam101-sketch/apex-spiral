@@ -671,19 +671,37 @@
         "Fix Gini selector to read evolution/genes/ instead of legacy genes.json",
         "Populate gene_pool array for registry integrity"
       ]
+    },
+    "cycle_110": {
+      "delta_g": 1.3631,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.3631,
+      "selected_gene": "gene_594",
+      "gini_gain": 0.0,
+      "combined_score": 0.15,
+      "gain_ratio": 1.288292,
+      "G_neuro": 1.1142,
+      "G_self": 1.0908,
+      "G_evm": 1.06,
+      "G_devour": 1.0,
+      "gate_open": true,
+      "gini_n_candidates": 17,
+      "gini_outcome_history": 15,
+      "gini_source": "gene_pool",
+      "notes": "Gini selector Trap 9 fixed: now reads gene_pool/evolution/genes (17 candidates, 15 outcomes) instead of legacy genes.json (12 candidates, 0 outcomes)"
     }
   },
   "gene_pool_stats": {
     "total_genes": 17,
     "by_category": {
-      "repair": 3,
-      "optimize": 18,
-      "innovate": 1
+      "repair": 2,
+      "optimize": 15,
+      "innovate": 0
     },
     "bootstrap_ratio": 0.632,
     "oob_ratio": 0.368,
-    "source": "registry updated with genes 594-600; prior 12 + 7 hermes defect genes",
-    "last_updated": "2026-05-26T19:03:27.171041Z"
+    "source": "populated from all registry sections cycle 110",
+    "last_updated": "2026-05-27T04:01:00Z"
   },
   "updated_at": "2026-05-27T00:05:00Z",
   "hermes_agent_defect_genes": {
@@ -761,36 +779,42 @@
       "name": "evomaster_claw_native_evolution_core",
       "status": "implemented_rust_core",
       "formula": "J_claw=E[R_exec+lambda*K_claw]; K_claw=HashPool(Filter(tau_valid))",
-      "rust_core": "/home/ubuntu/apex-spiral/evomaster_claw_core"
+      "rust_core": "/home/ubuntu/apex-spiral/evomaster_claw_core",
+      "gene_id": "gene_601"
     }
   },
   "orchestrator_truth_gate_genes": {
     "602": {
       "name": "orchestrator_soul_truth_gate",
       "status": "implemented_governance_core",
-      "soul_path": "/home/ubuntu/.hermes/SOUL.md"
+      "soul_path": "/home/ubuntu/.hermes/SOUL.md",
+      "gene_id": "gene_602"
     }
   },
   "apex_devour_genes": {
     "603": {
       "name": "apex_devour_rust_core",
       "status": "implemented_rust_core",
-      "rust_core": "/home/ubuntu/apex-spiral/apex_devour/"
+      "rust_core": "/home/ubuntu/apex-spiral/apex_devour/",
+      "gene_id": "gene_603"
     },
     "604": {
       "name": "agent_lightning_credit_assignment_gate",
       "status": "implemented_rust_module",
-      "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/credit.rs"
+      "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/credit.rs",
+      "gene_id": "gene_604"
     },
     "605": {
       "name": "reflexion_verbal_memory_gate",
       "status": "implemented_rust_module",
-      "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/reflection.rs"
+      "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/reflection.rs",
+      "gene_id": "gene_605"
     },
     "606": {
       "name": "self_improving_coding_agent_maintenance_gate",
       "status": "implemented_rust_module",
-      "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/maintenance.rs"
+      "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/maintenance.rs",
+      "gene_id": "gene_606"
     },
     "607": {
       "name": "apex_straTA_strategic_tiered_agent_architecture",
@@ -807,7 +831,8 @@
         "straTA_cli": "PASS (z_id=18b2d717c7d5c48d, J(theta)=2.994, complete=true, rate=100.0%)",
         "cli_subcommand": "stra-ta (hyphenated)"
       },
-      "shortboard": "Bee Queen activated swarm mode: z~pi(s1) generates global strategy, fix z drives multi-Agent parallel a_t~pi(z,s_t), GRPO layered reward J(theta), MemLLM long-term memory sync, single instruction completes strategy+execution+memory+verification closed loop"
+      "shortboard": "Bee Queen activated swarm mode: z~pi(s1) generates global strategy, fix z drives multi-Agent parallel a_t~pi(z,s_t), GRPO layered reward J(theta), MemLLM long-term memory sync, single instruction completes strategy+execution+memory+verification closed loop",
+      "gene_id": "gene_607"
     },
     "608": {
       "name": "issue_resolution_benchmark_gate",
@@ -821,7 +846,8 @@
         "resolution_cli": "PASS (n_runs=3, mean_resolution_credit=0.58, solve_rate=0.666667, tool_error_rate=0.666667, keep_for_training=false)",
         "dashboard_refresh": "PASS at this cycle"
       },
-      "shortboard": "Native issue to patch to test gate with regression/sandbox/scope/error metrics for coding-agent runs."
+      "shortboard": "Native issue to patch to test gate with regression/sandbox/scope/error metrics for coding-agent runs.",
+      "gene_id": "gene_608"
     },
     "610": {
       "name": "apex_gate_health_evm_integration",
@@ -835,7 +861,8 @@
         "cargo_build_release": "PASS",
         "gate_cli": "PASS (delta_g_candidate=1.3631, gate_open=true, 4/4 gates passed, EVM_base=0.7691, defect_rate=0.0000)",
         "evm_python_live": "PASS (EVM=0.7691, G_evm=1.0600)"
-      }
+      },
+      "gene_id": "gene_610"
     }
   },
   "vlm_agentic_genes": {
@@ -850,7 +877,146 @@
         "cargo_test": "PASS (28 tests, 4 new VLM tests)",
         "cargo_build_release": "PASS",
         "vlm_cli": "PASS (n_steps=5, n_corrections=2, correction_rate=0.40, mean_correction_quality=0.85, keep_for_training=true)"
-      }
+      },
+      "gene_id": "gene_609"
     }
-  }
+  },
+  "gene_pool": [
+    {
+      "gene_id": "gene_594",
+      "name": "subagent_legacy_recovery",
+      "section": "hermes_agent_defect_genes",
+      "registry_key": "594",
+      "status": "completed",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_595",
+      "name": "gpt_skill_audit",
+      "section": "hermes_agent_defect_genes",
+      "registry_key": "595",
+      "status": "completed",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_596",
+      "name": "self_capability_audit",
+      "section": "hermes_agent_defect_genes",
+      "registry_key": "596",
+      "status": "completed",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_597",
+      "name": "dual_skill_gene_evolve",
+      "section": "hermes_agent_defect_genes",
+      "registry_key": "597",
+      "status": "completed",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_598",
+      "name": "gpt_subagent_depth_broker",
+      "section": "hermes_agent_defect_genes",
+      "registry_key": "598",
+      "status": "registered_gpt_managed",
+      "category": "repair"
+    },
+    {
+      "gene_id": "gene_599",
+      "name": "gpt_skill_merge_refactor",
+      "section": "hermes_agent_defect_genes",
+      "registry_key": "599",
+      "status": "registered_gpt_managed",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_600",
+      "name": "gpt_value_aware_compression",
+      "section": "hermes_agent_defect_genes",
+      "registry_key": "600",
+      "status": "registered_gpt_managed",
+      "category": "repair"
+    },
+    {
+      "gene_id": "gene_601",
+      "name": "evomaster_claw_native_evolution_core",
+      "section": "claw_native_evolution_genes",
+      "registry_key": "601",
+      "status": "implemented_rust_core",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_602",
+      "name": "orchestrator_soul_truth_gate",
+      "section": "orchestrator_truth_gate_genes",
+      "registry_key": "602",
+      "status": "implemented_governance_core",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_603",
+      "name": "apex_devour_rust_core",
+      "section": "apex_devour_genes",
+      "registry_key": "603",
+      "status": "implemented_rust_core",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_604",
+      "name": "agent_lightning_credit_assignment_gate",
+      "section": "apex_devour_genes",
+      "registry_key": "604",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_605",
+      "name": "reflexion_verbal_memory_gate",
+      "section": "apex_devour_genes",
+      "registry_key": "605",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_606",
+      "name": "self_improving_coding_agent_maintenance_gate",
+      "section": "apex_devour_genes",
+      "registry_key": "606",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_607",
+      "name": "apex_straTA_strategic_tiered_agent_architecture",
+      "section": "apex_devour_genes",
+      "registry_key": "607",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_608",
+      "name": "issue_resolution_benchmark_gate",
+      "section": "apex_devour_genes",
+      "registry_key": "608",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_609",
+      "name": "vlm_agentic_self_correction_gate",
+      "section": "vlm_agentic_genes",
+      "registry_key": "609",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_610",
+      "name": "apex_gate_health_evm_integration",
+      "section": "apex_devour_genes",
+      "registry_key": "610",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    }
+  ]
 }
