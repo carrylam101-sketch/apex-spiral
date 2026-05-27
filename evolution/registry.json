@@ -689,13 +689,60 @@
       "gini_outcome_history": 15,
       "gini_source": "gene_pool",
       "notes": "Gini selector Trap 9 fixed: now reads gene_pool/evolution/genes (17 candidates, 15 outcomes) instead of legacy genes.json (12 candidates, 0 outcomes)"
+    },
+    "cycle_111": {
+      "timestamp": "2026-05-27T05:02:00Z",
+      "delta_g": 1.404,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "delta_g_formula_conservative": 0.62718,
+      "selected_gene": "gene_611",
+      "status": "completed_native_rust_module",
+      "shortboard": "Gene 611 (apex_iteration_budget) implemented as native Rust module. G_apex_ib = 1 + 0.03*(1 - truncation_risk) - 0.02*truncation_risk. 43 tests PASS. CLI: iteration-budget --iter-count <n>. First root-gene implementation in APEX dependency chain 602-608.",
+      "apex_iteration_budget": {
+        "cli_single_normal": "iter=45, level=normal, G_apex_ib=1.0300, truncation_risk=0.0, should_checkpoint=false",
+        "cli_single_alert": "iter=92, level=medium_alert, G_apex_ib=1.0150, truncation_risk=0.3, should_checkpoint=true",
+        "gene_file": "/home/ubuntu/apex-spiral/evolution/genes/611_apex_iteration_budget.json"
+      },
+      "gain_factors": {
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "G_apex_ib": 1.03
+      },
+      "verification": {
+        "cargo_test": "PASS (43 tests including 6 new iteration_budget tests)",
+        "cargo_build_release": "PASS (4.69s)",
+        "registry_json_valid": "PASS (18 genes, gene_611 in pool+section)",
+        "dashboard_refresh": "PASS"
+      },
+      "artifacts": [
+        "/home/ubuntu/apex-spiral/apex_devour/src/iteration_budget.rs",
+        "/home/ubuntu/apex-spiral/evolution/genes/611_apex_iteration_budget.json",
+        "/home/ubuntu/apex-spiral/evolution/reports/cycle_111_apex_iteration_budget.md"
+      ],
+      "boundary": "iteration_budget is a standalone measurement gate. It does NOT modify Hermes Agent behavior. Integration with run_agent.py requires separate implementation.",
+      "G_neuro": 1.0,
+      "G_self": 1.0,
+      "G_evm": 1.0
+    },
+    "cycle_112": {
+      "delta_g": 1.718,
+      "delta_g_before": 1.404,
+      "gain_ratio": 1.2236,
+      "timestamp": "2026-05-27T04:04:51.250643Z",
+      "summary": "Fixed apex_gate_registry.rs ev_score/harm_rate prefix-only lookup bug; 3 failing tests \u2192 52/52 passing; evomaster_claw_core 3/3 passing",
+      "genes_applied": [],
+      "devour_sources": [],
+      "notes": "Rust gate_credit normalization + full-name lookup fix"
     }
   },
   "gene_pool_stats": {
-    "total_genes": 17,
+    "total_genes": 18,
     "by_category": {
       "repair": 2,
-      "optimize": 15,
+      "optimize": 16,
       "innovate": 0
     },
     "bootstrap_ratio": 0.632,
@@ -863,6 +910,22 @@
         "evm_python_live": "PASS (EVM=0.7691, G_evm=1.0600)"
       },
       "gene_id": "gene_610"
+    },
+    "611": {
+      "name": "apex_iteration_budget",
+      "status": "implemented_rust_module",
+      "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/iteration_budget.rs",
+      "binary": "/home/ubuntu/apex-spiral/apex_devour/target/release/apex_devour",
+      "cli_subcommand": "iteration-budget",
+      "description": "APEX iteration budget gate: budget-aware intervention measurement for agent iteration cut-off risk. G_apex_ib = 1 + 0.03*(1 - truncation_risk) - 0.02*truncation_risk. Intervention levels: Normal/Low/Medium/High/Critical. Standalone measurement gate \u2014 does NOT modify agent behavior.",
+      "formula": "G_apex_ib = 1 + 0.03*(1 - truncation_risk) - 0.02*truncation_risk; Normal(0%)/Low(70%)/Medium(85%)/High(95%)/Critical(100%)",
+      "verification": {
+        "cargo_test": "PASS (43 tests including 6 new iteration_budget tests)",
+        "cargo_build_release": "PASS (4.69s)",
+        "single_cli": "PASS (iter=45, level=normal, G_apex_ib=1.0300)",
+        "alert_cli": "PASS (iter=92, level=medium_alert, should_checkpoint=true, G_apex_ib=1.0150)"
+      },
+      "gene_id": "gene_611"
     }
   },
   "vlm_agentic_genes": {
@@ -1015,6 +1078,14 @@
       "name": "apex_gate_health_evm_integration",
       "section": "apex_devour_genes",
       "registry_key": "610",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_611",
+      "name": "apex_iteration_budget",
+      "section": "apex_devour_genes",
+      "registry_key": "611",
       "status": "implemented_rust_module",
       "category": "optimize"
     }
