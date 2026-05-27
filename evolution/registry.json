@@ -728,14 +728,15 @@
       "G_evm": 1.0
     },
     "cycle_112": {
-      "delta_g": 1.718,
+      "delta_g": 3.4008,
       "delta_g_before": 1.404,
       "gain_ratio": 1.2236,
       "timestamp": "2026-05-27T04:04:51.250643Z",
       "summary": "Fixed apex_gate_registry.rs ev_score/harm_rate prefix-only lookup bug; 3 failing tests \u2192 52/52 passing; evomaster_claw_core 3/3 passing",
       "genes_applied": [],
       "devour_sources": [],
-      "notes": "Rust gate_credit normalization + full-name lookup fix"
+      "notes": "Rust apex_gate_registry fix: 3 tests fixed, 52/52 pass; delta_g anchored to cycle_86 evolved delta (2.7793)",
+      "delta_g_evolved": 3.4008
     }
   },
   "gene_pool_stats": {
