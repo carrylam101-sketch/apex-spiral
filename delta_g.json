@@ -1,0 +1,22 @@
+{
+  "project": "APEX V10.3 Spiral",
+  "version": "0.1.0",
+  "activated": "2026-05-27",
+  "description": "APEX × CMMI L5 工业化交付标准工作流基线",
+  "cmmi_level": 5,
+  "gate_standard": {
+    "delta_g_plan_min": 0.60,
+    "delta_g_audit_min": "delta_g_plan",
+    "compile_pass_rate": "100%",
+    "ci_test_pass_rate": "100%",
+    "critical_cvess": 0
+  },
+  "tools": {
+    "planner": "Local Codex (http://127.0.0.1:8317/v1)",
+    "coder": "Local Codex",
+    "auditor": "GPT (Hermes main agent)",
+    "cicd": "GitHub Actions",
+    "repo": "carrylam101-sketch/apex-spiral"
+  },
+  "delta_g_baseline": 1.0000
+}
