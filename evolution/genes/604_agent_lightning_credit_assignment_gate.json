@@ -1,0 +1,73 @@
+{
+  "id": 604,
+  "gene_id": "gene_604",
+  "name": "agent_lightning_credit_assignment_gate",
+  "status": "implemented_rust_module",
+  "created_at": "2026-05-24T04:05:24Z",
+  "type": "agentic_rl_credit_assignment",
+  "description": "Native Rust measurable gate for decoupled trajectory-to-transition credit assignment, inspired by Agent Lightning mechanism; no external code copied.",
+  "source_digest": [
+    {
+      "source": "Agent Lightning",
+      "url": "https://arxiv.org/abs/2508.03680",
+      "mechanism": "Decouple agent execution from RL training; model execution as MDP; decompose trajectories into training transitions with credit assignment.",
+      "apex_mapping": [
+        "P_decompose",
+        "V_audit",
+        "MetaG"
+      ],
+      "measurable_gate": "CreditReport: mean_credit, pass_rate, tool_error_rate, keep_for_training"
+    },
+    {
+      "source": "mini-swe-agent",
+      "url": "https://github.com/SWE-agent/mini-swe-agent",
+      "mechanism": "Minimal bash-only linear coding-agent loop with sandboxed command execution and SWE-bench verification.",
+      "apex_mapping": [
+        "ToolAct",
+        "Sandbox",
+        "V_audit"
+      ],
+      "measurable_gate": "future: shell-action transition schema and verifier pass/fail gate"
+    },
+    {
+      "source": "Reflexion",
+      "url": "https://arxiv.org/abs/2303.11366",
+      "mechanism": "Verbal reinforcement through feedback reflection stored in episodic memory; no weight update.",
+      "apex_mapping": [
+        "S_review",
+        "MetaG",
+        "PolicyTextUpdate"
+      ],
+      "measurable_gate": "future: reflection changes next attempt policy and improves pass rate"
+    }
+  ],
+  "formulas": {
+    "D_devour": "Q_source * M_mech * A_impl * V_audit * T_transfer",
+    "G_devour": "1 + 0.08*D_devour - 0.05*Omega_risk",
+    "credit": "clamp(((reward+1)/2)*verifier_weight - tool_penalty, 0, 1)"
+  },
+  "conservative_params": {
+    "Q_source": 0.41,
+    "M_mech": 1.0,
+    "A_impl": 0.9,
+    "V_audit": 0.85,
+    "T_transfer": 0.78,
+    "Omega_risk": 0.05,
+    "D_devour": 0.244647,
+    "G_devour": 1.017072
+  },
+  "artifacts": {
+    "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/credit.rs",
+    "sample_trajectory": "/home/ubuntu/apex-spiral/apex_devour/sample_trajectory.json"
+  },
+  "verification": {
+    "cargo_test": "PASS (9 tests)",
+    "cargo_build_release": "PASS",
+    "credit_cli": "PASS mean_credit=0.9 keep_for_training=true"
+  },
+  "truth_gate": {
+    "external_code_copied": false,
+    "core_code_integrated": true,
+    "scope_boundary": "Only a credit assignment gate is implemented; full RL trainer/fine-tuning is not integrated."
+  }
+}

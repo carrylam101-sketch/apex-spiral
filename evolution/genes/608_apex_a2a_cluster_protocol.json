@@ -1,0 +1,25 @@
+{
+  "id": 608,
+  "gene_id": "gene_608",
+  "name": "apex_a2a_cluster_protocol",
+  "category": "innovate",
+  "source": "hermes-agent × APEX V10.3 × ZeroLang × A2A",
+  "mechanism": "通过 HMAC-SHA256 签名的 JSON A2A 消息实现 Agent 间跨域协作：register_node / send_a2a / a2a_recv，支持 APEX 全球算力集群",
+  "apex_mapping": {
+    "Λ": "Λ_cluster：跨域协作 → 注册到集群",
+    "Φ": "外部加持：APEX 全球算力网络",
+    "A2A": "Agent-to-Agent JSON over HTTPS"
+  },
+  "measurable_gates": {
+    "register_node": "POST {node_id, capabilities, delta_g, g_evm} → cluster node_id",
+    "send_a2a": "POST {from, to, method, args, delta_g, nonce} → response + EV",
+    "a2a_recv": "HMAC 验签后处理消息"
+  },
+  "status": "registered_design",
+  "evm_defect_channels": ["Net", "Agt", "Res"],
+  "file": "agent/apex_a2a_protocol.py",
+  "integration_point": "agent/apex_a2a_protocol.py",
+  "registered_at": "2026-05-24T14:15:00Z",
+  "registered_cycle": 101,
+  "author": "Hermes × carry"
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APEX Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+    .meta { margin-bottom: 16px; }
+    .cards { display: grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: 12px; margin: 16px 0 24px; }
+    .card { border: 1px solid #e6e8ef; border-radius: 10px; padding: 12px 14px; background: #fafbff; }
+    .card b { display:block; margin-bottom: 6px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    canvas { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 8px; }
+    table { border-collapse: collapse; margin-top: 16px; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: right; }
+    th:first-child, td:first-child, th:last-child, td:last-child { text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>APEX 五环短板雷达看板</h1>
+  <div class="meta">
+    <div>更新时间: 2026-06-06 00:05:32</div>
+    <div>当前循环: 101 | 状态: HEALTHY | ΔG: 2.2713</div>
+    <div>Shannon C: 10.632 | η_capacity: 0.5541 | plateau_score: 1.0</div>
+  </div>
+  <div class="cards">
+    <div class="card"><b>Neuro-Cell Gate</b>Π_neuro: 0.795522<br>Ω_cell: 0.449701<br>ΔG_candidate: 2.5133</div>
+    <div class="card"><b>GitHub V10.3 Self Loop</b>G_self_loop: n/a<br>ΔG_v10_3_candidate: n/a<br>gain: n/a%</div>
+    <div class="card"><b>Repo Sync</b>origin/main: n/a<br>module: n/a</div>
+  </div>
+  <div class="grid">
+    <canvas id="radar"></canvas>
+    <canvas id="trend"></canvas>
+  </div>
+  <table>
+    <thead><tr><th>cycle</th><th>ΔG</th><th>C_shannon</th><th>η_capacity</th><th>plateau</th><th>findings</th><th>status</th></tr></thead>
+    <tbody>
+      <tr><td>101</td><td>2.2713</td><td>10.6320</td><td>0.5541</td><td>1.0000</td><td>1</td><td>HEALTHY</td></tr><tr><td>101</td><td>2.2713</td><td>10.6320</td><td>0.5541</td><td>1.0000</td><td>1</td><td>HEALTHY</td></tr><tr><td>101</td><td>2.2713</td><td>10.6320</td><td>0.5541</td><td>1.0000</td><td>1</td><td>HEALTHY</td></tr><tr><td>101</td><td>2.2713</td><td>10.6320</td><td>0.5541</td><td>1.0000</td><td>1</td><td>HEALTHY</td></tr><tr><td>101</td><td>2.2713</td><td>10.6320</td><td>0.5541</td><td>1.0000</td><td>1</td><td>HEALTHY</td></tr>
+    </tbody>
+  </table>
+  <script>
+    const labels = ["Φ_anti", "Ψ_cross", "H(X)", "C_shannon", "𝒯_full", "M_mem"];
+    const latest = [1, 0.5379, 0.7427, 1, 0.82, 0.89];
+    const avg20 = [1.0, 0.5379, 0.7427, 1.0, 0.82, 0.89];
+    const cycles = [101, 101, 101, 101, 101];
+    const deltaG = [2.2713, 2.2713, 2.2713, 2.2713, 2.2713];
+    const capacityC = [10.632, 10.632, 10.632, 10.632, 10.632];
+    const etaCapacity = [0.5541, 0.5541, 0.5541, 0.5541, 0.5541];
+    const plateauScore = [1.0, 1.0, 1.0, 1.0, 1.0];
+
+    new Chart(document.getElementById('radar'), {
+      type: 'radar',
+      data: { labels, datasets: [
+        { label: '最新', data: latest, borderWidth: 2 },
+        { label: '20轮均值', data: avg20, borderWidth: 2 }
+      ] },
+      options: { scales: { r: { min: 0, max: 1 } } }
+    });
+
+    new Chart(document.getElementById('trend'), {
+      type: 'line',
+      data: { labels: cycles, datasets: [
+        { label: 'ΔG', data: deltaG, tension: 0.2, borderWidth: 2 },
+        { label: 'C_shannon', data: capacityC, tension: 0.2, borderWidth: 2 },
+        { label: 'η_capacity', data: etaCapacity, tension: 0.2, borderWidth: 2 },
+        { label: 'plateau_score', data: plateauScore, tension: 0.2, borderWidth: 2 }
+      ] },
+      options: { plugins: { legend: { display: true } } }
+    });
+  </script>
+</body>
+</html>

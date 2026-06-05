@@ -1,0 +1,69 @@
+{
+  "id": 601,
+  "gene_id": "gene_601",
+  "name": "apex_devour_evolution_engine",
+  "status": "skill_enabled_registered",
+  "created_at": "2026-05-23T20:18:00+08:00",
+  "type": "agentic_rl_devour_skill",
+  "description": "APEX 吞噬自进化引擎：从高星开源 Agentic RL / coding-agent / self-improvement 项目抽取机制，经过 APEX 公式门控、重写、审计和证据归档后内化为 CLAW/Hermes 原生能力。",
+  "formulas": {
+    "RL_base": "pi(a|s) -> R -> grad_pi",
+    "APEX_ARL": "RL union {MetaG, Reflect, LongPlan}",
+    "I_total": "M_base * C_think",
+    "C_think": "G_set + P_decompose + S_review",
+    "D_devour": "Q_source * M_mech * A_impl * V_audit * T_transfer",
+    "G_devour": "1 + 0.08*D_devour - 0.05*Omega_risk"
+  },
+  "source_digest": [
+    {
+      "repo": "OpenHands/OpenHands",
+      "stars_observed": 74595,
+      "mechanism": "SDK/CLI/GUI/Cloud software-agent stack; scalable agent execution",
+      "apex_mapping": ["LongPlan", "ToolAct", "Sandbox", "Workflow"],
+      "gate": "task flow and execution log exist"
+    },
+    {
+      "repo": "SWE-agent/SWE-agent",
+      "stars_observed": 19278,
+      "mechanism": "GitHub issue -> patch -> test loop; SWE-bench oriented environment",
+      "apex_mapping": ["P_decompose", "V_audit", "IssueRepair"],
+      "gate": "issue-to-patch pipeline can run tests"
+    },
+    {
+      "repo": "MineDojo/Voyager",
+      "stars_observed": 6923,
+      "mechanism": "automatic curriculum, ever-growing skill library, iterative prompting",
+      "apex_mapping": ["G_self", "SkillMemory", "Reflect"],
+      "gate": "skills reusable across tasks and curriculum difficulty increases"
+    },
+    {
+      "repo": "noahshinn/reflexion",
+      "stars_observed": 3159,
+      "mechanism": "verbal reinforcement learning via reflection memory",
+      "apex_mapping": ["S_review", "MetaG", "PolicyTextUpdate"],
+      "gate": "failure reflection changes next attempt policy"
+    }
+  ],
+  "devour_gain_conservative": {
+    "Q_source": 0.82,
+    "M_mech": 0.72,
+    "A_impl": 0.35,
+    "V_audit": 0.60,
+    "T_transfer": 0.74,
+    "Omega_risk": 0.24,
+    "D_devour_estimate": 0.0918,
+    "G_devour_estimate": 0.9953,
+    "note": "A_impl remains low because this cycle created the governing skill/gene but did not yet implement Rust/Go/C core. Therefore gain is conservatively not claimed as positive."
+  },
+  "artifacts": {
+    "skill": "/home/ubuntu/.hermes/skills/mlops/apex-devour-evolution-engine/SKILL.md",
+    "gene": "/home/ubuntu/apex-spiral/evolution/genes/601_apex_devour_evolution_engine.json",
+    "report": "/home/ubuntu/apex-spiral/evolution/reports/cycle_101_apex_devour_evolution_engine.md"
+  },
+  "truth_gate": {
+    "skill_created": true,
+    "core_code_integrated": false,
+    "cron_skill_attached": "pending_verification",
+    "claim_boundary": "Skill/gene enabled; CLAW core Rust/Go/C implementation is not yet completed in this cycle."
+  }
+}

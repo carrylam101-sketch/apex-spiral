@@ -1,0 +1,63 @@
+{
+  "cycle": 82,
+  "status": "HEALTHY",
+  "factors_current": {
+    "G_base": 4.010179832377537,
+    "Lambda": 0.98,
+    "Theta": 0.44,
+    "K": 1.72,
+    "xi": 1.0,
+    "Psi": 0.5379,
+    "Phi": 0.963,
+    "H": 0.94,
+    "T": 0.88,
+    "epsilon": 0.82,
+    "delta_formula": 2.2713
+  },
+  "factors_optimized": {
+    "Lambda": 0.985,
+    "Theta": 0.448,
+    "K": 1.735,
+    "xi": 1.0,
+    "Psi": 0.5439,
+    "Phi": 0.972,
+    "H": 0.93,
+    "T": 0.865,
+    "epsilon": 0.805,
+    "delta_candidate": 2.5065014461664754
+  },
+  "neuro": {
+    "Pi_neuro": 0.795522,
+    "Omega_cell": 0.449701,
+    "Omega_gap": 0.18,
+    "G_neuro": 1.10652828
+  },
+  "self_loop": {
+    "Psi_self": 0.5043093932896641,
+    "Xi_repair": 0.031178602126831212,
+    "Grad_self": 0.031675,
+    "Gamma_awake": 1.0341346534653464,
+    "G_self": 1.0666176272405785
+  },
+  "evm": {
+    "defects": {
+      "Tok": 0.0601,
+      "Mem": 0.08,
+      "Err": 0.0,
+      "Run": 0.06,
+      "Net": 0.08,
+      "Pan": 0.1,
+      "Log": 0.0,
+      "Clw": 0.0,
+      "Agt": 0.0,
+      "Prm": 0.0,
+      "Soul": 0.0,
+      "Res": 0.0
+    },
+    "Pi_evm": 0.968325,
+    "Omega_defect": 0.031675,
+    "G_evm": 1.0568325
+  },
+  "delta_evolved": 3.1264061360627062,
+  "overall_gain": 1.2473187042618041
+}

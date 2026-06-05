@@ -1,0 +1,7 @@
+{
+  "allowed_tools": ["terminal", "browser", "skill_manage", "read_file", "search_files"],
+  "blocked_patterns": ["rm -rf", "secret_exfiltration", "unverified_provider_switch"],
+  "max_depth": 2,
+  "max_steps": 25,
+  "require_artifact": true
+}

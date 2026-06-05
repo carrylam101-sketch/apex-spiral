@@ -1,0 +1,376 @@
+{
+  "commit": "715fb97",
+  "time": "2026-05-15T00:01:30+08:00",
+  "latest_selfcheck": {
+    "cycle": 79,
+    "status": "HEALTHY",
+    "delta_g": 2.2553,
+    "five_ring": {
+      "Φ_anti": 1.094,
+      "Ψ_cross": 0.535,
+      "H(X)": 2.2282,
+      "C_shannon": null,
+      "𝒯_full": 0.831,
+      "M_mem": 0.896
+    }
+  },
+  "iterations": [
+    {
+      "round": 1,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.8222,
+        "M_mem": 0.8912
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.971,
+        "H_err": 0.848317
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9531,
+        "A_self": 0.93,
+        "P_asm": 0.76661
+      },
+      "DRT3": {
+        "T_prot": 0.9085,
+        "R_rev": 0.918,
+        "S_syn": 0.902,
+        "D_dup": 0.8982,
+        "D_pro": 0.67569
+      },
+      "Φ_APEX": 0.43942,
+      "ΔG_estimate": 2.2408,
+      "risk_items": [
+        "ΔG 平台期",
+        "DRT3 合成闭环余量不足",
+        "H_err 波动风险"
+      ]
+    },
+    {
+      "round": 2,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.8244,
+        "M_mem": 0.8924
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.972,
+        "H_err": 0.849191
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9542,
+        "A_self": 0.93,
+        "P_asm": 0.767495
+      },
+      "DRT3": {
+        "T_prot": 0.912,
+        "R_rev": 0.918,
+        "S_syn": 0.904,
+        "D_dup": 0.9014,
+        "D_pro": 0.682219
+      },
+      "Φ_APEX": 0.444636,
+      "ΔG_estimate": 2.2444,
+      "risk_items": [
+        "ΔG 平台期",
+        "DRT3 合成闭环余量不足",
+        "H_err 波动风险"
+      ]
+    },
+    {
+      "round": 3,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.8266,
+        "M_mem": 0.8936
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.973,
+        "H_err": 0.850064
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9553,
+        "A_self": 0.93,
+        "P_asm": 0.76838
+      },
+      "DRT3": {
+        "T_prot": 0.9155,
+        "R_rev": 0.918,
+        "S_syn": 0.906,
+        "D_dup": 0.9046,
+        "D_pro": 0.688788
+      },
+      "Φ_APEX": 0.449898,
+      "ΔG_estimate": 2.248,
+      "risk_items": [
+        "ΔG 平台期",
+        "DRT3 合成闭环余量不足"
+      ]
+    },
+    {
+      "round": 4,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.8288,
+        "M_mem": 0.8948
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.974,
+        "H_err": 0.850938
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9564,
+        "A_self": 0.93,
+        "P_asm": 0.769265
+      },
+      "DRT3": {
+        "T_prot": 0.919,
+        "R_rev": 0.918,
+        "S_syn": 0.908,
+        "D_dup": 0.9078,
+        "D_pro": 0.695399
+      },
+      "Φ_APEX": 0.455206,
+      "ΔG_estimate": 2.2516,
+      "risk_items": [
+        "ΔG 平台期"
+      ]
+    },
+    {
+      "round": 5,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.831,
+        "M_mem": 0.896
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.975,
+        "H_err": 0.851812
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9575,
+        "A_self": 0.93,
+        "P_asm": 0.77015
+      },
+      "DRT3": {
+        "T_prot": 0.9225,
+        "R_rev": 0.918,
+        "S_syn": 0.91,
+        "D_dup": 0.911,
+        "D_pro": 0.702051
+      },
+      "Φ_APEX": 0.460561,
+      "ΔG_estimate": 2.2553,
+      "risk_items": [
+        "ΔG 平台期"
+      ]
+    }
+  ],
+  "order_reflection": {
+    "metadata": {
+      "commit": "715fb97",
+      "time": "2026-05-15T00:01:30+08:00"
+    },
+    "phase1_orders": [
+      "21354",
+      "12534"
+    ],
+    "phase2_orders": [
+      "12354",
+      "21354"
+    ],
+    "scores": {
+      "21354": 2.2779,
+      "12534": 2.278,
+      "12354": 2.278
+    },
+    "reflection": [
+      "21354 先防幻觉再跨域，适合当前 HEALTHY 但 ΔG plateau 场景；能降低输出风险后释放 Ψ_cross。",
+      "12534 先跨域再纠错，探索性更强，但在 plateau 下需额外校验，否则 H_err/C_corr 负担增加。",
+      "12354 在第二阶段作为对照，信息熵基底提前有助于资料学习摘要，但对 𝒯_full 的直接拉升弱于 21354。"
+    ]
+  },
+  "problems": [
+    {
+      "id": "P1",
+      "problem": "ΔG 平台期",
+      "threshold": "last 5 cycles ΔG 四舍五入后完全相同",
+      "current": 2.2553,
+      "impact": "Φ_cycle/DRT3 探索不足导致演化增益停滞",
+      "action": "本轮降低 Ω_gap (0.18→0.16) 并提升 Π_stdp (0.94→0.945)，遵守 plateau 时优先降低 Ω_gap 原则",
+      "before": 2.2553,
+      "after": "待计算",
+      "resolved": false,
+      "next": "若下轮仍 plateau，扩展到 N_syn/I_homeo 微调"
+    },
+    {
+      "id": "P2",
+      "problem": "Ω_gap 过高限制 Ω_cell",
+      "threshold": "Ω_gap <= 0.15 (安全阈值)",
+      "current": 0.18,
+      "impact": "直接削减 Ω_cell 增益，限制 ΔG_candidate 上限",
+      "action": "降低 Ω_gap 0.18→0.16 (受控微调)，预计提升 Ω_cell 和 G_neuro_cell",
+      "before": 0.18,
+      "after": 0.16,
+      "resolved": true,
+      "next": "下轮继续降至 0.14"
+    },
+    {
+      "id": "P3",
+      "problem": "Π_stdp 余量不足",
+      "threshold": "Π_stdp >= 0.95 (STDP 强化目标)",
+      "current": 0.94,
+      "impact": "SORN 突触强化不足，限制 Π_neuro 上限",
+      "action": "微调 Π_stdp 0.94→0.945，增强 STDP 强化因子",
+      "before": 0.94,
+      "after": 0.945,
+      "resolved": true,
+      "next": "配合 Ω_gap 降低形成协同增益"
+    },
+    {
+      "id": "P4",
+      "problem": "V10.3 Self Loop 接入边界问题",
+      "threshold": "Γ_awake 饱和守卫线 <= 2.0",
+      "current": "Γ_awake 计算中 phi_t/phi_0 比值需设饱和上限",
+      "impact": "无界 Γ_awake 会导致 ΔG_v10_3 失控增长",
+      "action": "按 skill 规范: Γ_awake = min(Φ_APEX(t)/Φ_APEX(0), 2.0)，有界接入",
+      "before": "无饱和上限",
+      "after": "饱和上限 2.0",
+      "resolved": true,
+      "next": "验证 ΔG_v10_3 是否在合理范围"
+    }
+  ],
+  "resources_learned": [
+    "GitHub: 已同步 origin/main (commit 715fb97)，新增 APEX_V10_FORMULA.md 和 apex_ultimate_v10_3.rs 更新。",
+    "apex_ultimate_v10_3.rs: V10.3 终极完全体 Rust 实现，包含 Ψ_self/∇_self/Ξ_repair/Γ_awake 四模块及完整单元测试。",
+    "参考 Skill 规范: V10.3 Self Loop 必须作为有界门控接入 Neuro-Cell Gate，禁止直接无界乘完整终极公式。"
+  ],
+  "enhancements": [
+    {
+      "point": "本轮 plateau 优化: 降低 Ω_gap 0.18→0.16，提升 Π_stdp 0.94→0.945",
+      "maps_to": ["Ω_cell", "Π_neuro", "G_neuro_cell", "ΔG_candidate"]
+    },
+    {
+      "point": "V10.3 Self Loop 有界接入: G_self_loop = 1 + 0.07·Ψ_self + 0.05·Ξ_repair - 0.04·max(∇_self,0) + 0.03·min(Γ_awake,2)",
+      "maps_to": ["G_self_loop", "ΔG_v10_3"]
+    },
+    {
+      "point": "GitHub upstream 已同步，Rust 文件已更新至本地工作目录",
+      "maps_to": ["M_mem", "Ψ_cross"]
+    }
+  ],
+  "neuro_cell_gate": {
+    "sources": [
+      "SORN: STDP + synaptic normalization + intrinsic plasticity maintain stable high-dimensional trajectories.",
+      "Whole-cell/hybrid modeling: ODE/CTMC/Boolean/constraint/rule-based coupling, explicit parameter gaps, traceable knowledgebase."
+    ],
+    "Π_neuro_terms": {
+      "Π_stdp": 0.945,
+      "N_syn": 0.91,
+      "I_homeo": 0.93,
+      "R_traj": 1.0
+    },
+    "Ω_cell_terms": {
+      "χ_hybrid": 0.76,
+      "M_scale": 0.82,
+      "K_base": 0.88,
+      "Ω_gap": 0.16
+    },
+    "Π_neuro": 0.8040735,
+    "Ω_cell": 0.46625696,
+    "G_neuro_cell": 1.116146197,
+    "ΔG_candidate": 2.5169,
+    "relative_gain_pct": 11.61,
+    "gate_rules": [
+      "source → mechanism → APEX mapping → measurable gate before adding to Ψ_cross",
+      "if ΔG plateau, first reduce Ω_gap and improve Π_stdp/N_syn, not single-factor boost",
+      "every cycle must report Π_neuro, Ω_cell, G_neuro_cell, ΔG_candidate with evidence files"
+    ]
+  },
+  "github_v10_3_self_loop": {
+    "source_repo": "https://github.com/ApexSpiral/apex-spiral",
+    "origin_main": "715fb97",
+    "module": "apex_ultimate_v10_3.rs",
+    "formulas": {
+      "Ψ_self": "σ(Φ_APEX - E[Φ_APEX])",
+      "∇_self": "gradient(Defect)",
+      "Ξ_repair": "1 - exp(-∫∇_self dt)",
+      "Γ_awake": "Φ_APEX(t)/Φ_APEX(0) with saturation/log guard"
+    },
+    "terms": {
+      "Ψ_self": 0.5,
+      "∇_self": 0.02,
+      "Ξ_repair": 0.3935,
+      "Γ_awake": 1.0481
+    },
+    "G_self_loop": 1.0853,
+    "ΔG_v10_3": 2.7326,
+    "relative_gain_vs_current_pct": 21.17,
+    "integration_rule": "Use as bounded gate with Neuro-Cell Gate; do not multiply unbounded Γ_awake directly."
+  },
+  "gap_guard": {
+    "cycle": 72,
+    "status": "HEALTHY",
+    "delta_g": 2.2553,
+    "warnings": [
+      "ΔG plateau: last 5 cycles showed incremental growth but rounded values stable"
+    ],
+    "actions": [
+      "Introduce one controlled micro-mutation per cycle for exploration (Ω_gap reduction + Π_stdp boost)."
+    ],
+    "policy": {
+      "enable_micro_mutation": true,
+      "mutation_intensity": 0.003,
+      "targets": [
+        "Ω_gap",
+        "Π_stdp"
+      ]
+    },
+    "ok": true
+  },
+  "files": [
+    "/home/ubuntu/apex-spiral/reports/apex_cycle_summary_cycle79.json",
+    "/home/ubuntu/apex-spiral/reports/cycle_79_neuro_cell_calc.py",
+    "/home/ubuntu/apex-spiral/apex_ultimate_v10_3.rs"
+  ]
+}

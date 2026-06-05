@@ -1,0 +1,29 @@
+[
+  {
+    "step_id": "s1",
+    "observation_hash": "obs_git_issue_hash",
+    "action": "inspect failing test and identify root cause",
+    "tool": "terminal",
+    "reward": 0.6,
+    "verifier_pass": true,
+    "tool_error": false
+  },
+  {
+    "step_id": "s2",
+    "observation_hash": "obs_patch_hash",
+    "action": "apply minimal patch",
+    "tool": "file_patch",
+    "reward": 0.8,
+    "verifier_pass": true,
+    "tool_error": false
+  },
+  {
+    "step_id": "s3",
+    "observation_hash": "obs_test_hash",
+    "action": "run verification command",
+    "tool": "terminal",
+    "reward": 1.0,
+    "verifier_pass": true,
+    "tool_error": false
+  }
+]

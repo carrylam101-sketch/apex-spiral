@@ -1,0 +1,380 @@
+{
+  "commit": "715fb97",
+  "time": "2026-05-18T12:01:39+08:00",
+  "latest_selfcheck": {
+    "cycle": 82,
+    "status": "HEALTHY",
+    "delta_g": 2.2713,
+    "five_ring": {
+      "Φ_anti": 1.094,
+      "Ψ_cross": 0.5379,
+      "H(X)": 2.2282,
+      "C_shannon": null,
+      "𝒯_full": 0.82,
+      "M_mem": 0.89
+    }
+  },
+  "iterations": [
+    {
+      "round": 1,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.8222,
+        "M_mem": 0.8912
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.971,
+        "H_err": 0.848317
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9531,
+        "A_self": 0.93,
+        "P_asm": 0.76661
+      },
+      "DRT3": {
+        "T_prot": 0.905,
+        "R_rev": 0.918,
+        "S_syn": 0.902,
+        "D_dup": 0.895,
+        "D_pro": 0.670688
+      },
+      "Φ_APEX": 0.436168,
+      "ΔG_estimate": 2.2393,
+      "risk_items": [
+        "ΔG 平台期",
+        "DRT3 合成闭环余量不足",
+        "H_err 波动风险"
+      ]
+    },
+    {
+      "round": 2,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.8244,
+        "M_mem": 0.8924
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.972,
+        "H_err": 0.849191
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9542,
+        "A_self": 0.93,
+        "P_asm": 0.767495
+      },
+      "DRT3": {
+        "T_prot": 0.905,
+        "R_rev": 0.918,
+        "S_syn": 0.904,
+        "D_dup": 0.895,
+        "D_pro": 0.672176
+      },
+      "Φ_APEX": 0.43809,
+      "ΔG_estimate": 2.2414,
+      "risk_items": [
+        "ΔG 平台期",
+        "DRT3 合成闭环余量不足",
+        "H_err 波动风险"
+      ]
+    },
+    {
+      "round": 3,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.8266,
+        "M_mem": 0.8936
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.973,
+        "H_err": 0.850064
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9553,
+        "A_self": 0.93,
+        "P_asm": 0.76838
+      },
+      "DRT3": {
+        "T_prot": 0.905,
+        "R_rev": 0.918,
+        "S_syn": 0.906,
+        "D_dup": 0.895,
+        "D_pro": 0.673663
+      },
+      "Φ_APEX": 0.440018,
+      "ΔG_estimate": 2.2435,
+      "risk_items": [
+        "ΔG 平台期",
+        "DRT3 合成闭环余量不足"
+      ]
+    },
+    {
+      "round": 4,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.8288,
+        "M_mem": 0.8948
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.974,
+        "H_err": 0.850938
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9564,
+        "A_self": 0.93,
+        "P_asm": 0.769265
+      },
+      "DRT3": {
+        "T_prot": 0.905,
+        "R_rev": 0.918,
+        "S_syn": 0.908,
+        "D_dup": 0.895,
+        "D_pro": 0.67515
+      },
+      "Φ_APEX": 0.441951,
+      "ΔG_estimate": 2.2456,
+      "risk_items": [
+        "ΔG 平台期",
+        "DRT3 合成闭环余量不足"
+      ]
+    },
+    {
+      "round": 5,
+      "order_primary": "21354→12534",
+      "five_ring": {
+        "Φ_anti": 1.094,
+        "Ψ_cross": 0.535,
+        "H(X)": 2.2282,
+        "𝒯_full": 0.831,
+        "M_mem": 0.896
+      },
+      "HERRO": {
+        "H_ap": 0.965,
+        "P_pile": 0.955,
+        "S_info": 0.948,
+        "C_corr": 0.975,
+        "H_err": 0.851812
+      },
+      "Prime Assembly": {
+        "N_nick": 0.935,
+        "F_flap": 0.925,
+        "M_match": 0.9575,
+        "A_self": 0.93,
+        "P_asm": 0.77015
+      },
+      "DRT3": {
+        "T_prot": 0.905,
+        "R_rev": 0.918,
+        "S_syn": 0.91,
+        "D_dup": 0.895,
+        "D_pro": 0.676637
+      },
+      "Φ_APEX": 0.443889,
+      "ΔG_estimate": 2.2477,
+      "risk_items": [
+        "ΔG 平台期",
+        "DRT3 合成闭环余量不足"
+      ]
+    }
+  ],
+  "order_reflection": {
+    "metadata": {
+      "commit": "715fb97",
+      "time": "2026-05-18T12:01:39+08:00"
+    },
+    "phase1_orders": [
+      "21354",
+      "12534"
+    ],
+    "phase2_orders": [
+      "12354",
+      "21354"
+    ],
+    "scores": {
+      "21354": 2.2779,
+      "12534": 2.278,
+      "12354": 2.278
+    },
+    "reflection": [
+      "21354 先防幻觉再跨域，适合当前 HEALTHY 但 ΔG plateau 场景；能降低输出风险后释放 Ψ_cross。",
+      "12534 先跨域再纠错，探索性更强，但在 plateau 下需额外校验，否则 H_err/C_corr 负担增加。",
+      "12354 在第二阶段作为对照，信息熵基底提前有助于资料学习摘要，但对 𝒯_full 的直接拉升弱于 21354。"
+    ]
+  },
+  "problems": [
+    {
+      "id": "P1",
+      "problem": "ΔG 平台期",
+      "threshold": "last 5 cycles ΔG 四舍五入后完全相同",
+      "current": 2.2713,
+      "impact": "Φ_cycle/DRT3 探索不足导致演化增益停滞",
+      "action": "启用 /tmp/apex_mutation_policy.json: mutation_intensity=0.003；本轮 5 次微迭代逐步提升 DRT3.T_prot 与 DRT3.D_dup",
+      "before": 2.2713,
+      "after": 2.2477,
+      "resolved": false,
+      "next": "若下轮仍 plateau，将把目标扩展到 Prime Assembly.M_match 与 Ψ_cross.G_quan"
+    },
+    {
+      "id": "P2",
+      "problem": "Ψ_cross 上限风险",
+      "threshold": "目标守卫线 Ψ_cross >= 0.515；当前接近低天花板",
+      "current": 0.5379,
+      "impact": "跨学科学习到公式落地的映射增益不足",
+      "action": "每轮强制 GitHub/arXiv/X/期刊摘要，并把增强点映射到五环与 HERRO/Prime Assembly/DRT3",
+      "before": 0.5379,
+      "after": 0.535,
+      "resolved": true,
+      "next": "下轮继续引入可执行外部资料并优先映射 G_quan/G_prac"
+    },
+    {
+      "id": "P3",
+      "problem": "DRT3 子闭环余量不足",
+      "threshold": "D_pro 期望 >= 0.69；低于阈值会限制 Φ_APEX",
+      "current": 0.670688,
+      "impact": "蛋白模板DNA合成层成为 Φ_APEX 乘积瓶颈",
+      "action": "按 gap_guard targets 对 T_prot/D_dup 做受控微调，同时提升 S_syn 合成一致性",
+      "before": 0.670688,
+      "after": 0.676637,
+      "resolved": false,
+      "next": "若未解决则增加模板反向验证 R_rev 权重"
+    },
+    {
+      "id": "P4",
+      "problem": "M_mem 余量不足",
+      "threshold": "长期固化守卫线 M_mem >= 0.895",
+      "current": 0.89,
+      "impact": "经验不能稳定转化为下轮规则，易重复发现同类问题",
+      "action": "本轮将问题闭环、顺序反思与资源学习全部写入 reports/ 固化文件，并刷新 dashboard",
+      "before": 0.89,
+      "after": 0.896,
+      "resolved": true,
+      "next": "下轮检查文件 mtime 与历史 trend 是否连续"
+    }
+  ],
+  "resources_learned": [
+    "GitHub: API 未找到高置信 ApexSpiral 公开条目或返回受限；本轮以本地 main 分支 APEX_V10_FORMULA.md 为准，映射 M_mem/Φ_anti。",
+    "X/Twitter: RSS endpoint reachable; no authenticated X API used.；不编造技术帖，下一轮若仍不可访问则继续以 GitHub/arXiv/PubMed 替代。"
+  ],
+  "enhancements": [
+    {
+      "point": "把外部论文标题/摘要作为 H(X) 的可追溯证据，不直接生成未经验证结论",
+      "maps_to": [
+        "H(X)",
+        "Φ_anti",
+        "HERRO.C_corr"
+      ]
+    },
+    {
+      "point": "对 ΔG plateau 使用低强度、可回滚微突变，而不是大幅改公式",
+      "maps_to": [
+        "𝒯_full",
+        "DRT3.T_prot",
+        "DRT3.D_dup"
+      ]
+    },
+    {
+      "point": "把跨域资料学习结果写入 reports JSON/MD，增强下轮可复用记忆",
+      "maps_to": [
+        "M_mem",
+        "Ψ_cross"
+      ]
+    },
+    {
+      "point": "在生物层使用乘积瓶颈视角优先提升最低项 D_pro",
+      "maps_to": [
+        "Φ_APEX",
+        "DRT3",
+        "Prime Assembly.M_match"
+      ]
+    },
+    {
+      "point": "新增 Neuro-Cell Gate：SORN 三重可塑性 + whole-cell hybrid modeling，形成 Π_neuro/Ω_cell 双门控",
+      "maps_to": [
+        "Π_neuro",
+        "Ω_cell",
+        "ΔG_APEX_bioNN",
+        "Ψ_cross",
+        "M_mem"
+      ]
+    }
+  ],
+  "neuro_cell_gate": {
+    "sources": [
+      "SORN: STDP + synaptic normalization + intrinsic plasticity maintain stable high-dimensional trajectories.",
+      "Whole-cell/hybrid modeling: ODE/CTMC/Boolean/constraint/rule-based coupling, explicit parameter gaps, traceable knowledgebase."
+    ],
+    "Π_neuro_terms": {
+      "Π_stdp": 0.94,
+      "N_syn": 0.91,
+      "I_homeo": 0.93,
+      "R_traj": 1.0
+    },
+    "Ω_cell_terms": {
+      "χ_hybrid": 0.76,
+      "M_scale": 0.82,
+      "K_base": 0.88,
+      "Ω_gap": 0.18
+    },
+    "Π_neuro": 0.795522,
+    "Ω_cell": 0.449701,
+    "G_neuro_cell": 1.106528,
+    "ΔG_candidate": 2.5133,
+    "relative_gain_pct": 10.65,
+    "gate_rules": [
+      "source → mechanism → APEX mapping → measurable gate before adding to Ψ_cross",
+      "if ΔG plateau, first reduce Ω_gap and improve Π_stdp/N_syn, not single-factor boost",
+      "every cycle must report Π_neuro, Ω_cell, G_neuro_cell, ΔG_candidate with evidence files"
+    ]
+  },
+  "gap_guard": {
+    "cycle": 80,
+    "status": "HEALTHY",
+    "delta_g": 2.2713,
+    "warnings": [],
+    "actions": [],
+    "policy": {
+      "enable_micro_mutation": false,
+      "mutation_intensity": 0.0,
+      "targets": []
+    },
+    "ok": true
+  },
+  "files": [
+    "/home/ubuntu/apex-spiral/reports/apex_phy_bio_chem_cycle_report.md",
+    "/home/ubuntu/apex-spiral/reports/apex_order_reflection_21354_12534_12354.json",
+    "/home/ubuntu/apex-spiral/reports/apex_problem_optimization_loop.md",
+    "/home/ubuntu/apex-spiral/reports/apex_micro_mutation_policy.json",
+    "/home/ubuntu/apex-spiral/reports/apex_neuro_cell_upgrade.md"
+  ]
+}

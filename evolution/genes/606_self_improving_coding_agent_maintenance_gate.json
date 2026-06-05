@@ -1,0 +1,41 @@
+{
+  "id": 606,
+  "gene_id": "gene_606",
+  "name": "self_improving_coding_agent_maintenance_gate",
+  "category": "optimize",
+  "status": "implemented_rust_module",
+  "created_at": "2026-05-25T04:06:43Z",
+  "source_summary": "ngrok bmo self-improving coding-agent blog, Addy Osmani self-improving coding agents, Agent Lightning trajectory-credit framing",
+  "mechanism": "Evaluate coding-agent maintenance sessions using validated task rate, tests, reflection capture, learning events, implemented improvements, repeated failures, and context drift.",
+  "apex_mapping": [
+    "ToolAct",
+    "SkillMemory",
+    "Reflect",
+    "V_audit",
+    "P_decompose",
+    "Workflow"
+  ],
+  "measurable_gate": [
+    "MaintenanceReport.mean_maintenance_credit",
+    "reflection_capture_rate",
+    "improvement_rate",
+    "repeated_failure_rate",
+    "trigger_maintenance",
+    "keep_memory_update"
+  ],
+  "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/maintenance.rs",
+  "sample": "/home/ubuntu/apex-spiral/apex_devour/sample_maintenance_sessions.json",
+  "formula": {
+    "D_devour": "Q_source*M_mech*A_impl*V_audit*T_transfer",
+    "G_devour": "1+0.08*D_devour-0.05*Omega_risk"
+  },
+  "parameters": {
+    "Q_source": 0.52,
+    "M_mech": 1.0,
+    "A_impl": 0.9,
+    "V_audit": 0.85,
+    "T_transfer": 0.78,
+    "Omega_risk": 0.05
+  },
+  "boundary": "maintenance gate is not a full RL trainer, fine-tuning pipeline, autonomous online learner, or claim of outperforming source projects."
+}

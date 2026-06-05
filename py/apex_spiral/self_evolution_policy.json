@@ -1,0 +1,7 @@
+{
+  "post_task_writeback_gate": true,
+  "cross_domain_retrieval_pairs": 2,
+  "adversarial_verification": true,
+  "micro_mutation_amplitude": 0.003,
+  "updated_at": "2026-05-11 04:01:30"
+}

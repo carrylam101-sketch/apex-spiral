@@ -1,0 +1,219 @@
+{
+  "timestamp": "2026-05-11T20:17:52.919608",
+  "physics_enhancements": {
+    "D_pro_quantum": 0.795,
+    "Psi_quantum": 0.6819,
+    "Omega_relativistic": 1.2,
+    "gamma_lorentz": 1.0,
+    "Theta_neuro": 0.875,
+    "Phi_apex": 0.5406,
+    "Delta_G_enhanced": 0.4263,
+    "Phi_total": 0.473,
+    "PID_factor": 0.9916,
+    "info_efficiency": 0.8,
+    "Kelly_factor": 0.24,
+    "f_star_Kelly": 0.4
+  },
+  "sequence_analysis": {
+    "21354": {
+      "order": "21354",
+      "rounds": [
+        {
+          "round": 1,
+          "Phi_anti": 1.0,
+          "Psi_cross": 0.6819,
+          "H_X": 0.7427,
+          "T_full": 0.82,
+          "M_mem": 0.7788,
+          "Delta_G": 2.2705
+        },
+        {
+          "round": 2,
+          "Phi_anti": 1.01,
+          "Psi_cross": 0.6956,
+          "H_X": 0.7576,
+          "T_full": 0.8365,
+          "M_mem": 0.7944,
+          "Delta_G": 2.3119
+        },
+        {
+          "round": 3,
+          "Phi_anti": 1.02,
+          "Psi_cross": 0.7095,
+          "H_X": 0.7728,
+          "T_full": 0.8532,
+          "M_mem": 0.8103,
+          "Delta_G": 2.354
+        },
+        {
+          "round": 4,
+          "Phi_anti": 1.03,
+          "Psi_cross": 0.7236,
+          "H_X": 0.7882,
+          "T_full": 0.8702,
+          "M_mem": 0.8264,
+          "Delta_G": 2.3967
+        },
+        {
+          "round": 5,
+          "Phi_anti": 1.04,
+          "Psi_cross": 0.738,
+          "H_X": 0.8038,
+          "T_full": 0.8874,
+          "M_mem": 0.8428,
+          "Delta_G": 2.4401
+        }
+      ]
+    },
+    "12534": {
+      "order": "12534",
+      "rounds": [
+        {
+          "round": 1,
+          "Phi_anti": 1.0,
+          "Psi_cross": 0.6819,
+          "H_X": 0.7427,
+          "T_full": 0.82,
+          "M_mem": 0.7788,
+          "Delta_G": 2.2705
+        },
+        {
+          "round": 2,
+          "Phi_anti": 1.01,
+          "Psi_cross": 0.6956,
+          "H_X": 0.7576,
+          "T_full": 0.8365,
+          "M_mem": 0.7944,
+          "Delta_G": 2.3119
+        },
+        {
+          "round": 3,
+          "Phi_anti": 1.02,
+          "Psi_cross": 0.7095,
+          "H_X": 0.7728,
+          "T_full": 0.8532,
+          "M_mem": 0.8103,
+          "Delta_G": 2.354
+        },
+        {
+          "round": 4,
+          "Phi_anti": 1.03,
+          "Psi_cross": 0.7236,
+          "H_X": 0.7882,
+          "T_full": 0.8702,
+          "M_mem": 0.8264,
+          "Delta_G": 2.3967
+        },
+        {
+          "round": 5,
+          "Phi_anti": 1.04,
+          "Psi_cross": 0.738,
+          "H_X": 0.8038,
+          "T_full": 0.8874,
+          "M_mem": 0.8428,
+          "Delta_G": 2.4401
+        }
+      ]
+    },
+    "12354": {
+      "order": "12354",
+      "rounds": [
+        {
+          "round": 1,
+          "Phi_anti": 1.0,
+          "Psi_cross": 0.6819,
+          "H_X": 0.7427,
+          "T_full": 0.82,
+          "M_mem": 0.7788,
+          "Delta_G": 2.2705
+        },
+        {
+          "round": 2,
+          "Phi_anti": 1.01,
+          "Psi_cross": 0.6956,
+          "H_X": 0.7576,
+          "T_full": 0.8365,
+          "M_mem": 0.7944,
+          "Delta_G": 2.3119
+        },
+        {
+          "round": 3,
+          "Phi_anti": 1.02,
+          "Psi_cross": 0.7095,
+          "H_X": 0.7728,
+          "T_full": 0.8532,
+          "M_mem": 0.8103,
+          "Delta_G": 2.354
+        },
+        {
+          "round": 4,
+          "Phi_anti": 1.03,
+          "Psi_cross": 0.7236,
+          "H_X": 0.7882,
+          "T_full": 0.8702,
+          "M_mem": 0.8264,
+          "Delta_G": 2.3967
+        },
+        {
+          "round": 5,
+          "Phi_anti": 1.04,
+          "Psi_cross": 0.738,
+          "H_X": 0.8038,
+          "T_full": 0.8874,
+          "M_mem": 0.8428,
+          "Delta_G": 2.4401
+        }
+      ]
+    },
+    "21345": {
+      "order": "21345",
+      "rounds": [
+        {
+          "round": 1,
+          "Phi_anti": 1.0,
+          "Psi_cross": 0.6819,
+          "H_X": 0.7427,
+          "T_full": 0.82,
+          "M_mem": 0.7788,
+          "Delta_G": 2.2705
+        },
+        {
+          "round": 2,
+          "Phi_anti": 1.01,
+          "Psi_cross": 0.6956,
+          "H_X": 0.7576,
+          "T_full": 0.8365,
+          "M_mem": 0.7944,
+          "Delta_G": 2.3119
+        },
+        {
+          "round": 3,
+          "Phi_anti": 1.02,
+          "Psi_cross": 0.7095,
+          "H_X": 0.7728,
+          "T_full": 0.8532,
+          "M_mem": 0.8103,
+          "Delta_G": 2.354
+        },
+        {
+          "round": 4,
+          "Phi_anti": 1.03,
+          "Psi_cross": 0.7236,
+          "H_X": 0.7882,
+          "T_full": 0.8702,
+          "M_mem": 0.8264,
+          "Delta_G": 2.3967
+        },
+        {
+          "round": 5,
+          "Phi_anti": 1.04,
+          "Psi_cross": 0.738,
+          "H_X": 0.8038,
+          "T_full": 0.8874,
+          "M_mem": 0.8428,
+          "Delta_G": 2.4401
+        }
+      ]
+    }
+  }
+}

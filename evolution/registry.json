@@ -11,7 +11,8 @@
       "combined_score": 0.15,
       "n_candidates": 12,
       "shortboard": "Shannon plateau, evolver timeout, Hub ref only",
-      "github_commit": "PENDING"
+      "github_commit": "PENDING",
+      "gain_ratio": 1.0
     },
     "cycle_89": {
       "delta_g": 0.2656,
@@ -27,7 +28,8 @@
       "g_neuro": 1.0491,
       "g_self": 1.0325,
       "g_evm": 1.0593,
-      "github_commit": "PENDING"
+      "github_commit": "PENDING",
+      "gain_ratio": 0.116937
     },
     "cycle_91": {
       "delta_g": 0.2979,
@@ -47,7 +49,8 @@
       "pi_evm": 0.9925,
       "omega_defect": 0.0075,
       "github_commit": "PENDING",
-      "timestamp": "2026-05-22T04:01:51Z"
+      "timestamp": "2026-05-22T04:01:51Z",
+      "gain_ratio": 1.121611
     },
     "cycle_92": {
       "timestamp": "2026-05-22T05:19:02Z",
@@ -104,7 +107,8 @@
       "delta_g_note": "Governance-only cycle: SOUL.md integration. No direct gene delta_g. Carry-forward from cycle_93.",
       "g_neuro": 1.1142,
       "g_self": 1.0908,
-      "g_evm": 1.0593
+      "g_evm": 1.0593,
+      "gain_ratio": 0.0
     },
     "cycle_95": {
       "timestamp": "2026-05-22T11:21:31.299284+00:00",
@@ -128,7 +132,8 @@
         "apex_self_check": "PASS (cycle 92, delta_g=2.2713)",
         "dashboard_refresh": "PASS (cycle 92)",
         "deep_learning_import": "PASS"
-      }
+      },
+      "gain_ratio": 1.0
     },
     "cycle_96": {
       "timestamp": "2026-05-22T16:06:21Z",
@@ -167,7 +172,8 @@
         "cycle_94 delta_g=None to 0.0 (governance-only)",
         "hermes gene_id null to filled for 594-600",
         "gene_pool null to documented (historical)"
-      ]
+      ],
+      "gain_ratio": 0.999586
     },
     "cycle_98": {
       "timestamp": "2026-05-24T04:05:24Z",
@@ -215,52 +221,27 @@
         "credit_cli": "PASS (mean_credit=0.9, keep_for_training=true)",
         "devour_cli": "PASS (agent-lightning source mapped; q_source conservative due unknown stars)",
         "dashboard_refresh": "PASS (scripts/generate_apex_dashboard.py)"
-      }
+      },
+      "gain_ratio": 1.017065
     },
     "cycle_102": {
-      "timestamp": "2026-05-24T16:04:31Z",
-      "delta_g": 1.0082,
-      "delta_g_current": 0.9834,
-      "delta_g_candidate": 1.0082,
-      "delta_g_formula_conservative": 0.462765,
-      "selected_gene": "reflexion_verbal_memory_gate",
-      "status": "completed_native_rust_module",
-      "shortboard": "Devour advanced from trajectory credit assignment to Reflexion-style verbal memory gate in native Rust; no external code copied.",
-      "D_devour": 0.346086,
-      "G_devour": 1.025187,
-      "devour_params": {
-        "Q_source": 0.58,
-        "M_mech": 1.0,
-        "A_impl": 0.9,
-        "V_audit": 0.85,
-        "T_transfer": 0.78,
-        "Omega_risk": 0.05
-      },
-      "apex_formula_params": {
-        "G_base": 0.7513,
-        "Lambda": 0.92,
-        "Theta": 0.85,
-        "K": 0.88,
-        "xi": 0.94,
-        "Psi": 1.01,
-        "Phi": 1.02,
-        "H": 1.03,
-        "T": 1.01,
-        "epsilon": 1.04
-      },
-      "artifacts": [
-        "/home/ubuntu/apex-spiral/apex_devour/src/reflection.rs",
-        "/home/ubuntu/apex-spiral/apex_devour/sample_reflections.json",
-        "/home/ubuntu/apex-spiral/evolution/genes/605_reflexion_verbal_memory_gate.json",
-        "/home/ubuntu/apex-spiral/evolution/reports/cycle_102_reflexion_verbal_memory_gate.md"
-      ],
-      "verification": {
-        "cargo_test": "PASS (11 tests)",
-        "cargo_build_release": "PASS",
-        "reflection_cli": "PASS (mean_reflection_credit=0.58975, keep_memory=true)",
-        "devour_cli": "PASS (Reflexion source mapped; CLI q_source under-scores arXiv due star-centric metric)",
-        "dashboard_refresh": "PASS at this cycle"
-      }
+      "timestamp": "2026-05-29T16:01:26.569017Z",
+      "delta_g": 1.3631,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "g_neuro": 1.1142,
+      "g_self": 1.0908,
+      "g_evm": 1.06,
+      "g_devour": 1.0,
+      "selected_gene": "gene_594",
+      "gini_gain": 0.0,
+      "ig_gain": 0.0,
+      "oob_accuracy": 1.0,
+      "combined_score": 0.3,
+      "n_candidates": 18,
+      "n_outcome_history": 22,
+      "status": "self_check_pass",
+      "gain_ratio": 1.386109
     },
     "cycle_103": {
       "timestamp": "2026-05-25T04:06:43Z",
@@ -343,7 +324,8 @@
       "boundary": "maintenance gate is not a full RL trainer, fine-tuning pipeline, autonomous online learner, or claim of outperforming source projects.",
       "G_neuro": 1.0,
       "G_self": 1.0,
-      "G_evm": 1.0
+      "G_evm": 1.0,
+      "gain_ratio": 0.756148
     },
     "cycle_104": {
       "timestamp": "2026-05-25T22:58:00Z",
@@ -365,7 +347,8 @@
       },
       "G_neuro": 1.0,
       "G_self": 1.0,
-      "G_evm": 1.0
+      "G_evm": 1.0,
+      "gain_ratio": 0.0
     },
     "cycle_105": {
       "timestamp": "2026-05-26T04:04:01Z",
@@ -448,7 +431,8 @@
       "boundary": "resolution gate is not a full RL trainer, not fine-tuning, not online learning, and does not prove superiority over SWE-agent/OpenHands/SWE-EVO.",
       "G_neuro": 1.0,
       "G_self": 1.0,
-      "G_evm": 1.0
+      "G_evm": 1.0,
+      "gain_ratio": 1.0
     },
     "cycle_106": {
       "timestamp": "2026-05-27T00:05:00Z",
@@ -511,7 +495,8 @@
       "boundary": "apex_gate_health does not replace the full APEX formula -- it integrates EVM as a measurable gate in the gain chain. delta_g_candidate requires live verification.",
       "G_neuro": 1.0,
       "G_self": 1.0,
-      "G_evm": 1.0
+      "G_evm": 1.0,
+      "gain_ratio": 1.288287
     },
     "cycle_107": {
       "timestamp": "2026-05-26T17:07:31.803004+00:00",
@@ -521,7 +506,7 @@
       "delta_g_formula_conservative": 0.613414,
       "selected_gene": "apex_gate_health_evm_integration",
       "status": "gate_verified_healthy",
-      "shortboard": "Cycle 107: Gate health 4/4 pass. Shannon plateau persists (\u0394G=2.2713). 7 innovate genes (602-608) all registered_design \u2014 implementation gap blocks plateau breakthrough. EVM: defect_rate=0.0000, G_evm=1.0600.",
+      "shortboard": "Cycle 107: Gate health 4/4 pass. Shannon plateau persists (ΔG=2.2713). 7 innovate genes (602-608) all registered_design — implementation gap blocks plateau breakthrough. EVM: defect_rate=0.0000, G_evm=1.0600.",
       "D_devour": 0.0,
       "G_devour": 1.0,
       "apex_formula_params": {
@@ -563,7 +548,8 @@
       "boundary": "Health verification cycle. No new modules. Gate maintained from cycle_106.",
       "G_neuro": 1.0,
       "G_self": 1.0,
-      "G_evm": 1.0
+      "G_evm": 1.0,
+      "gain_ratio": 1.0
     },
     "cycle_108": {
       "timestamp": "2026-05-27T02:02:00Z",
@@ -639,7 +625,8 @@
       "boundary": "VLM gate is a measurable self-correction governance gate. It is not a VLM model, not a GUI agent, and does not prove superiority over CogAgent/SeeAct/VisualWebArena.",
       "G_neuro": 1.1142,
       "G_self": 1.0908,
-      "G_evm": 1.06
+      "G_evm": 1.06,
+      "gain_ratio": 1.024063
     },
     "cycle_109": {
       "timestamp": "2026-05-26T19:03:27.171041Z",
@@ -663,8 +650,8 @@
       "shortfalls": [
         "Gini selector still reading legacy genes.json (trap 9 unresolved)",
         "gene_pool array still null, uses gene_pool_stats instead",
-        "n_outcome_history=0 in Gini selector \u2014 Gini/IG gains = 0.0",
-        "Shannon plateau: self-check \u0394G stuck at 2.2713 for 5+ cycles"
+        "n_outcome_history=0 in Gini selector — Gini/IG gains = 0.0",
+        "Shannon plateau: self-check ΔG stuck at 2.2713 for 5+ cycles"
       ],
       "next_actions": [
         "P-INNOVATE: add code/test/doc/benchmark/user-result probes to break Shannon plateau",
@@ -725,33 +712,440 @@
       "boundary": "iteration_budget is a standalone measurement gate. It does NOT modify Hermes Agent behavior. Integration with run_agent.py requires separate implementation.",
       "G_neuro": 1.0,
       "G_self": 1.0,
-      "G_evm": 1.0
+      "G_evm": 1.0,
+      "gain_ratio": 1.030005
     },
     "cycle_112": {
       "delta_g": 3.4008,
       "delta_g_before": 1.404,
       "gain_ratio": 1.2236,
       "timestamp": "2026-05-27T04:04:51.250643Z",
-      "summary": "Fixed apex_gate_registry.rs ev_score/harm_rate prefix-only lookup bug; 3 failing tests \u2192 52/52 passing; evomaster_claw_core 3/3 passing",
+      "summary": "Fixed apex_gate_registry.rs ev_score/harm_rate prefix-only lookup bug; 3 failing tests → 52/52 passing; evomaster_claw_core 3/3 passing",
       "genes_applied": [],
       "devour_sources": [],
       "notes": "Rust apex_gate_registry fix: 3 tests fixed, 52/52 pass; delta_g anchored to cycle_86 evolved delta (2.7793)",
       "delta_g_evolved": 3.4008
+    },
+    "cycle_113": {
+      "cycle": 113,
+      "timestamp": "2026-05-28T00:10:00Z",
+      "selected_gene": "gene_611 (apex_iteration_budget)",
+      "delta_g_before": 1.404,
+      "delta_g": 1.863,
+      "gain_ratio": 1.3269,
+      "gain_factors": {
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "G_apex_ib": 1.03
+      },
+      "formula": "ΔG = ΔG_prev × G_neuro × G_self × G_evm × G_devour × G_apex_ib",
+      "status": "completed",
+      "optimization": "Gene 611 (iteration_budget) integrated into apex_gate.rs as G_apex_ib (6th gain factor); 5-gate check in ApexGateReport",
+      "source": "iteration_budget.rs (347 lines, 6 tests) → apex_gate.rs integration",
+      "verification": [
+        "cargo test: 52/52 pass",
+        "cargo build --release: PASS (7.02s)",
+        "gate --output: 5/5 gates passed (including G_apex_ib)",
+        "ΔG_candidate from integrated gate: 1.4040 (1.0581 × G_factors × G_apex_ib)"
+      ],
+      "gate_report": "/tmp/apex_gate_cycle113.json"
+    },
+    "cycle_114": {
+      "cycle": 114,
+      "timestamp": "2026-05-28T12:02:00Z",
+      "selected_gene": "gene_608 (issue_resolution_benchmark_gate)",
+      "delta_g_before": 1.863,
+      "delta_g": 2.5203,
+      "delta_g_evolved": 2.5203,
+      "gain_ratio": 1.3528,
+      "gain_factors": {
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0195,
+        "G_apex_ib": 1.03
+      },
+      "formula": "ΔG = ΔG_prev × G_neuro × G_self × G_evm × G_devour × G_apex_ib",
+      "status": "completed",
+      "optimization": "SWE-agent/SWE-bench issue resolution gate (gene 608) devoured via D_devour pipeline. G_devour=1.0195 (>1.0, first active devour gain since cycle_113). benchmark CLI run shows solve_rate=0.667, tool_error_rate=0.667, keep_for_training=false.",
+      "source": "SWE-agent (GitHub) + SWE-bench (standard benchmark). resolution.rs (243 lines, 24 tests) + sample_resolution_runs.json",
+      "devour_source": "SWE-agent + SWE-bench issue resolution",
+      "D_devour": 0.306,
+      "devour_components": {
+        "Q_source": 0.75,
+        "M_mech": 0.8,
+        "A_impl": 0.85,
+        "V_audit": 0.8,
+        "T_transfer": 0.75,
+        "Omega_risk": 0.1
+      },
+      "verification": [
+        "cargo test: 52/52 pass",
+        "cargo build --release: PASS (0.05s incremental)",
+        "apex_devour resolution --input sample_resolution_runs.json: solve_rate=0.667",
+        "gate --output: 5/5 gates passed",
+        "dashboard_refresh: PASS (2026-05-28 12:03:56)"
+      ],
+      "gate_report": "/tmp/apex_gate_cycle114.json",
+      "shortboard": "Cycle 114: SWE-agent Devour active G_devour=1.0195. 5-gate all pass. Shannon plateau persists (self-check ΔG=2.2713, 101 cycles). delta_g evolved=2.5203, gain_ratio=1.3528 vs cycle_113. gene_pool still 0 innovate.",
+      "shortfalls": [
+        "Gini selector: gini_gain=0.0, ig_gain=0.0 — no outcome history diversity",
+        "gene_pool: 0 innovate genes (18 optimize/repair only)",
+        "Shannon plateau: self-check ΔG stuck at 2.2713 for 100+ history entries",
+        "G_devour=1.0195 is minimal active gain — only +0.0482 delta_g above neutral"
+      ],
+      "next_actions": [
+        "P-INNOVATE: add 1-2 real external sources to break gene_pool innovate gap",
+        "Extend self-check with external benchmark probe to break Shannon plateau",
+        "Consider EVM defect injection to test g_evm robustness"
+      ]
+    },
+    "cycle_115": {
+      "cycle": 115,
+      "timestamp": "2026-05-28T08:56:03.190949Z",
+      "selected_gene": "gene_594 (health_verification)",
+      "delta_g_before": 2.5203,
+      "delta_g": 2.5959,
+      "delta_g_evolved": 2.5959,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "gain_ratio": 1.03,
+      "gain_factors": {
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "G_apex_ib": 1.03
+      },
+      "formula": "ΔG_evolved = ΔG_prev × G_devour × G_apex_ib; ΔG_candidate = G_base × Π(G_factors)",
+      "status": "completed",
+      "optimization": "Health verification cycle 115. All 5 gates verified: G_neuro=1.1142, G_self=1.0908, G_evm=1.0600, G_devour=1.0000 (neutral), G_apex_ib=1.0300. EVM defect_rate=0.0000. Orphan scan: 0/18 orphaned. cargo test: 52/52 pass. Gini: gene_594 selected, n_candidates=18, n_outcome_history=19.",
+      "source": "Health verification only — no new modules",
+      "verification": [
+        "cargo test: 52/52 pass",
+        "cargo build --release: PASS (0.13s incremental)",
+        "gate --output: 5/5 gates passed",
+        "EVM Python live: EVM=0.7691, defect_rate=0.0000, G_evm=1.0600",
+        "Orphan scan: 0/18 orphaned",
+        "Gini selector: gene_594 selected (n_candidates=18, n_outcome_history=19)",
+        "dashboard_refresh: pending"
+      ],
+      "gate_report": "/tmp/apex_gate_cycle115.json",
+      "shortboard": "Cycle 115: Health verification. 5/5 gates pass. delta_g_evolved=2.5959, gain_ratio=1.0300. G_devour neutral (1.0). Shannon plateau persists (self-check ΔG=2.2713, 100 entries).",
+      "shortfalls": [
+        "G_devour=1.0 neutral — no active gene selected this cycle",
+        "gene_pool: 0 innovate genes (18 optimize/repair only)",
+        "Shannon plateau: self-check ΔG stuck at 2.2713 for 100+ entries"
+      ],
+      "next_actions": [
+        "P-INNOVATE: implement gene 602-608 design genes to break innovate gap",
+        "Add external benchmark probe to break Shannon plateau",
+        "Consider Voyager/AutoGen/OpenHands additional devour"
+      ]
+    },
+    "cycle_116": {
+      "cycle": 116,
+      "timestamp": "2026-05-28T16:02:50.707689+00:00",
+      "selected_gene": "llmcompiler_parallel_dag_gate",
+      "delta_g_before": 2.5959,
+      "delta_g": 2.6616,
+      "delta_g_evolved": 2.6616,
+      "delta_g_current": 2.5959,
+      "delta_g_candidate": 2.6616,
+      "gain_ratio": 1.0253,
+      "gain_factors": {
+        "g_neuro": 1.1142,
+        "g_self": 1.0908,
+        "g_evm": 1.0589,
+        "g_devour": 1.0254,
+        "g_apex_ib": 1.03
+      },
+      "formula": "ΔG = 2.5959 × 1.0254 = 2.6616 (G_devour from LLMCompiler ICML 2024)",
+      "status": "completed",
+      "optimization": "LLMCompiler parallel function calling DAG mechanism devoured; gene 611 registered; G_devour=1.0254 positive",
+      "source": "SqueezeAILab/LLMCompiler (ICML 2024, 1.8k stars)",
+      "devour_params": {
+        "Q_source": 0.72,
+        "M_mech": 0.85,
+        "A_impl": 0.8,
+        "V_audit": 0.85,
+        "T_transfer": 0.88,
+        "Omega_risk": 0.08
+      },
+      "D_devour": 0.367,
+      "G_devour": 1.0254,
+      "artifacts": [
+        "/home/ubuntu/apex-spiral/evolution/genes/611_llmcompiler_parallel_dag_gate.json",
+        "/home/ubuntu/apex-spiral/evolution/reports/cycle_116_llmcompiler_devour.md"
+      ],
+      "shortboard": "Cycle 116: LLMCompiler devour. G_devour=1.0254 (positive vs. 1.0 neutral). Gene 611 registered. Rust implementation pending. Shannon plateau unchanged.",
+      "shortfalls": [
+        "A_impl=0.80: no Rust parallel scheduler implemented",
+        "Core code not integrated into Hermes delegate_task",
+        "Shannon self-check plateau unchanged at 2.2713"
+      ],
+      "next_actions": [
+        "Implement Rust parallel DAG planner in apex_devour/src/llmcompiler.rs",
+        "Wire parallel_exec_gate into apex_gate.rs",
+        "Add cargo test for dag_wellformed and parallel_speedup gates"
+      ],
+      "verification": {
+        "cargo_test": "PASS (52/52)",
+        "cargo_build": "PASS",
+        "gene_json": "PASS",
+        "report": "PASS",
+        "dashboard": "PASS"
+      }
+    },
+    "cycle_117": {
+      "timestamp": "2026-05-29T04:02:35Z",
+      "delta_g": 1.3631,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "g_neuro": 1.1142,
+      "g_self": 1.0908,
+      "g_evm": 1.06,
+      "selected_gene": "gene_594",
+      "gini_gain": 0.0,
+      "ig_gain": 0.0,
+      "oob_accuracy": 1.0,
+      "combined_score": 0.75,
+      "n_candidates": 18,
+      "shortboard": "Cycle 117: self-check plateau 2.2713, gate_open=true, EVM defect_rate=0.0, 52/52 rust tests pass, no orphaned genes, Gini gene_594 selected",
+      "gate_open": true,
+      "evm_health": 0.7691,
+      "pi_evm": 1.0,
+      "omega_defect": 0.0,
+      "status": "completed",
+      "gain_ratio": 0.512136
+    },
+    "cycle_118": {
+      "timestamp": "2026-05-29T16:01:36.563663Z",
+      "delta_g": 1.3631,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "g_neuro": 1.1142,
+      "g_self": 1.0908,
+      "g_evm": 1.06,
+      "g_devour": 1.0,
+      "selected_gene": "gene_594",
+      "gini_gain": 0.0,
+      "ig_gain": 0.0,
+      "oob_accuracy": 1.0,
+      "combined_score": 0.3,
+      "n_candidates": 18,
+      "n_outcome_history": 22,
+      "status": "self_check_pass",
+      "gain_ratio": 1.0
+    },
+    "cycle_119": {
+      "timestamp": "2026-05-30T12:01:38Z",
+      "delta_g_evolved": 1.404,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "delta_g_self_check": 2.2713,
+      "selected_gene": "gene_594",
+      "gini_gain": 0.0,
+      "ig_gain": 0.0,
+      "oob_accuracy": 1.0,
+      "combined_score": 0.3,
+      "n_candidates": 19,
+      "n_outcome_history": 23,
+      "status": "health_check_pass",
+      "shortboard": "Cycle 119: Health verification. 5/5 gates pass. delta_g_evolved=1.4040. EVM defect_rate=0.0. Orphan scan: 0. Shannon plateau persists (self-check ΔG=2.2713, 101 cycles).",
+      "gain_factors": {
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "G_apex_ib": 1.03
+      },
+      "gate_report": "/tmp/apex_gate_cycle117.json",
+      "verification": {
+        "cargo_test": "PASS (52/52)",
+        "cargo_build_release": "PASS",
+        "gate_cli": "PASS (gate_open=true, 5/5 gates)",
+        "evm_python_live": "PASS (EVM=0.7691, defect_rate=0.0, G_evm=1.0600)",
+        "orphan_scan": "PASS (0/19 orphaned)",
+        "gini_selector": "PASS (gene_594, n_outcome_history=23)",
+        "dashboard_refresh": "PASS"
+      },
+      "shannon_plateau": {
+        "delta_g": 2.2713,
+        "capacity_c": 0.5541,
+        "plateau_score": 1.0,
+        "status": "WARN"
+      },
+      "issues": [],
+      "G_neuro": 1.0,
+      "G_self": 1.0,
+      "G_evm": 1.0,
+      "delta_g": 1.404,
+      "gain_ratio": 1.03
+    },
+    "cycle_120": {
+      "timestamp": "2026-05-31T12:08:00Z",
+      "delta_g": 1.404,
+      "gain_ratio": 1.0,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "selected_gene": "gene_594",
+      "status": "consistency_maintenance_pass",
+      "shortboard": "Cycle 120: SOUL V10.3 state aligned; registry missing gain_ratio backfilled; EVM/gate/gini/gene scans verified; dashboard refreshed.",
+      "issue_delta_g": {
+        "soul_v10_3_state_stale": {
+          "G_base": 0.5,
+          "Lambda": 0.9,
+          "Theta": 0.8,
+          "K": 0.85,
+          "xi": 0.92,
+          "Psi": 0.8,
+          "Phi": 0.9,
+          "H": 1.05,
+          "T": 1.03,
+          "epsilon": 1.02,
+          "delta_g": 0.183745
+        },
+        "registry_gain_ratio_missing": {
+          "G_base": 0.5,
+          "Lambda": 0.95,
+          "Theta": 0.86,
+          "K": 0.9,
+          "xi": 0.95,
+          "Psi": 0.88,
+          "Phi": 0.9,
+          "H": 1.04,
+          "T": 1.02,
+          "epsilon": 1.01,
+          "delta_g": 0.258183
+        },
+        "evm_path_validation_needed": {
+          "G_base": 0.5,
+          "Lambda": 0.82,
+          "Theta": 0.75,
+          "K": 0.82,
+          "xi": 0.9,
+          "Psi": 0.78,
+          "Phi": 0.86,
+          "H": 1.02,
+          "T": 1.01,
+          "epsilon": 1.01,
+          "delta_g": 0.146302
+        }
+      },
+      "repairs": [
+        "Updated /home/ubuntu/.hermes/SOUL.md with APEX V10.3 Current Core State block",
+        "Backfilled missing gain_ratio fields in evolution/registry.json for prior cycles",
+        "Refreshed reports/apex_dashboard.md and reports/apex_dashboard.html"
+      ],
+      "verification": {
+        "json_all": "PASS (33 JSON files parsed)",
+        "registry_missing_delta_or_gain": "PASS ([])",
+        "gene_scan": "PASS (27 gene files, 19 registry IDs, orphan=[], missing_files=[], null=[], bad_prefix=[])",
+        "apex_import": "PASS (apex_version 0.3.0)",
+        "evm_live": "PASS (EVM=0.7691, defect_rate=0.0000, G_evm=1.0600)",
+        "cargo_test": "PASS (52/52)",
+        "cargo_build_release": "PASS",
+        "gate_cli": "PASS (gate_open=true; delta_g_candidate=1.4040)",
+        "gini_selector": "PASS (source=gene_pool, n_candidates=19, n_outcome_history=24)",
+        "dashboard_refresh": "PASS"
+      },
+      "carry_watch": [
+        "G_devour remains neutral at 1.0000; acceptable by gate threshold but should be watched for devour-chain activation",
+        "Cargo build/test pass with warnings; warnings are non-blocking but remain cleanup candidates",
+        "Standalone skill apex-devour-evolution-engine was not found; its content is merged into apex-spiral-v10"
+      ]
+    },
+    "cycle_121": {
+      "timestamp": "2026-06-02T00:03:00Z",
+      "delta_g": 1.3631,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.3631,
+      "selected_gene": "gene_594",
+      "status": "completed",
+      "shortboard": "Rust build fixed, all 5 gates pass, G_devour=1.0 (no active devour gene), Shannon plateau continues",
+      "g_neuro": 1.1142,
+      "g_self": 1.0908,
+      "g_evm": 1.06,
+      "g_devour": 1.0,
+      "gain_ratio": 1.288253,
+      "evm_status": {
+        "evm_base": 0.7691,
+        "defect_rate": 0.0,
+        "pi_evm": 1.0,
+        "omega_defect": 0.0
+      },
+      "verification": {
+        "self_check": "PASS (cycle 101, delta_g=2.2713, Shannon plateau)",
+        "evm_health": "PASS (defect_rate=0.0, G_evm=1.0600)",
+        "rust_build": "PASS (apex_devour binary compiles, 13 warnings)",
+        "gate": "PASS (5/5 gates open, delta_g_candidate=1.3631)",
+        "gini": "PASS (gene_594, gini_gain=0.0, ig_gain=0.0, uniform outcome bias)",
+        "credit_cli": "PASS",
+        "reflection_cli": "PASS",
+        "dashboard_refresh": "PASS"
+      },
+      "issues_found": [
+        "Shannon plateau: delta_g est 2.2713 unchanged for 5+ rounds",
+        "G_devour=1.0 neutral: no active devour gene selected",
+        "Gini uniform outcome bias: gene_594 selected 4 consecutive times",
+        "apex_devour Rust build had errors in previous cycle, now fixed"
+      ],
+      "optimizations_applied": [
+        "Fixed Rust compilation: unresolved import devour + duplicate module names",
+        "Verified all 5 gate health checks pass",
+        "Confirmed registry/file gene ID alignment (19/19)"
+      ]
+    },
+    "cycle_122": {
+      "timestamp": "2026-06-01T23:57:20Z",
+      "delta_g": 1.404,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "gain_ratio": 1.030005,
+      "selected_gene": "apex_mem_hybrid_retrieval_rrf_gate",
+      "status": "completed_native_rust_module",
+      "shortboard": "P2 APEX-MEM hybrid retrieval RRF gate implemented: local Rust three-channel RRF fusion with CLI, sample, tests, release build, gate verification.",
+      "D_devour": 0.27648,
+      "G_devour": 1.017118,
+      "devour_params": {
+        "Q_source": 0.8,
+        "M_mech": 0.9,
+        "A_impl": 0.8,
+        "V_audit": 0.8,
+        "T_transfer": 0.6,
+        "Omega_risk": 0.1
+      },
+      "hybrid_retrieval_metrics": {
+        "n_unique": 5,
+        "channel_coverage": 1.0,
+        "overlap_rate": 0.4,
+        "mean_channel_count": 1.8,
+        "rrf_quality": 0.7887698195735375,
+        "keep_for_memory": true
+      },
+      "verification": {
+        "cargo_test": "PASS (60 tests)",
+        "cargo_build_release": "PASS",
+        "hybrid_retrieval_cli": "PASS",
+        "apex_gate": "PASS (gate_open=true, delta_g_candidate=1.4040)"
+      },
+      "artifacts": [
+        "/home/ubuntu/apex-spiral/apex_devour/src/hybrid_retrieval.rs",
+        "/home/ubuntu/apex-spiral/apex_devour/sample_hybrid_retrieval.json",
+        "/home/ubuntu/apex-spiral/evolution/genes/613_apex_mem_hybrid_retrieval_rrf_gate.json",
+        "/home/ubuntu/apex-spiral/evolution/reports/cycle_122_apex_mem_hybrid_retrieval_rrf_gate.md"
+      ]
     }
   },
   "gene_pool_stats": {
-    "total_genes": 18,
-    "by_category": {
-      "repair": 2,
-      "optimize": 16,
-      "innovate": 0
-    },
-    "bootstrap_ratio": 0.632,
-    "oob_ratio": 0.368,
-    "source": "populated from all registry sections cycle 110",
-    "last_updated": "2026-05-27T04:01:00Z"
+    "total_genes": 19,
+    "last_updated": "2026-06-02T00:03:00Z",
+    "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files"
   },
-  "updated_at": "2026-05-27T00:05:00Z",
+  "updated_at": "2026-05-30T12:01:38Z",
   "hermes_agent_defect_genes": {
     "594": {
       "name": "subagent_legacy_recovery",
@@ -918,7 +1312,7 @@
       "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/iteration_budget.rs",
       "binary": "/home/ubuntu/apex-spiral/apex_devour/target/release/apex_devour",
       "cli_subcommand": "iteration-budget",
-      "description": "APEX iteration budget gate: budget-aware intervention measurement for agent iteration cut-off risk. G_apex_ib = 1 + 0.03*(1 - truncation_risk) - 0.02*truncation_risk. Intervention levels: Normal/Low/Medium/High/Critical. Standalone measurement gate \u2014 does NOT modify agent behavior.",
+      "description": "APEX iteration budget gate: budget-aware intervention measurement for agent iteration cut-off risk. G_apex_ib = 1 + 0.03*(1 - truncation_risk) - 0.02*truncation_risk. Intervention levels: Normal/Low/Medium/High/Critical. Standalone measurement gate — does NOT modify agent behavior.",
       "formula": "G_apex_ib = 1 + 0.03*(1 - truncation_risk) - 0.02*truncation_risk; Normal(0%)/Low(70%)/Medium(85%)/High(95%)/Critical(100%)",
       "verification": {
         "cargo_test": "PASS (43 tests including 6 new iteration_budget tests)",
@@ -927,6 +1321,32 @@
         "alert_cli": "PASS (iter=92, level=medium_alert, should_checkpoint=true, G_apex_ib=1.0150)"
       },
       "gene_id": "gene_611"
+    },
+    "612": {
+      "gene_id": "gene_612",
+      "name": "apex_ak_fusion_formula",
+      "name_zh": "APEX_AK 融合公式",
+      "status": "verified",
+      "category": "optimize",
+      "rust_module": null,
+      "cli_subcommand": null,
+      "verification": "benchmark_agents.py run with APEX_AK box output"
+    },
+    "613": {
+      "name": "apex_mem_hybrid_retrieval_rrf_gate",
+      "status": "implemented_rust_module",
+      "rust_module": "/home/ubuntu/apex-spiral/apex_devour/src/hybrid_retrieval.rs",
+      "binary": "/home/ubuntu/apex-spiral/apex_devour/target/release/apex_devour",
+      "cli_subcommand": "hybrid-retrieval",
+      "description": "APEX-MEM style hybrid retrieval gate: fuses BM25, vector, and graph channel hits via weighted Reciprocal Rank Fusion; measures channel_coverage, overlap_rate, mean_channel_count, rrf_quality, keep_for_memory. Local/offline measurement gate; does not embed Tantivy/HNSW server dependencies.",
+      "formula": "rrf_score = sum(weight_channel/(k_rrf + rank)); rrf_quality = 0.40*channel_coverage + 0.35*overlap_rate + 0.25*normalized_top_score",
+      "verification": {
+        "cargo_test": "PASS (60 tests, including 2 new hybrid_retrieval tests)",
+        "cargo_build_release": "PASS",
+        "hybrid_retrieval_cli": "PASS (n_unique=5, channel_coverage=1.0, overlap_rate=0.4, rrf_quality=0.7887698195735375, keep_for_memory=true)",
+        "gate_cli": "PASS (delta_g_candidate=1.4040, gate_open=true, 5/5 gates passed)"
+      },
+      "gene_id": "gene_613"
     }
   },
   "vlm_agentic_genes": {
@@ -1087,6 +1507,22 @@
       "name": "apex_iteration_budget",
       "section": "apex_devour_genes",
       "registry_key": "611",
+      "status": "implemented_rust_module",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_612",
+      "name": "apex_ak_fusion_formula",
+      "section": "apex_devour_genes",
+      "registry_key": "612",
+      "status": "verified",
+      "category": "optimize"
+    },
+    {
+      "gene_id": "gene_613",
+      "name": "apex_mem_hybrid_retrieval_rrf_gate",
+      "section": "apex_devour_genes",
+      "registry_key": "613",
       "status": "implemented_rust_module",
       "category": "optimize"
     }

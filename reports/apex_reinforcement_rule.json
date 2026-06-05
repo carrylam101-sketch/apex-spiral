@@ -1,0 +1,10 @@
+{
+  "updated_at": "2026-05-11T11:03:11.783808",
+  "rule": "enable_micro_mutation_when_plateau",
+  "mutation_intensity": 0.002,
+  "targets": [
+    "DRT3.T_prot",
+    "DRT3.D_dup"
+  ],
+  "verify_window": 5
+}

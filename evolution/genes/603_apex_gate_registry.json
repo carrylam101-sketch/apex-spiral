@@ -1,0 +1,24 @@
+{
+  "id": 603,
+  "gene_id": "gene_603",
+  "name": "apex_gate_registry",
+  "category": "innovate",
+  "source": "hermes-agent/tools/registry.py × APEX V10.3",
+  "mechanism": "registry.dispatch() 执行前增加 APEX 预检查：负势湮灭 + SV 资源 + EV 预估算，阻止不值得执行或已超资源预算的工具",
+  "apex_mapping": {
+    "EV": "EV = BV + AV > 0.5 → 通过",
+    "SV": "Σ C_all < sv_budget → 通过",
+    "Ω_harm": "harm_rate < 0 → 拒绝"
+  },
+  "measurable_gates": {
+    "apex_gate": "allowed=False when harm<0 OR 资源超限 OR EV<0.5",
+    "dispatch": "dispatch 前调用 apex_gate()，结果写日志"
+  },
+  "status": "registered_design",
+  "evm_defect_channels": ["Run", "Res", "Log"],
+  "file": "tools/apex_gate.py",
+  "integration_point": "tools/registry.py dispatch() 前置",
+  "registered_at": "2026-05-24T14:15:00Z",
+  "registered_cycle": 101,
+  "author": "Hermes × carry"
+}

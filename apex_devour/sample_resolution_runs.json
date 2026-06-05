@@ -1,0 +1,41 @@
+[
+  {
+    "run_id": "swe_agent_style_verified_patch",
+    "issue_hash": "sha256:issue-a",
+    "reproduction_present": true,
+    "patch_generated": true,
+    "tests_run": true,
+    "tests_passed": true,
+    "regression_tests_added": true,
+    "files_touched": 4,
+    "sandboxed": true,
+    "tool_errors": 0,
+    "human_review_required": false
+  },
+  {
+    "run_id": "openhands_style_sandboxed_partial",
+    "issue_hash": "sha256:issue-b",
+    "reproduction_present": true,
+    "patch_generated": true,
+    "tests_run": true,
+    "tests_passed": true,
+    "regression_tests_added": false,
+    "files_touched": 9,
+    "sandboxed": true,
+    "tool_errors": 1,
+    "human_review_required": false
+  },
+  {
+    "run_id": "broad_unverified_reject",
+    "issue_hash": "sha256:issue-c",
+    "reproduction_present": false,
+    "patch_generated": true,
+    "tests_run": true,
+    "tests_passed": false,
+    "regression_tests_added": false,
+    "files_touched": 28,
+    "sandboxed": false,
+    "tool_errors": 2,
+    "human_review_required": true
+  }
+]

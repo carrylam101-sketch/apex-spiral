@@ -1,0 +1,79 @@
+{
+  "cycle": 85,
+  "time": "2026-05-20T12:01:16+08:00",
+  "commit": "715fb97",
+  "status": "HEALTHY",
+  "factors_current": {
+    "G_base": 4.010179832377537,
+    "Lambda": 0.98,
+    "Theta": 0.44,
+    "K": 1.72,
+    "xi": 1.0,
+    "Psi": 0.5379,
+    "Phi": 0.963,
+    "H": 0.94,
+    "T": 0.88,
+    "epsilon": 0.82,
+    "delta_formula": 2.2713
+  },
+  "factors_optimized": {
+    "Lambda": 0.986,
+    "Theta": 0.449,
+    "K": 1.738,
+    "xi": 1.0,
+    "Psi": 0.5449,
+    "Phi": 0.973,
+    "H": 0.9289999999999999,
+    "T": 0.864,
+    "epsilon": 0.8059999999999999,
+    "delta_candidate": 2.5287274705791027
+  },
+  "neuro": {
+    "Pi_neuro": 0.8067238200000001,
+    "Omega_cell": 0.46139326272000003,
+    "Omega_gap": 0.172,
+    "G_neuro": 1.1089838430176
+  },
+  "self_loop": {
+    "Psi_self": 0.5851618423601453,
+    "Xi_repair": 0.024690087971667385,
+    "Grad_self": 0.025,
+    "Gamma_awake": 1.0340459224069676,
+    "G_self": 1.0722172110360026
+  },
+  "evm": {
+    "defects": {
+      "Tok": 0.05,
+      "Mem": 0.08,
+      "Err": 0.0,
+      "Run": 0.0,
+      "Net": 0.08,
+      "Pan": 0.06,
+      "Log": 0.0,
+      "Clw": 0.03,
+      "Agt": 0.0,
+      "Prm": 0.0,
+      "Soul": 0.0,
+      "Res": 0.0
+    },
+    "defect_total": 0.30000000000000004,
+    "Pi_evm": 0.975,
+    "Omega_defect": 0.025000000000000005,
+    "G_evm": 1.0575,
+    "EVM_core": 0.7498919999999999
+  },
+  "delta_evolved": 3.1797311072318175,
+  "overall_gain": 1.3999608626037148,
+  "problem_shortboards": [
+    "Θ=0.44 remains the lowest numerator gate; prioritized +0.009 bounded differentiation.",
+    "T=0.88 and ε=0.82 still inflate denominator; optimized by batching/verification-cost trimming.",
+    "Net/Clw defect from unauthenticated git pull prevented upstream sync; kept local validation as fallback.",
+    "Mem=0.08 retained because persistent history exists but cross-cycle memory still needs dashboard refresh evidence."
+  ],
+  "actions": [
+    "Bounded factor micro-optimization computed without unbounded multiplier.",
+    "Neuro-Cell plateau guard lowered Ω_gap 0.180→0.172 and raised Π_stdp/N_syn/I_homeo.",
+    "EVM defect scan injected measured Net/Clw/Mem/Tok/Pan only; Ω_defect below 0.3 so no emergency ancient-tao escalation.",
+    "Wrote cycle summary and refreshed dashboard."
+  ]
+}

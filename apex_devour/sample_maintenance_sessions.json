@@ -1,0 +1,35 @@
+[
+  {
+    "session_id": "m1",
+    "task_count": 4,
+    "validated_tasks": 4,
+    "tests_run": true,
+    "reflection_captured": true,
+    "learning_events": 3,
+    "improvements_implemented": 1,
+    "repeated_failures": 0,
+    "context_drift": false
+  },
+  {
+    "session_id": "m2",
+    "task_count": 3,
+    "validated_tasks": 2,
+    "tests_run": true,
+    "reflection_captured": true,
+    "learning_events": 2,
+    "improvements_implemented": 1,
+    "repeated_failures": 1,
+    "context_drift": false
+  },
+  {
+    "session_id": "m3",
+    "task_count": 2,
+    "validated_tasks": 1,
+    "tests_run": false,
+    "reflection_captured": false,
+    "learning_events": 0,
+    "improvements_implemented": 0,
+    "repeated_failures": 1,
+    "context_drift": true
+  }
+]

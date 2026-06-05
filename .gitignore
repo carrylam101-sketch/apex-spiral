@@ -1,3 +1,128 @@
-target/
-*.pyc
+# ============================================================
+# 🔒 SECRETS — MUST BE FIRST (auto-excluded by github-private-repo-backup skill)
+# ============================================================
+*.env
+.env
+.env.local
+.env.*  (except .env.example)
+!*.env.example
+*.key
+*.pem
+*.crt
+credentials.json
+secrets.json
+id_rsa*
+id_dsa*
+id_ed25519*
+known_hosts
+.aws/
+.azure/
+.gcp/
+.gh-token
+.github_token
+.token
+.session
+.cookie
+config/gh_token
+config/secret*
+
+# ============================================================
+# 📦 Big files (binary install packages)
+# ============================================================
+*.dmg
+*.exe
+*.msi
+*.pkg
+*.deb
+*.rpm
+*.app
+*.dmg.zip
+*.dmg.blockmap
+
+# ============================================================
+# 🗜️ Archives
+# ============================================================
+*.zip
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.gz
+*.bz2
+*.xz
+
+# ============================================================
+# 🐍 Python
+# ============================================================
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+venv/
+.venv/
+env/
+.env/
+.venv/
+
+# ============================================================
+# 📦 Node / JS
+# ============================================================
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnp.*
+.next/
+.nuxt/
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# ============================================================
+# 🖥️ OS
+# ============================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.Trashes
+
+# ============================================================
+# 💻 IDE / Editor
+# ============================================================
+.idea/
+.vscode/
+*.iml
+*.sublime-project
+*.sublime-workspace
+.history/
+
+# ============================================================
+# 🗄️ Database & Logs
+# ============================================================
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.log
+logs/
+*.bak
+*.tmp
+*.temp
+tmp/
+temp/
+
+# ============================================================
+# 🔧 Build / Cache
+# ============================================================
+target/
+build/
+dist/
+out/
+*.pid
+*.seed

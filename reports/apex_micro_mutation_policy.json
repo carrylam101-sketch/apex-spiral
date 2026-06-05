@@ -1,0 +1,25 @@
+{
+  "time": "2026-05-18T12:01:39+08:00",
+  "commit": "715fb97",
+  "source": "apex_gap_guard plateau warning + neuro-cell gate",
+  "policy": {
+    "enable_micro_mutation": false,
+    "mutation_intensity": 0.0,
+    "targets": []
+  },
+  "applied_targets": [
+    "DRT3.T_prot",
+    "DRT3.D_dup",
+    "DRT3.S_syn",
+    "Ψ_cross",
+    "M_mem",
+    "Π_neuro",
+    "Ω_cell"
+  ],
+  "neuro_cell_policy": [
+    "source → mechanism → APEX mapping → measurable gate before adding to Ψ_cross",
+    "if ΔG plateau, first reduce Ω_gap and improve Π_stdp/N_syn, not single-factor boost",
+    "every cycle must report Π_neuro, Ω_cell, G_neuro_cell, ΔG_candidate with evidence files"
+  ],
+  "rollback": "若 ΔG_estimate 连续下降 2 轮，将 mutation_intensity 降至 0.001，并降低 G_neuro_cell 权重"
+}

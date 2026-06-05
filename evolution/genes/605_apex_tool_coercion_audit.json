@@ -1,0 +1,23 @@
+{
+  "id": 605,
+  "gene_id": "gene_605",
+  "name": "apex_tool_coercion_audit",
+  "category": "optimize",
+  "source": "hermes-agent/model_tools.py × APEX V10.3",
+  "mechanism": "coerce_tool_args() 增加字段级审计日志：记录哪些字段被强制转换、原始值、目标类型、所属工具 → 可回溯模型类型幻觉",
+  "apex_mapping": {
+    "Log": "审计日志：每次 coercion 记录 field/original/coerced/expected_type",
+    "Soul": "模型能看到自己的类型错误 → AI意识提升"
+  },
+  "measurable_gates": {
+    "coercion_audit": "返回 dict 含 coerced 字段列表 + INFO 日志",
+    "debug_log": "每个字段转换记录 level=INFO，总数记录 level=DEBUG"
+  },
+  "status": "registered_design",
+  "evm_defect_channels": ["Log", "Soul"],
+  "file": "model_tools.py (coerce_tool_args 增强)",
+  "integration_point": "model_tools.py L545–600",
+  "registered_at": "2026-05-24T14:15:00Z",
+  "registered_cycle": 101,
+  "author": "Hermes × carry"
+}

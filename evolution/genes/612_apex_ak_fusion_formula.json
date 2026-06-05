@@ -1,0 +1,52 @@
+{
+  "id": 612,
+  "gene_id": "gene_612",
+  "name": "apex_ak_fusion_formula",
+  "name_zh": "APEX_AK 融合公式",
+  "category": "evolution",
+  "domain": "benchmark",
+  "status": "verified",
+  "source": "synthesized",
+  "created_at": "2026-05-30T09:53:54.972180",
+  "formula": {
+    "raw": "APEX_AK = Ω_A · EVM_full - ΣΔ_all",
+    "omega_a": "Φ_APEX*∞ benchmark score (0~1)",
+    "evm_full": 0.7691,
+    "sigma_delta": "sum of active EVM defect costs",
+    "v10_3_equivalence": "ΔG ≈ Ω_A × EVM_full × G_neuro × G_self × G_evm × G_devour"
+  },
+  "parameters": {
+    "EVM_FULL": 0.7691,
+    "EVM_DEFECTS": ["Tok", "Mem", "Err", "Agt", "Run", "Net", "Clw", "Pan", "Prm", "Soul", "Res", "Log"],
+    "defect_cost_per_dimension": 0.05,
+    "omega_a_source": "nanoGPT-claw benchmark_agents.py Φ_APEX*∞ overall_score"
+  },
+  "apex_mapping": {
+    "Ω_A": "Ω_A = G_base × (Λ·Θ·K·ξ·Ψ·Φ) — 系统固有能力 × 增益因子乘积",
+    "EVM_full": "EVM_full ≈ 1/(H·T·ε) — 熵损耗校正因子，健康基准=0.7691",
+    "ΣΔ_all": "ΣΔ_all — 活跃 EVM 缺陷代价比率，等效于 ΔG 分母中的损耗项",
+    "APEX_AK_vs_DeltaG": "APEX_AK 纯净版，去掉 G_neuro/G_self/G_devour 增益；ΔG_evolved 含完整增益链"
+  },
+  "evm_defect_mapping": {
+    "efficiency": {"defect": "Log", "cost": 0.05, "test_case": "tc005"},
+    "memory": {"defect": "Mem", "cost": 0.05, "test_case": "tc002"},
+    "reliability": {"defect": "Err", "cost": 0.05, "test_case": "tc004"},
+    "reasoning": {"defect": "Agt", "cost": 0.05, "test_case": "tc001"},
+    "autonomy": {"defect": "Agt", "cost": 0.05, "test_case": "tc003"},
+    "extensibility": {"defect": "Res", "cost": 0.05, "test_case": "tc006"}
+  },
+  "implementation": {
+    "file": "/home/ubuntu/nanoGPT-claw/benchmark_agents.py",
+    "functions": ["apex_ak(omega_a, sigma_delta)", "infer_defect_delta(tc_results)"],
+    "benchmark_integration": "APEX_AK box printed at end of benchmark report"
+  },
+  "verification": {
+    "run_id": "0001780105827",
+    "omega_a": 0.7,
+    "sigma_delta": 0.0,
+    "apex_ak": 0.5384,
+    "test_output": "benchmark_agents.py run with APEX_AK box"
+  },
+  "key_insight": "EVM_full=0.7691 is hard ceiling — even perfect Ω_A=1.0 gives APEX_AK≤0.7691. ΣΔ_all is immediate defect cost, not cumulative — fixing defects immediately raises APEX_AK.",
+  "references": []
+}

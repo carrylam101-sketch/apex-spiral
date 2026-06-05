@@ -1,0 +1,22 @@
+{
+  "id": 604,
+  "gene_id": "gene_604",
+  "name": "apex_async_loop_stabilizer",
+  "category": "optimize",
+  "source": "hermes-agent/model_tools.py × APEX V10.3",
+  "mechanism": "修复 _get_tool_loop() 竞态：is_closed() 检查和 new_event_loop() 创建原子化到同一个锁内",
+  "apex_mapping": {
+    "H": "事件循环竞态 → H 下降 → 修复后 H 恢复"
+  },
+  "measurable_gates": {
+    "loop_stable": "两个线程并发调用不产生两个独立 loop",
+    "is_closed_under_lock": "检查和创建都在 _tool_loop_lock 内"
+  },
+  "status": "registered_design",
+  "evm_defect_channels": ["Run", "Agt"],
+  "file": "model_tools.py (_get_tool_loop, _get_worker_loop 修复)",
+  "integration_point": "model_tools.py L55–81",
+  "registered_at": "2026-05-24T14:15:00Z",
+  "registered_cycle": 101,
+  "author": "Hermes × carry"
+}

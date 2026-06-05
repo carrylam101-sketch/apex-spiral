@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-05-14T12:02:03",
+  "route": "P-INNOVATE",
+  "trigger": "Shannon平台期 / η_capacity偏低",
+  "probes_passed": 5,
+  "probes_total": 5,
+  "probes": [
+    {
+      "name": "code",
+      "target": "/home/ubuntu/apex-spiral/py/apex_spiral/apex_self_check.py",
+      "function_count": 12,
+      "has_shannon_capacity_layer": true,
+      "has_improvement_generator": true,
+      "ok": true
+    },
+    {
+      "name": "tests",
+      "py_compile": {
+        "cmd": "/usr/bin/python3.12 -m py_compile py/apex_spiral/apex_self_check.py scripts/generate_apex_dashboard.py",
+        "exit_code": 0,
+        "stdout_tail": "",
+        "stderr_tail": "",
+        "ok": true
+      },
+      "ok": true
+    },
+    {
+      "name": "docs",
+      "formula_doc_exists": true,
+      "dashboard_doc_exists": true,
+      "mentions_v10_3_trifecta": true,
+      "ok": true
+    },
+    {
+      "name": "external_benchmark",
+      "git_head": "738c068",
+      "working_tree_changes": [
+        "?? py/apex_model.pt",
+        "?? py/apex_spiral.egg-info/",
+        "?? py/apex_spiral/apex_daily.py",
+        "?? py/apex_spiral/apex_self_check.py",
+        "?? py/apex_spiral/apex_v10_v2.py",
+        "?? py/apex_spiral/deep_learning.py",
+        "?? py/apex_spiral/self_evolution_policy.json",
+        "?? reports/",
+        "?? scripts/"
+      ],
+      "ok": true
+    },
+    {
+      "name": "user_results",
+      "cycles": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "recent_delta_g": [
+        2.2229,
+        2.2229,
+        2.2229,
+        2.2229,
+        2.2229,
+        2.2229,
+        2.2713,
+        2.2229
+      ],
+      "delta_g_span_recent": 0.0484,
+      "eta_capacity": 0.4231,
+      "plateau_score": 0.0,
+      "plateau_confirmed": false,
+      "ok": true
+    }
+  ],
+  "verifiable_increment": {
+    "type": "evidence_artifact",
+    "path": "/home/ubuntu/apex-spiral/reports/apex_innovation_probes.json",
+    "delta_g_increment": 0.0,
+    "no_delta_g_increment_reason": null
+  },
+  "next_mutation_candidates": [
+    "lower duplicate-check noise_n using probe deduplication evidence",
+    "add capacity metrics to dashboard trend to make η_capacity regressions visible",
+    "separate stable health score from exploratory innovation bonus to avoid fake ΔG inflation"
+  ]
+}

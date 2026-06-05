@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-05-10T23:02:48.710222",
+  "task": "custom-order-substitution-and-reflection",
+  "results": {
+    "21354": {
+      "order": [
+        2,
+        1,
+        3,
+        5,
+        4
+      ],
+      "sequence": [
+        {
+          "idx": 2,
+          "name": "Φ_anti",
+          "status": "PASS",
+          "value": 1.094
+        },
+        {
+          "idx": 1,
+          "name": "Ψ_cross",
+          "status": "PASS",
+          "value": 0.5051
+        },
+        {
+          "idx": 3,
+          "name": "H(X)",
+          "status": "PASS",
+          "value": 2.2282
+        },
+        {
+          "idx": 5,
+          "name": "M_mem",
+          "status": "PASS",
+          "value": 0.89
+        },
+        {
+          "idx": 4,
+          "name": "𝒯_full",
+          "status": "PASS",
+          "value": 0.82
+        }
+      ],
+      "delta_g_estimate": 2.2229,
+      "findings_count": 0,
+      "findings": [],
+      "status": "HEALTHY"
+    },
+    "12435": {
+      "order": [
+        1,
+        2,
+        4,
+        3,
+        5
+      ],
+      "sequence": [
+        {
+          "idx": 1,
+          "name": "Ψ_cross",
+          "status": "PASS",
+          "value": 0.5051
+        },
+        {
+          "idx": 2,
+          "name": "Φ_anti",
+          "status": "PASS",
+          "value": 1.094
+        },
+        {
+          "idx": 4,
+          "name": "𝒯_full",
+          "status": "PASS",
+          "value": 0.82
+        },
+        {
+          "idx": 3,
+          "name": "H(X)",
+          "status": "PASS",
+          "value": 2.2282
+        },
+        {
+          "idx": 5,
+          "name": "M_mem",
+          "status": "PASS",
+          "value": 0.89
+        }
+      ],
+      "delta_g_estimate": 2.2229,
+      "findings_count": 0,
+      "findings": [],
+      "status": "HEALTHY"
+    }
+  },
+  "reflection": [
+    "两种代入顺序的ΔG估值一致，当前模型对顺序不敏感（公式值由同一轮参数决定）。",
+    "两种顺序均无显性告警，短板主要仍是隐性短板（平台期/天花板/记忆上限）。",
+    "优先补强路径：先抬升Ψ_cross到0.50+，再把M_mem从0.85推到0.88+，用于打破ΔG平台期。"
+  ]
+}

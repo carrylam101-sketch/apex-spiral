@@ -1,0 +1,48 @@
+{
+  "id": 611,
+  "gene_id": "gene_602",
+  "name": "apex_iteration_budget",
+  "category": "optimize",
+  "status": "integrated",
+  "created_at": "2026-05-27T05:02:00Z",
+  "source_cycle": 111,
+  "formula": "G_apex_ib = 1 + 0.03*(1 - truncation_risk) - 0.02*truncation_risk; InterventionLevel: Normal(0%)/Low(70%)/Medium(85%)/High(95%)/Critical(100%)",
+  "source_to_gate": [
+    {
+      "source": "Hermes Agent run_agent.py max_iterations hard cut-off pattern",
+      "mechanism": "Iteration budget consumption tracking; budget-aware intervention before hard cut-off; checkpoint recommendation at configurable thresholds",
+      "apex_mapping": [
+        "H (resource efficiency)",
+        "T (iteration cost)",
+        "Run (process termination)"
+      ],
+      "measurable_gate": "BudgetGateOutput.truncation_risk / intervention_credit / G_apex_ib; IterationBudgetReport.mean_truncation_risk / mean_credit / g_apex_ib"
+    }
+  ],
+  "implementation": {
+    "language": "Rust",
+    "module": "/home/ubuntu/apex-spiral/apex_devour/src/iteration_budget.rs",
+    "cli": "apex_devour iteration-budget --iter-count 45 [--max-iter 100]",
+    "batch_cli": "apex_devour iteration-budget --input /path/to/records.json"
+  },
+  "metrics": [
+    "iteration_count",
+    "max_iterations",
+    "budget_consumed_pct",
+    "intervention_level",
+    "truncation_risk",
+    "should_checkpoint",
+    "should_truncate",
+    "intervention_credit",
+    "G_apex_ib"
+  ],
+  "verification": {
+    "cargo_test": "PASS (43 tests including 6 new iteration_budget tests)",
+    "cargo_build_release": "PASS (4.69s, 12 warnings)",
+    "single_record_cli": "PASS (iter=45, level=normal, G_apex_ib=1.0300)",
+    "alert_cli": "PASS (iter=92, level=medium_alert, should_checkpoint=true, G_apex_ib=1.0150)"
+  },
+  "integration": "Gene 611 G_apex_ib integrated into apex_gate.rs and apex_gate_health.rs as 6th gain factor; ApexGateReport.compute_delta_g() now multiplies G_apex_ib; gate check added (G_apex_ib \u2265 0.99)",
+  "boundary": "Integration in apex_gate.rs complete. Still standalone measurement gate \u2014 does NOT modify Hermes Agent iteration behavior.",
+  "gene_dependency": "gene_602 is root of APEX dependency chain: 602\u2192603\u2192604\u2192605\u2192606\u2192607\u2192608"
+}

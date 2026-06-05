@@ -1,0 +1,12 @@
+{
+  "applied_at": "2026-05-11T13:04:22.502680",
+  "source": "gap_guard",
+  "policy": {
+    "enable_micro_mutation": true,
+    "mutation_intensity": 0.002,
+    "targets": [
+      "DRT3.T_prot",
+      "DRT3.D_dup"
+    ]
+  }
+}

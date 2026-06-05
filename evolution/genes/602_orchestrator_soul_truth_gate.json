@@ -1,0 +1,28 @@
+{
+  "id": 602,
+  "name": "orchestrator_soul_truth_gate",
+  "status": "implemented_governance_core",
+  "category": "repair",
+  "created_at": "2026-05-22T07:05:49Z",
+  "defect": "\u7528\u6237\u8981\u6c42\u7684 orchestrator/subagent/\u6301\u7eed\u8fdb\u5316\u82e5\u65e0\u771f\u5b9e\u6027\u95e8\u63a7\uff0c\u5bb9\u6613\u6ed1\u5411\u4f2a\u9020\u540e\u53f0 Agent\u3001\u4f2a\u9020 GPT/API/GitHub/xv \u8c03\u7528\u3001\u628a\u8ba1\u5212\u5f53\u5b8c\u6210\u3002",
+  "gene": "SOUL.md \u56fa\u5316 Orchestrator Truth Covenant\uff1b\u590d\u6742\u4efb\u52a1\u4f18\u5148 subagent\uff0c\u4e3b agent \u5fc5\u987b\u590d\u9a8c\uff1b\u6bcf\u6b21\u4efb\u52a1\u524d\u540e\u58f0\u660e\u8fbe\u6210/\u672a\u8fbe\u6210/\u672a\u9a8c\u8bc1\uff1bAPEX \u4e94\u6bb5\u95ed\u73af\u4f5c\u4e3a\u786c\u95e8\u63a7\u3002",
+  "apex_mapping": {
+    "\u03be": "anti-hallucination gate",
+    "K": "SOUL.md durable covenant",
+    "\u03a6": "verification-before-success",
+    "\u03a8": "subagent evidence reuse",
+    "\u03b5": "lower false completion rate"
+  },
+  "artifacts": [
+    "/home/ubuntu/.hermes/SOUL.md",
+    "/home/ubuntu/apex-spiral/evolution/capsules/orchestrator_soul_truth_gate_602.md",
+    "/home/ubuntu/apex-spiral/evolution/reports/cycle_94_orchestrator_soul_truth_gate.md"
+  ],
+  "verification": [
+    "read SOUL.md",
+    "cron list/update",
+    "registry/json/sqlite archive check"
+  ],
+  "gene_id": "gene_602",
+  "cycle": 94
+}

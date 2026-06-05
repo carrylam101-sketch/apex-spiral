@@ -1,0 +1,46 @@
+{
+  "id": 611,
+  "gene_id": "gene_611",
+  "name": "llmcompiler_parallel_dag_gate",
+  "category": "devour",
+  "source": "SqueezeAILab/LLMCompiler",
+  "source_type": "github_icml2024",
+  "stars": 1800,
+  "mechanism": "parallel-function-calling-dag",
+  "mechanism_description": "LLMCompiler (ICML 2024): DAG-based task planner for parallel function calling. Decomposes complex queries into a directed acyclic graph of dependent tasks, fetches function descriptions, executes independent tasks in parallel, reduces results into a coherent response. Key innovation: <2% overhead vs 41% for sequential baseline.",
+  "apex_mapping": {
+    "P_decompose": "Task decomposition into DAG vertices",
+    "LongPlan": "Dependency graph planning across task boundaries",
+    "ToolAct": "Parallel execution of independent tool calls",
+    "S_review": "Result reduction and verification",
+    "Gamma": "Task differentiation via DAG structure"
+  },
+  "measurable_gates": {
+    "dag_wellformed": {"type": "bool", "args": ["n_tasks", "edges"], "threshold": "edges >= n_tasks - 1"},
+    "parallel_speedup": {"type": "ratio", "args": ["t_serial_ms", "t_parallel_ms"], "threshold": "> 1.0"},
+    "exec_confidence": {"type": "float", "args": ["n_independent_tasks"], "range": [0, 1], "threshold": "> 0.5"},
+    "reduce_valid": {"type": "bool", "args": ["n_results", "reduce_output"], "threshold": "reduce_output not null"}
+  },
+  "impl_status": "concept_only",
+  "impl_language": "none",
+  "audit_status": "none",
+  "transferrable": true,
+  "devour_params": {
+    "Q_source": 0.72,
+    "M_mech": 0.85,
+    "A_impl": 0.80,
+    "V_audit": 0.85,
+    "T_transfer": 0.88,
+    "Omega_risk": 0.08
+  },
+  "D_devour": 0.367,
+  "G_devour": 1.0254,
+  "risk_flags": ["research_only", "no_production_benchmark"],
+  "status": "registered",
+  "created_cycle": "cycle_116",
+  "next_action": "Implement Rust parallel DAG planner in apex_devour/src/llmcompiler.rs",
+  "references": [
+    "https://github.com/SqueezeAILab/LLMCompiler",
+    "ICML 2024: https://arxiv.org/abs/2404.09522"
+  ]
+}

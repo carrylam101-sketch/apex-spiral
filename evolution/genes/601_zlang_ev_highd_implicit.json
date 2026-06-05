@@ -1,0 +1,37 @@
+{
+  "id": 601,
+  "gene_id": "gene_601",
+  "name": "zlang_ev_highd_implicit",
+  "category": "innovate",
+  "source": "APEX V10.3 × ZeroLang × 高维隐态决策",
+  "mechanism": "EV=BV+AV资源约束 + HarmRate负势湮灭 + f_θ(h(x))高维隐态映射 + ZeroLang零依赖编译",
+  "apex_mapping": {
+    "BV": "Λ × Θ（任务本征需求熵权）",
+    "AV": "Θ_tool × K_master × Φ_cycle（工具动作增益势）",
+    "SV": "T × H × ε（系统资源上确界）",
+    "HarmRate": "34% → Ω_harm=0.34 → 负势湮灭触发",
+    "EV": "f_θ(h(x)) → 高维隐态决策（替代表层语义概率）",
+    "ZeroLang": "沙箱隔离 + 结构化算子 + APEX全局约束嵌入"
+  },
+  "measurable_gates": {
+    "EV门": "EV = BV + AV > 0.5",
+    "资源约束门": "Σ C_all ≤ SV（SV=1000 units）",
+    "负势湮灭门": "HarmRate < 0 → terminate",
+    "高维隐态门": "EV = f_θ(h(x)) > 0.4",
+    "ZeroLang约束门": "程序头部APEX检查 → reject if violated"
+  },
+  "status": "registered_conceptual",
+  "evm_defect_channels": ["Run", "Res", "Log"],
+  "g_neuro_cell_min": 0.8,
+  "g_evm_min": 0.9,
+  "harm_rate_max": 0.34,
+  "delta_g_min": 0.065,
+  "dependencies": ["gene_594", "gene_595", "gene_596", "gene_597"],
+  "rust_impl_required": true,
+  "zero_lang_interpreter": "not_implemented",
+  "fh_theta_mlp": "not_implemented",
+  "a2a_hub": "not_implemented",
+  "registered_at": "2026-05-24T14:00:00Z",
+  "registered_cycle": 101,
+  "author": "Hermes × carry"
+}

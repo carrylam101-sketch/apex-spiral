@@ -1,0 +1,68 @@
+{
+  "cycle": 81,
+  "commit": "715fb97",
+  "Phi_APEX": 0.460562,
+  "five_ring": {
+    "Phi_anti": 1.094,
+    "Psi_cross": 0.535,
+    "H_X": 2.2282,
+    "C_shannon": null,
+    "T_full": 0.831,
+    "M_mem": 0.896
+  },
+  "HERRO": {
+    "H_ap": 0.965,
+    "P_pile": 0.955,
+    "S_info": 0.948,
+    "C_corr": 0.975,
+    "H_err": 0.851812
+  },
+  "Prime_Assembly": {
+    "N_nick": 0.935,
+    "F_flap": 0.925,
+    "M_match": 0.9575,
+    "A_self": 0.93,
+    "P_asm": 0.77015
+  },
+  "DRT3": {
+    "T_prot": 0.9225,
+    "R_rev": 0.918,
+    "S_syn": 0.91,
+    "D_dup": 0.911,
+    "D_pro": 0.702051
+  },
+  "neuro_cell_gate": {
+    "Pi_neuro_terms": {
+      "Pi_stdp": 0.94,
+      "N_syn": 0.91,
+      "I_homeo": 0.93,
+      "R_traj": 1.0
+    },
+    "Omega_cell_terms": {
+      "chi_hybrid": 0.76,
+      "M_scale": 0.82,
+      "K_base": 0.88,
+      "Omega_gap": 0.18
+    },
+    "Pi_neuro": 0.795522,
+    "Omega_cell": 0.449701,
+    "G_neuro_cell": 1.106528,
+    "DeltaG_candidate": 2.4956,
+    "relative_gain_pct": 10.65
+  },
+  "v10_3_self_loop": {
+    "Psi_self": 0.505285,
+    "nabla_self": 0.02,
+    "Xi_repair": 0.095163,
+    "Gamma_awake": 1.048113,
+    "G_self_loop": 1.070771,
+    "DeltaG_v10_3": 2.6722,
+    "gain_vs_current_pct": 18.48
+  },
+  "tau_trace": 0.936778,
+  "neurotransmitter_conservation": 1.0,
+  "DeltaG_core": 2.9615625000000003,
+  "DeltaG_current": 2.2553,
+  "DeltaG_candidate": 2.4956,
+  "DeltaG_v10_3": 2.6722
+}

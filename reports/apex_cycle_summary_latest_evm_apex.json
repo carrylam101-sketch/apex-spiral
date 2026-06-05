@@ -1,0 +1,79 @@
+{
+  "cycle": 86,
+  "time": "2026-05-21T00:01:56+08:00",
+  "commit": "b70e088",
+  "status": "HEALTHY",
+  "factors_current": {
+    "G_base": 4.010179832377537,
+    "Lambda": 0.98,
+    "Theta": 0.44,
+    "K": 1.72,
+    "xi": 1.0,
+    "Psi": 0.5379,
+    "Phi": 0.963,
+    "H": 0.94,
+    "T": 0.88,
+    "epsilon": 0.82,
+    "delta_formula": 2.2713
+  },
+  "factors_optimized": {
+    "Lambda": 0.984,
+    "Theta": 0.452,
+    "K": 1.732,
+    "xi": 1.0,
+    "Psi": 0.5439,
+    "Phi": 0.972,
+    "H": 0.9319999999999999,
+    "T": 0.868,
+    "epsilon": 0.8099999999999999,
+    "delta_candidate": 2.492355203310876
+  },
+  "neuro": {
+    "Pi_neuro": 0.812,
+    "Omega_cell": 0.468,
+    "Omega_gap": 0.164,
+    "G_neuro": 1.1104399999999999
+  },
+  "self_loop": {
+    "Psi_self": 0.5550398544293729,
+    "Xi_repair": 0.18941575402981292,
+    "Grad_self": 0.0,
+    "Gamma_awake": 1.0973254098141487,
+    "G_self": 1.081243339805971
+  },
+  "evm": {
+    "defects": {
+      "Tok": 0.02,
+      "Mem": 0.08,
+      "Err": 0.0,
+      "Run": 0.0,
+      "Net": 0.0,
+      "Pan": 0.0,
+      "Log": 0.0,
+      "Clw": 0.0,
+      "Agt": 0.0,
+      "Prm": 0.0,
+      "Soul": 0.0,
+      "Res": 0.0
+    },
+    "defect_total": 0.1,
+    "Pi_evm": 0.9916666666666667,
+    "Omega_defect": 0.008333333333333333,
+    "G_evm": 1.0591666666666666,
+    "EVM_core": 0.7627106666666666
+  },
+  "delta_evolved": 2.8884000789053403,
+  "overall_gain": 1.271694658964179,
+  "problem_shortboards": [
+    "C_shannon=0.5541 WARN: deltaG unchanged across recent cycles; self-check channel saturated.",
+    "Theta=0.440 is still the lowest numerator gate; differentiation is the main shortboard.",
+    "T=0.880 and epsilon=0.820 still inflate denominator; continue batching and validation-noise trimming.",
+    "Mem=0.08 is the main EVM defect; Tok=0.02 low risk; Err is injected from 1 WARN item."
+  ],
+  "actions": [
+    "git pull synced: Already up to date.",
+    "P-INNOVATE bounded micro-optimization: Theta+0.012, Phi+0.009, T-0.012, epsilon-0.010.",
+    "EVM defect scan below Omega_defect 0.3 threshold; applied routine HuangDi/Mem and Tao/Tok governance, no emergency escalation.",
+    "Refreshed apex_dashboard.md/html and wrote cycle JSON evidence."
+  ]
+}

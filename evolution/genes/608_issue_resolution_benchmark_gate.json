@@ -1,0 +1,67 @@
+{
+  "id": 608,
+  "gene_id": "gene_608",
+  "name": "issue_resolution_benchmark_gate",
+  "category": "optimize",
+  "status": "implemented_rust_module",
+  "created_at": "2026-05-26T04:04:01Z",
+  "source_cycle": 105,
+  "formula": "D_devour=Q_source*M_mech*A_impl*V_audit*T_transfer; G_devour=1+0.08*D_devour-0.05*Omega_risk",
+  "source_to_gate": [
+    {
+      "source": "SWE-agent GitHub repository / SWE-bench issue-resolution loop",
+      "mechanism": "GitHub issue -> reproduction -> patch -> tests; coding-agent task environment",
+      "apex_mapping": [
+        "P_decompose",
+        "IssueRepair",
+        "V_audit",
+        "Sandbox"
+      ],
+      "measurable_gate": "ResolutionReport.solve_rate / test_pass_rate / regression_coverage_rate / tool_error_rate / keep_for_training"
+    },
+    {
+      "source": "OpenHands OpenReview/arXiv platform papers and public project",
+      "mechanism": "Event-driven software-agent execution with sandboxed tools, logs, and remote runtime",
+      "apex_mapping": [
+        "LongPlan",
+        "ToolAct",
+        "Sandbox",
+        "Workflow"
+      ],
+      "measurable_gate": "ResolutionReport.sandbox_rate + verification_signal + error_penalty"
+    },
+    {
+      "source": "SWE-EVO/SWE-bench-style long-horizon coding-agent benchmarks",
+      "mechanism": "Version/history-derived issue resolution requiring tests and long-horizon codebase maintenance",
+      "apex_mapping": [
+        "V_audit",
+        "Workflow",
+        "SkillMemory",
+        "IssueRepair"
+      ],
+      "measurable_gate": "Regression coverage + scope_penalty + keep_for_training gate"
+    }
+  ],
+  "implementation": {
+    "language": "Rust",
+    "module": "/home/ubuntu/apex-spiral/apex_devour/src/resolution.rs",
+    "sample": "/home/ubuntu/apex-spiral/apex_devour/sample_resolution_runs.json",
+    "cli": "apex_devour resolution --input sample_resolution_runs.json"
+  },
+  "metrics": [
+    "solve_rate",
+    "test_pass_rate",
+    "regression_coverage_rate",
+    "sandbox_rate",
+    "tool_error_rate",
+    "mean_resolution_credit",
+    "keep_for_training"
+  ],
+  "verification": {
+    "cargo_test": "PASS (24 tests)",
+    "cargo_build_release": "PASS",
+    "resolution_cli": "PASS (n_runs=3, mean_resolution_credit=0.58, solve_rate=0.666667, tool_error_rate=0.666667, keep_for_training=false)",
+    "dashboard_refresh": "pending at registry write time"
+  },
+  "boundary": "resolution gate is not a full RL trainer, not fine-tuning, not online learning, and does not prove superiority over SWE-agent/OpenHands/SWE-EVO."
+}

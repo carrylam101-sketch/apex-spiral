@@ -1,0 +1,24 @@
+{
+  "id": 606,
+  "gene_id": "gene_606",
+  "name": "apex_session_delta_tracker",
+  "category": "innovate",
+  "source": "hermes-agent/hermes_state.py × APEX V10.3",
+  "mechanism": "在 SQLite 会话表中增加 APEX ΔG 字段：delta_g_before/after/gain_ratio/harm_rate/resource_usage，支持会话级增益追踪和古法看板",
+  "apex_mapping": {
+    "Pan": "ΔG 可视化 → 看板不再失真",
+    "Soul": "会话意识：每个会话有 delta_g 标识",
+    "H": "健康度追踪：harm_rate 记录"
+  },
+  "measurable_gates": {
+    "record_session_apex": "写入 5个新字段到 sessions 表",
+    "session_delta_g_query": "SELECT delta_g_after, gain_ratio FROM sessions WHERE session_id=?"
+  },
+  "status": "registered_design",
+  "evm_defect_channels": ["Pan", "Soul", "Mem"],
+  "file": "agent/apex_session_tracker.py",
+  "integration_point": "hermes_state.py SessionDB.__init__ 后置 migration",
+  "registered_at": "2026-05-24T14:15:00Z",
+  "registered_cycle": 101,
+  "author": "Hermes × carry"
+}

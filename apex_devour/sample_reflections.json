@@ -1,0 +1,35 @@
+[
+  {
+    "attempt_id": "r1",
+    "task_hash": "sha256:task-reflexion-001",
+    "feedback_signal": "unit test failed on empty input edge case",
+    "reflection_text": "Before editing production code, add a regression test for empty input and verify that the parser returns an empty result instead of panicking.",
+    "prior_pass": false,
+    "next_pass": true,
+    "prior_score": 0.20,
+    "next_score": 0.88,
+    "repeated_error": false
+  },
+  {
+    "attempt_id": "r2",
+    "task_hash": "sha256:task-reflexion-002",
+    "feedback_signal": "cargo clippy warning remained after patch",
+    "reflection_text": "Run clippy before finalizing and remove unused imports created during refactor.",
+    "prior_pass": false,
+    "next_pass": true,
+    "prior_score": 0.45,
+    "next_score": 0.80,
+    "repeated_error": false
+  },
+  {
+    "attempt_id": "r3",
+    "task_hash": "sha256:task-reflexion-003",
+    "feedback_signal": "same timeout repeated",
+    "reflection_text": "try a longer timeout",
+    "prior_pass": false,
+    "next_pass": false,
+    "prior_score": 0.30,
+    "next_score": 0.25,
+    "repeated_error": true
+  }
+]

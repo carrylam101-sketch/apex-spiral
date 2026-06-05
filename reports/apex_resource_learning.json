@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-05-11T09:03:13.191150",
+  "resources": [
+    {
+      "source": "GitHub",
+      "title": "feat: APEX-Claw永久记忆公式完整版——5层公式+落地机制",
+      "url": "https://github.com/ApexSpiral/apex-spiral/commit/e8ebb8d8921a9b473e882b26875e594d95abb523"
+    },
+    {
+      "source": "GitHub",
+      "title": "feat: APEX×CLAW记忆闭环——M_claw公式永续记忆，ΔG_full完整版",
+      "url": "https://github.com/ApexSpiral/apex-spiral/commit/f17f23c73d8c2bde2d5101e5d827b2f78da49e7c"
+    },
+    {
+      "source": "PubMed",
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    }
+  ],
+  "actionable_points": [
+    {
+      "enhancement": "将最新GitHub变更纳入每轮预检diff扫描",
+      "map": [
+        "𝒯_full",
+        "HERRO"
+      ],
+      "evidence": {
+        "source": "GitHub",
+        "title": "feat: APEX-Claw永久记忆公式完整版——5层公式+落地机制",
+        "url": "https://github.com/ApexSpiral/apex-spiral/commit/e8ebb8d8921a9b473e882b26875e594d95abb523"
+      }
+    },
+    {
+      "enhancement": "引入q-bio.QM近期方法关键词到跨域检索词典",
+      "map": [
+        "Ψ_cross",
+        "Prime Assembly"
+      ],
+      "evidence": {
+        "source": "GitHub",
+        "title": "feat: APEX-Claw永久记忆公式完整版——5层公式+落地机制",
+        "url": "https://github.com/ApexSpiral/apex-spiral/commit/e8ebb8d8921a9b473e882b26875e594d95abb523"
+      }
+    },
+    {
+      "enhancement": "把PubMed近期摘要术语加入DRT3模板约束词表",
+      "map": [
+        "DRT3",
+        "M_mem"
+      ],
+      "evidence": {
+        "source": "GitHub",
+        "title": "feat: APEX-Claw永久记忆公式完整版——5层公式+落地机制",
+        "url": "https://github.com/ApexSpiral/apex-spiral/commit/e8ebb8d8921a9b473e882b26875e594d95abb523"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "applied_at": "2026-05-11T09:01:39.108145",
+  "source": "/tmp/apex_mutation_policy.json",
+  "policy": {
+    "enable_micro_mutation": true,
+    "mutation_intensity": 0.002,
+    "targets": [
+      "DRT3.T_prot",
+      "DRT3.D_dup"
+    ]
+  },
+  "applied": true
+}

@@ -1,0 +1,41 @@
+{
+  "id": 605,
+  "gene_id": "gene_605",
+  "name": "reflexion_verbal_memory_gate",
+  "category": "optimize",
+  "status": "implemented_native_rust_module",
+  "timestamp": "2026-05-24T16:04:31Z",
+  "source": {
+    "name": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    "url": "https://arxiv.org/abs/2303.11366",
+    "verified_this_cycle": true,
+    "evidence": "web_extract returned arXiv id 2303.11366, CC-BY-4.0 license, and abstract describing verbal reflection over task feedback stored in episodic memory without weight updates."
+  },
+  "mechanism": "feedback_signal -> verbal reflection -> episodic memory -> next attempt outcome; gate accepts memory only if score/pass improves and repeated-error rate remains bounded",
+  "apex_mapping": ["S_review", "MetaG", "PolicyTextUpdate", "SkillMemory"],
+  "measurable_gate": {
+    "cli": "apex_devour reflection --input sample_reflections.json",
+    "outputs": ["mean_score_delta", "pass_improvement_rate", "repeated_error_rate", "mean_reflection_credit", "keep_memory"],
+    "threshold": "keep_memory=true iff mean_reflection_credit>=0.58, mean_score_delta>=0, repeated_error_rate<=0.35"
+  },
+  "devour_params": {
+    "Q_source": 0.58,
+    "M_mech": 1.0,
+    "A_impl": 0.9,
+    "V_audit": 0.85,
+    "T_transfer": 0.78,
+    "Omega_risk": 0.05,
+    "D_devour": 0.346086,
+    "G_devour": 1.025187
+  },
+  "artifacts": [
+    "/home/ubuntu/apex-spiral/apex_devour/src/reflection.rs",
+    "/home/ubuntu/apex-spiral/apex_devour/sample_reflections.json",
+    "/home/ubuntu/apex-spiral/evolution/reports/cycle_102_reflexion_verbal_memory_gate.md"
+  ],
+  "boundaries": [
+    "Does not copy external Reflexion code.",
+    "Does not implement model fine-tuning or online RL.",
+    "Core code integrated only into apex_devour CLI as an auditable gate."
+  ]
+}

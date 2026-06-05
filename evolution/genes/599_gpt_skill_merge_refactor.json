@@ -1,0 +1,38 @@
+{
+  "id": 599,
+  "name": "gpt_skill_merge_refactor",
+  "defect": "\u4e0d\u5408\u5e76\u76f8\u5173skill\uff0c\u6280\u80fd\u5e93\u91cd\u590d/\u51b2\u7a81/\u68c0\u7d22\u566a\u58f0\u4e0a\u5347",
+  "gene": "GPT\u6258\u7ba1\u6280\u80fd\u5408\u5e76\u91cd\u6784\uff1a\u7531595\u8d28\u91cf\u5ba1\u8ba1\u4f4e\u5206/\u91cd\u590d\u4fe1\u53f7\u89e6\u53d1\uff0c\u6309\u8bed\u4e49\u7c07\u751f\u6210merge proposal\uff1b\u4fdd\u7559\u522b\u540d\u4e0e\u8fc1\u79fb\u65e5\u5fd7\uff0c\u4eba\u5de5\u6216GPT\u4e8c\u5ba1\u540e\u5408\u5e76\u3002",
+  "status": "registered_gpt_managed",
+  "category": "optimize",
+  "apex_mapping": {
+    "primary": "\u03a8",
+    "secondary": [
+      "\u03be",
+      "H"
+    ],
+    "gate": "duplicate_cluster_score>=0.82 && migration_aliases_written"
+  },
+  "fitness": {
+    "expected_delta_g_uplift": 0.14,
+    "risk": "\u4e2d\uff1a\u8bef\u5408\u5e76\u5bfc\u81f4\u4e13\u7528\u6d41\u7a0b\u4e22\u5931",
+    "mitigation": "\u5148stale/redirect\uff0c\u4e0d\u786c\u5220\uff1b\u4fdd\u7559rollback manifest"
+  },
+  "triggers": [
+    "gpt_skill_audit\u53d1\u73b0\u91cd\u590d/\u4f4e\u5206",
+    "skills search\u547d\u4e2d\u591a\u4e2a\u76f8\u4f3cskill",
+    "\u540c\u4e00\u95ee\u9898\u591askill\u4e92\u76f8\u51b2\u7a81"
+  ],
+  "verification": [
+    "merge_proposal.md",
+    "aliases.json",
+    "pre/post skill count and duplicate score"
+  ],
+  "created_at": "2026-05-22T05:19:02Z",
+  "source": "GPT\u6258\u7ba1\u5269\u4f593\u7f3a\u9677\u6ce8\u518c",
+  "depends_on": [
+    595,
+    597
+  ],
+  "gene_id": "gene_599"
+}

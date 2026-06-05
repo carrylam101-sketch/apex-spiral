@@ -1,0 +1,38 @@
+{
+  "id": 600,
+  "name": "gpt_value_aware_compression",
+  "defect": "\u538b\u7f29\u4e0d\u770b\u4ef7\u503c\uff0c\u91cd\u8981\u8bc1\u636e/\u7ea6\u675f\u88ab\u7b49\u6743\u6458\u8981\u4e22\u5931",
+  "gene": "GPT\u6258\u7ba1\u4ef7\u503c\u611f\u77e5\u538b\u7f29\uff1a\u538b\u7f29\u524d\u7ed9\u6d88\u606f\u6253ValueScore=\u7ea6\u675f/\u8bc1\u636e/\u51b3\u7b56/\u8def\u5f84/\u5931\u8d25\u6559\u8bad\u6743\u91cd\uff1b\u9ad8\u4ef7\u503c\u5185\u5bb9\u4fdd\u6307\u9488\uff0c\u4f4e\u4ef7\u503c\u5185\u5bb9\u6458\u8981\u3002",
+  "status": "registered_gpt_managed",
+  "category": "repair",
+  "apex_mapping": {
+    "primary": "\u03be",
+    "secondary": [
+      "\u03a6",
+      "H"
+    ],
+    "gate": "value_score_preserved>=0.90 && evidence_pointer_coverage>=0.95"
+  },
+  "fitness": {
+    "expected_delta_g_uplift": 0.21,
+    "risk": "\u4f4e-\u4e2d\uff1a\u8bc4\u5206\u504f\u7f6e",
+    "mitigation": "\u89c4\u5219\u8bc4\u5206+GPT\u8bc4\u5206\u53cc\u8f68\uff1b\u5f3a\u5236\u4fdd\u7559\u7528\u6237\u786c\u7ea6\u675f/\u6587\u4ef6\u8def\u5f84/\u547d\u4ee4\u8f93\u51fa"
+  },
+  "triggers": [
+    "\u4e0a\u4e0b\u6587\u63a5\u8fd1\u538b\u7f29\u9608\u503c",
+    "\u957f\u4efb\u52a1\u8de8\u538b\u7f29\u7ee7\u7eed",
+    "\u7528\u6237\u786c\u7ea6\u675f/\u8bc1\u636e\u591a"
+  ],
+  "verification": [
+    "compression_manifest.json",
+    "preserved_constraints_count",
+    "evidence_pointer_coverage"
+  ],
+  "created_at": "2026-05-22T05:19:02Z",
+  "source": "GPT\u6258\u7ba1\u5269\u4f593\u7f3a\u9677\u6ce8\u518c",
+  "depends_on": [
+    595,
+    597
+  ],
+  "gene_id": "gene_600"
+}

@@ -1,0 +1,25 @@
+{
+  "id": 607,
+  "gene_id": "gene_607",
+  "name": "apex_hidden_state_gate",
+  "category": "innovate",
+  "source": "hermes-agent/model_tools.py × APEX V10.3 × ZeroLang",
+  "mechanism": "EV = f_θ(h(x)) 高维隐态决策：工具执行结果提取隐态特征 → MLP gate → EV score ≥ 0.4 则通过，< 0.4 则拒绝并记录 harm_delta",
+  "apex_mapping": {
+    "EV": "EV = f_θ(h(x)) > 0.4 → 通过",
+    "ξ": "防幻觉：error 字段自动 → harm_delta +0.1",
+    "f_θ(h(x))": "高维隐态映射决策（4维特征 → 0.5 MLP权重）"
+  },
+  "measurable_gates": {
+    "apex_hidden_gate": "返回 (passed, ev_score, harm_delta)",
+    "extract_hidden_state": "4维特征：len_norm/error_flag/newline_density/json_size",
+    "f_theta": "2层 MLP gate，ev >= 0.4 通过"
+  },
+  "status": "registered_design",
+  "evm_defect_channels": ["Err", "Clw", "Soul"],
+  "file": "agent/apex_hidden_state_gate.py",
+  "integration_point": "model_tools.handle_function_call() 返回前",
+  "registered_at": "2026-05-24T14:15:00Z",
+  "registered_cycle": 101,
+  "author": "Hermes × carry"
+}

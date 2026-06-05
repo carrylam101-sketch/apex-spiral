@@ -1,0 +1,52 @@
+[
+  {
+    "step_id": "vlm_s1",
+    "visual_obs": "Desktop screenshot: file explorer, download folder visible",
+    "action": "Click on downloads folder",
+    "tool": "mouse_click",
+    "success": true,
+    "correction_triggered": false,
+    "correction_quality": null,
+    "continued": true
+  },
+  {
+    "step_id": "vlm_s2",
+    "visual_obs": "Downloads folder open, file list visible",
+    "action": "Double-click installer package",
+    "tool": "mouse_click",
+    "success": false,
+    "correction_triggered": true,
+    "correction_quality": 0.8,
+    "continued": true
+  },
+  {
+    "step_id": "vlm_s3",
+    "visual_obs": "Installer dialog appeared with permission prompt",
+    "action": "Click Allow/Continue button on permission dialog",
+    "tool": "mouse_click",
+    "success": true,
+    "correction_triggered": false,
+    "correction_quality": null,
+    "continued": true
+  },
+  {
+    "step_id": "vlm_s4",
+    "visual_obs": "Setup wizard visible, next button clickable",
+    "action": "Click Next to proceed with default installation",
+    "tool": "mouse_click",
+    "success": false,
+    "correction_triggered": true,
+    "correction_quality": 0.9,
+    "continued": true
+  },
+  {
+    "step_id": "vlm_s5",
+    "visual_obs": "Custom install path field visible, empty",
+    "action": "Type /home/ubuntu/custom_path into install path field",
+    "tool": "keyboard",
+    "success": true,
+    "correction_triggered": false,
+    "correction_quality": null,
+    "continued": true
+  }
+]

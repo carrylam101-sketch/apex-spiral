@@ -1,0 +1,40 @@
+{
+  "id": 601,
+  "name": "evomaster_claw_native_evolution_core",
+  "defect": "CLAW \u9759\u6001\u6307\u4ee4\u8c03\u7528\u3001\u65e0\u8f68\u8ff9\u7ea7\u81ea\u6211\u8fed\u4ee3\u3001\u65e0\u77e5\u8bc6\u6c38\u4e45\u6c89\u6dc0\uff0c\u5bfc\u81f4\u91cd\u590d\u72af\u9519\u548c\u590d\u6742\u73af\u5883\u6267\u884c\u6210\u529f\u7387\u4e0d\u8db3",
+  "gene": "EvoMaster \u9002\u914d CLAW \u539f\u751f\u8fdb\u5316\u6838\u5fc3\uff1aJ_claw=E[R_exec+\u03bbK_claw]\uff1b\u03c0_claw(t+1)=GPT-Stream(\u03c4,K_claw,Constraint_sandbox)\uff1bK_claw=HashPool(Filter(\u03c4_valid))\u3002Rust \u7248\u8d1f\u8d23\u516c\u5f0f\u3001HashPool\u3001\u6c99\u7bb1\u95e8\u63a7\u3001\u7b56\u7565\u66f4\u65b0\u5305\u3002",
+  "status": "implemented_rust_core",
+  "category": "innovate",
+  "created_at": "2026-05-22T05:36:28Z",
+  "apex_mapping": {
+    "primary": "G_claw",
+    "secondary": [
+      "K",
+      "\u03a8",
+      "\u03be",
+      "\u03a6"
+    ],
+    "gate": "objective_gate && cache_gate && sandbox_gate && reuse_gate"
+  },
+  "fitness": {
+    "J_before": 0.757,
+    "J_after": 1.0785,
+    "G_claw": 3.914329,
+    "delta_g_before": 0.023689,
+    "delta_g_after": 0.092727,
+    "uplift_percent": 291.4
+  },
+  "artifacts": [
+    "/home/ubuntu/apex-spiral/evomaster_claw_core/Cargo.toml",
+    "/home/ubuntu/apex-spiral/evomaster_claw_core/src/main.rs",
+    "/home/ubuntu/apex-spiral/evomaster_claw_core/sample_trajectory.jsonl",
+    "/home/ubuntu/apex-spiral/evomaster_claw_core/sample_constraints.json"
+  ],
+  "verification": [
+    "cargo test",
+    "cargo run -- health",
+    "cargo run -- audit --input sample_trajectory.jsonl --constraints sample_constraints.json"
+  ],
+  "gene_id": "gene_601",
+  "cycle": 93
+}

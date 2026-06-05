@@ -1,0 +1,19 @@
+{
+  "k_rrf": 60.0,
+  "top_k": 5,
+  "bm25": [
+    {"id": "mem_working_budget", "rank": 1, "score": 12.4},
+    {"id": "mem_semantic_graph", "rank": 2, "score": 10.1},
+    {"id": "mem_procedural_gate", "rank": 3, "score": 8.7}
+  ],
+  "vector": [
+    {"id": "mem_working_budget", "rank": 1, "score": 0.91},
+    {"id": "mem_declarative_store", "rank": 2, "score": 0.84},
+    {"id": "mem_semantic_graph", "rank": 3, "score": 0.80}
+  ],
+  "graph": [
+    {"id": "mem_semantic_graph", "rank": 1, "score": 1.0},
+    {"id": "mem_working_budget", "rank": 2, "score": 0.8},
+    {"id": "mem_meta_reflection", "rank": 3, "score": 0.6}
+  ]
+}
