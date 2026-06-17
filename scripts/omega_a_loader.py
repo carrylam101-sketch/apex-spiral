@@ -66,10 +66,11 @@ def load_omega_a() -> dict[str, Any]:
             unique_gene_ids.add(gid)
     sections = [
         'hermes_agent_defect_genes',
-        'orchestrator_truth_gate_genes',
-        'apex_devour_genes',
-        'claw_native_evolution_genes',
-        'vlm_agentic_genes',
+ 'orchestrator_truth_gate_genes',
+ 'apex_devour_genes',
+ 'claw_native_evolution_genes',
+ 'vlm_agentic_genes',
+ 'self_reflexion_genes',
     ]
     registry_ids: set[str] = set()
     for section in sections:

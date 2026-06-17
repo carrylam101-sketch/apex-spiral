@@ -1,0 +1,120 @@
+{
+  "id": 614,
+  "gene_id": "gene_614",
+  "name": "apex_self_reflexion_loop",
+  "name_zh": "APEX 自指反思改进闭环",
+  "category": "evolution",
+  "domain": "self_reference",
+  "status": "verified",
+  "source": {
+    "name": "AGI Activation Path (carry, 2026-06-10)",
+    "url": "internal:carry_dm_2026-06-10",
+    "mechanism_extracted": "F_{t+1} = F_t ⊕ Improve(F_t, Memory_t) — 自指改进循环",
+    "cycle_origin": "35-day AGI path stages 1-6 (2026-05-06 to 2026-06-10)"
+  },
+  "mechanism": {
+    "description": "自指反思改进闭环：任务执行→日志捕获→模式发现→反思基因提取→下轮应用验证。共4步，构成完整的 F_{t+1}=F_t⊕Improve 循环。",
+    "step1_capture": {
+      "name": "ReflexionCapture",
+      "input": "任务执行记录（成功/失败/耗时/错误类型）",
+      "output": "带标签的执行日志条目",
+      "apex_factor": "Φ (反思因子 — 执行记录捕捉)",
+      "threshold": "每轮至少3条有效日志条目"
+    },
+    "step2_discover": {
+      "name": "PatternDiscover",
+      "input": " ReflexionCapture 的日志条目集合",
+      "output": "发现的新模式/反思基因候选",
+      "logic": "同错误出现>=2次 → 模式标记；成功路径被复用>=3次 → 最佳实践标记",
+      "apex_factor": "ξ (防幻觉 — 模式必须有日志证据，不能主观臆造)",
+      "threshold": "每轮至少1个反思基因候选"
+    },
+    "step3_extract": {
+      "name": "GeneExtract",
+      "input": " PatternDiscover 的反思基因候选",
+      "output": "写入 gene_pool 的反思基因 JSON",
+      "criteria": "confidence>=0.75, pattern_type in {error_repeat, best_practice, strategy_discovery}",
+      "apex_factor": "Ψ (跨维度 — 反思基因跨任务复用)",
+      "output_location": "evolution/genes/reflection_gene_<id>.json + gene_pool entry"
+    },
+    "step4_verify": {
+      "name": "GateVerify",
+      "input": " 上轮提取的反思基因",
+      "action": "下轮 devour gate 中被选中并应用",
+      "output": "应用结果：delta_g_delta > 0 表示有效",
+      "apex_factor": "Λ (目标强度 — 反思基因必须有可测改进效果)",
+      "threshold": "被选中且 delta_g_delta > 0"
+    }
+  },
+  "formula": {
+    "raw": "F_{t+1} = F_t ⊕ Improve(F_t, Memory_t)",
+    "apex_notation": "ΔG_{t+1} = ΔG_t × G_self_loop",
+    "G_self_loop": "1 + 0.07·Ψ_self + 0.05·Ξ_repair - 0.04·max(∇_self, 0) + 0.03·min(Γ_awake, 2)",
+    "components": {
+      "Ψ_self": "σ(Φ_APEX - E[Φ_APEX]) — 反思因子相对于均值的偏差",
+      "Ξ_repair": "1 - exp(-∫∇_self dt) — 累积修复效应",
+      "∇_self": "gradient(Defect) — 当前缺陷梯度",
+      "Γ_awake": "Φ_APEX(t)/Φ_APEX(0) with saturation/log guard — 觉醒程度"
+    }
+  },
+  "apex_mapping": {
+    "Φ": "自指闭环的主驱动因子 — step1 ReflexionCapture + step4 GateVerify",
+    "Ψ": "反思基因跨任务复用 — step3 GeneExtract 的跨维度扩展",
+    "ξ": "模式发现必须有日志证据 — step2 PatternDiscover 的防幻觉约束",
+    "Λ": "反思基因必须有可测改进 — step4 GateVerify 的目标强度"
+  },
+  "relation_to_existing": {
+    "gene_605": "gene_605 是单任务内的 verbal reflection memory gate；gene_614 是跨周期的自指改进闭环，gene_614 的 step1 依赖任务级 reflexion 日志",
+    "gene_609": "gene_609 是 VLM agentic self-correction；gene_614 是通用的自指反思机制，覆盖所有任务类型",
+    "Φ_current": "当前 Φ 定义模糊（只有'秩序化'），gene_614 给 Φ 一个结构化的4步闭环定义"
+  },
+  "measurable_gate": {
+    "cli": "apex_devour self-reflexion-loop --input <task_log.json>",
+    "outputs": [
+      "reflexion_capture_rate — step1 有效日志/总日志",
+      "improvement_compute_rate — step2 发现模式/总日志",
+      "gene_extraction_count — step3 写入的反思基因数",
+      "gate_verify_delta — step4 反思基因带来的 ΔG 变化"
+    ],
+    "threshold": "reflexion_capture_rate>=0.6 AND improvement_compute_rate>=0.15 AND gate_verify_delta>0"
+  },
+  "devour_params": {
+    "Q_source": 0.85,
+    "M_mech": 1.0,
+    "A_impl": 0.9,
+    "V_audit": 0.88,
+    "T_transfer": 0.82,
+    "Omega_risk": 0.03
+  },
+  "execution_trace_example": {
+    "cycle_t": {
+      "task_1": {"status": "fail", "error": "tool_timeout", "duration_s": 45},
+      "task_2": {"status": "success", "pattern": "url_parse_retry"},
+      "task_3": {"status": "fail", "error": "json_parse", "duration_s": 12}
+    },
+    "step1_capture": {"logs_captured": 3, "threshold_met": true},
+    "step2_discover": {
+      "pattern_found": "json_parse error repeats in 2 different cycles",
+      "confidence": 0.82,
+      "pattern_type": "error_repeat"
+    },
+    "step3_extract": {
+      "gene_id": "reflection_001",
+      "content": "json_parse 前必须做 schema validation",
+      "confidence": 0.82,
+      "target_factor": "ξ"
+    },
+    "step4_verify_pending": "将在 cycle_{t+1} 的 devour gate 中验证"
+  },
+  "artifacts": [
+    "evolution/genes/614_apex_self_reflexion_loop.json",
+    "evolution/reports/cycle_129_self_reflexion_loop.md"
+  ],
+  "boundaries": [
+    "gene_614 是反思机制，不是完整 RL 或 fine-tuning",
+    "反思基因来源于日志证据，不是主观臆造（ξ约束）",
+    "gate_verify_delta>0 才算有效，否则反思基因为空产出",
+    "不实现模型权重更新",
+    "self-reflexion loop 是 Φ 因子的结构化定义扩展，不是替换"
+  ]
+}

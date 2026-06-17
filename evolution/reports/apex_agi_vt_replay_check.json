@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-06-07T05:52:39.756390+00:00",
+  "runtime": "ApexAGI",
+  "layer": "Vt replay verification",
+  "docker": {
+    "path": "/usr/bin/docker",
+    "sock": {
+      "exists": true,
+      "mode": "srw-rw----",
+      "uid": 0,
+      "gid": 111,
+      "is_socket": true
+    },
+    "version_probe": {
+      "cmd": [
+        "/usr/bin/docker",
+        "version",
+        "--format",
+        "{{.Server.Version}}"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "permission denied while trying to connect to the docker API at unix:///var/run/docker.sock"
+    },
+    "sudo_path": "/usr/bin/sudo",
+    "sudo_version_probe": {
+      "cmd": [
+        "/usr/bin/sudo",
+        "-n",
+        "/usr/bin/docker",
+        "version",
+        "--format",
+        "{{.Server.Version}}"
+      ],
+      "returncode": 0,
+      "stdout": "29.1.3",
+      "stderr": ""
+    },
+    "sg_path": "/usr/bin/sg",
+    "sg_docker_probe": {
+      "cmd": [
+        "/usr/bin/sg",
+        "docker",
+        "-c",
+        "docker version --format '{{.Server.Version}}'"
+      ],
+      "returncode": 0,
+      "stdout": "29.1.3",
+      "stderr": ""
+    }
+  },
+  "kvm": {
+    "path": "/dev/kvm",
+    "exists": false,
+    "stat": null
+  },
+  "cubesandbox": {
+    "cubesandbox_path": null,
+    "cube_path": null,
+    "repo_compatibility_note": "TencentCloud/CubeSandbox requires x86_64 Linux with KVM support; this host currently lacks /dev/kvm."
+  },
+  "decision": "replay_possible_with_docker_group_new_session",
+  "blockers": [],
+  "next_actions": []
+}

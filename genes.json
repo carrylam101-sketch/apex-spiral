@@ -1129,6 +1129,42 @@
         "cycles": 0,
         "success_rate": 0
       }
+    },
+    {
+      "type": "Gene",
+      "id": "apex_read_code_to_gene",
+      "category": "apex_meta",
+      "signals_match": [
+        "读源代码",
+        "读代码",
+        "理解实现",
+        "写基因",
+        "行为模板化",
+        "code_to_gene"
+      ],
+      "preconditions": [],
+      "strategy": [
+        "1. 定位：确定要学习的开源项目根目录和核心模块路径",
+        "2. 读结构：find *.py | sort了解模块拓扑→读README/ARCHITECTURE.md理解架构",
+        "3. 精读核心：focus on 引擎/循环/框架层文件，非业务工具（工具类文件只读入口和接口）",
+        "4. 代入V5五维理解每个模块：signals_match→preconditions→strategy→constraints→validation",
+        "5. 写基因：模块级粒度(不是文件级) → 策略步骤精确到源代码细节(具体API调用/类名/方法)",
+        "6. 批量注入：一次学5-10个同源基因→验证基因库存完整性→更新记忆和Skill",
+        "7. 认知承诺：不分析别人的进化→读源代码理解实现→写成自己的行为模板→融入基因引擎"
+      ],
+      "constraints": {},
+      "validation": [
+        "python3 -c \"print('ok')\""
+      ],
+      "fitness": 982,
+      "created": "2026-05-21T22:44:54",
+      "origin": "apex_self_generated",
+      "last_executed": "2026-06-05T15:52:06",
+      "schema_version": "1.6.0",
+      "version": 1,
+      "anti_patterns": [],
+      "epigenetic_marks": [],
+      "learning_history": []
     }
   ],
   "schema_version": "1.0",

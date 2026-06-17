@@ -1,0 +1,27 @@
+{
+  "runtime": "ApexAGI",
+  "formula": "ApexAGI = O o P7 o T o Vt o Au; O_intersection_T = empty",
+  "batch_id": "apexagi_round3_pi_readonly_probe",
+  "truth_boundary": {
+    "O": "ApexAGI/Hermes orchestrator creates task, judges evidence, and verifies outputs",
+    "T": "Pi is permitted only as external read-only coding-agent probe in this batch",
+    "Vt": "Docker replay may run with sudo; CubeSandbox remains blocked by missing /dev/kvm",
+    "Au": "hot_switch_effective=false; no production switch in this batch"
+  },
+  "p7": [
+    {"stage": "locate", "owner": "O", "task": "identify ApexAGI integration files and current blockers"},
+    {"stage": "plan", "owner": "O", "task": "generate read-only Pi probe with restricted tools"},
+    {"stage": "review", "owner": "O", "task": "ensure Pi command cannot write/edit/bash"},
+    {"stage": "implement", "owner": "T:Pi", "task": "read-only repository inspection, no file writes"},
+    {"stage": "code_review", "owner": "O", "task": "inspect Pi output and git diff/status"},
+    {"stage": "verify", "owner": "O+Vt", "task": "run py_compile, P7 preflight, Vt readiness, APEX gate, Harness gate"},
+    {"stage": "judge", "owner": "O", "task": "decide whether T layer is ready for a future scoped defect patch"}
+  ],
+  "pi_command_constraints": {
+    "tools_allowlist": "read,grep,find,ls",
+    "disabled": ["write", "edit", "bash"],
+    "mode": "print",
+    "no_session": true,
+    "no_context_files": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "runtime": "ApexAGI",
+  "layer": "T external coding agent",
+  "candidate": "Pi",
+  "binary_path": "/home/ubuntu/.local/bin/pi",
+  "package": "@mariozechner/pi-coding-agent@0.73.1",
+  "status": "binary_ready_model_auth_blocked",
+  "read_only_probe": {
+    "tools_allowlist": "read,grep,find,ls",
+    "git_status_before": 91,
+    "git_status_after": 91,
+    "stdout_lines": 0,
+    "stderr_summary": "No default API key first; MiniMax env mapping then returned 401 invalid api key",
+    "writes_detected": false
+  },
+  "truth_boundary": "Pi is callable as an external T-layer binary, but LLM-backed Pi execution is not yet available until a valid Pi-supported provider credential/OAuth is configured. No Pi code modification was performed.",
+  "next_actions": [
+    "Configure Pi provider auth via /login or a valid provider env var/auth.json entry",
+    "Re-run a read-only probe before allowing write/edit/bash tools",
+    "Only then assign a scoped defect patch to T under O review and Vt replay"
+  ]
+}

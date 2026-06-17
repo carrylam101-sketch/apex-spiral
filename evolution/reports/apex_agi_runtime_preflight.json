@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-06-07T05:52:39.841537+00:00",
+  "runtime": "ApexAGI",
+  "formula": "ApexAGI = O o P7 o T o Vt o Au, O_intersection_T = empty",
+  "apex_factors": {
+    "g_base": 0.5,
+    "lambda_goal": 0.9,
+    "theta_decomp": 0.8,
+    "k_knowledge": 0.75,
+    "xi_truth": 0.8,
+    "psi_transfer": 0.7,
+    "phi_harness": 0.85,
+    "h_health_cost": 1.1,
+    "t_cost": 1.2,
+    "epsilon_noise": 1.1
+  },
+  "delta_g_activation": 0.088512,
+  "layers": {
+    "O": "orchestration/judgement only",
+    "T": "external coding agents only",
+    "separation_invariant": true
+  },
+  "p7_batch": [
+    {
+      "stage": "locate",
+      "owner": "O",
+      "status": "pending",
+      "defect": "Path B Docker group membership added; sg docker replay passes; no hot switch",
+      "repo": "/home/ubuntu/apex-spiral"
+    },
+    {
+      "stage": "plan",
+      "owner": "O",
+      "status": "pending",
+      "defect": "Path B Docker group membership added; sg docker replay passes; no hot switch",
+      "repo": "/home/ubuntu/apex-spiral"
+    },
+    {
+      "stage": "review",
+      "owner": "O",
+      "status": "pending",
+      "defect": "Path B Docker group membership added; sg docker replay passes; no hot switch",
+      "repo": "/home/ubuntu/apex-spiral"
+    },
+    {
+      "stage": "implement",
+      "owner": "T/Vt",
+      "status": "pending",
+      "defect": "Path B Docker group membership added; sg docker replay passes; no hot switch",
+      "repo": "/home/ubuntu/apex-spiral"
+    },
+    {
+      "stage": "code_review",
+      "owner": "O",
+      "status": "pending",
+      "defect": "Path B Docker group membership added; sg docker replay passes; no hot switch",
+      "repo": "/home/ubuntu/apex-spiral"
+    },
+    {
+      "stage": "verify",
+      "owner": "T/Vt",
+      "status": "pending",
+      "defect": "Path B Docker group membership added; sg docker replay passes; no hot switch",
+      "repo": "/home/ubuntu/apex-spiral"
+    },
+    {
+      "stage": "judge",
+      "owner": "O",
+      "status": "pending",
+      "defect": "Path B Docker group membership added; sg docker replay passes; no hot switch",
+      "repo": "/home/ubuntu/apex-spiral"
+    }
+  ],
+  "tool_inventory": {
+    "pi": "/home/ubuntu/.local/bin/pi",
+    "dbexplain": null,
+    "cubesandbox": null,
+    "cube": null,
+    "docker": "/usr/bin/docker",
+    "git": "/usr/bin/git",
+    "hermes": "/home/ubuntu/.local/bin/hermes",
+    "codex": null,
+    "gh": null
+  },
+  "docker_status": {
+    "installed": true,
+    "path": "/usr/bin/docker",
+    "usable": false,
+    "probe": {
+      "cmd": [
+        "/usr/bin/docker",
+        "version",
+        "--format",
+        "{{.Server.Version}}"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "permission denied while trying to connect to the docker API at unix:///var/run/docker.sock"
+    }
+  },
+  "harness_cycle": {
+    "cmd": [
+      "python3",
+      "scripts/apex_harness_cycle.py"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"I_continue\": false,\n  \"V_H\": true,\n  \"commands\": {\n    \"harness\": {\n      \"cmd\": [\n        \"python3\",\n        \"scripts/harness_gate.py\",\n        \"--action\",\n        \"APEX cron read-only verification with report write\",\n        \"--path\",\n        \"/home/ubuntu/apex-spiral\",\n        \"--writes-files\",\n        \"--has-tests\"\n      ],\n      \"returncode\": 0,\n      \"stderr\": \"\",\n      \"stdout\": \"{\\n  \\\"action\\\": \\\"APEX cron read-only verification with report write\\\",\\n  \\\"c_code_change\\\": 0.45000000000000007,\\n  \\\"decision\\\": \\\"allow\\\",\\n  \\\"p_provenance\\\": 0.1,\\n  \\\"path\\\": \\\"/home/ubuntu/apex-spiral\\\",\\n  \\\"r_runtime\\\": 0.1,\\n  \\\"risk_score\\\": 0.24,\\n  \\\"threshold_block\\\": 0.65,\\n  \\\"threshold_warn\\\": 0.35,\\n  \\\"timestamp\\\": \\\"2026-06-07T05:52:39.618305+00:00\\\"\\n}\"\n    },\n    \"indicator\": {\n      \"cmd\": [\n        \"python3\",\n        \"scripts/indicator.py\",\n        \"--json\"\n      ],\n      \"returncode\": 0,\n      \"stderr\": \"\",\n      \"stdout\": \"{\\n  \\\"I_continue\\\": false,\\n  \\\"V_H\\\": true,\\n  \\\"evm\\\": {\\n    \\\"defect_rate\\\": 0.0,\\n    \\\"evm\\\": 0.7691,\\n    \\\"ok\\\": true\\n  },\\n  \\\"registry\\\": {\\n    \\\"bad_json\\\": [],\\n    \\\"ok\\\": true,\\n    \\\"orphaned\\\": [],\\n    \\\"registry_without_file\\\": []\\n  },\\n  \\\"timestamp\\\": \\\"2026-06-07T05:52:39.701591+00:00\\\"\\n}\"\n    },\n    \"omega\": {\n      \"cmd\": [\n        \"python3\",\n        \"scripts/omega_a_loader.py\"\n      ],\n      \"returncode\": 0,\n      \"stderr\": \"\",\n      \"stdout\": \"{\\n  \\\"anchor\\\": {\\n    \\\"active_task\\\": \\\"ApexAGI round3: Vt sudo Docker replay and Pi T-layer auth boundary probe\\\",\\n    \\\"error\\\": null,\\n    \\\"last_updated\\\": \\\"2026-06-07T13:36:58+08:00\\\",\\n    \\\"ok\\\": true,\\n    \\\"path\\\": \\\"/tmp/hermes_session_anchor.json\\\",\\n    \\\"phase\\\": \\\"completed_pending_pi_provider_auth_and_hot_switch_authorization\\\"\\n  },\\n  \\\"genes\\\": {\\n    \\\"bad_json\\\": [],\\n    \\\"file_count\\\": 28,\\n    \\\"orphaned_file_ids\\\": [],\\n    \\\"registry_ids\\\": 20,\\n    \\\"registry_without_file\\\": [],\\n    \\\"unique_gene_ids\\\": 20\\n  },\\n  \\\"memory\\\": {\\n    \\\"exists\\\": true,\\n    \\\"path\\\": \\\"/home/ubuntu/apex-spiral/memory\\\",\\n    \\\"size_kb\\\": 12.76\\n  },\\n  \\\"registry\\\": {\\n    \\\"cycle_count\\\": 31,\\n    \\\"error\\\": null,\\n    \\\"head_cycle\\\": \\\"cycle_124\\\",\\n    \\\"head_delta_g\\\": 1.404,\\n    \\\"ok\\\": true,\\n    \\\"path\\\": \\\"/home/ubuntu/apex-spiral/evolution/registry.json\\\"\\n  },\\n  \\\"root\\\": \\\"/home/ubuntu/apex-spiral\\\",\\n  \\\"timestamp\\\": \\\"2026-06-07T05:52:39.565360+00:00\\\"\\n}\"\n    }\n  },\n  \"cycle\": \"apex_harness_ralph_minimal\",\n  \"harness_decision\": \"allow\",\n  \"harness_risk_score\": 0.24,\n  \"omega_ok\": true,\n  \"raw\": {\n    \"harness\": {\n      \"action\": \"APEX cron read-only verification with report write\",\n      \"c_code_change\": 0.45000000000000007,\n      \"decision\": \"allow\",\n      \"p_provenance\": 0.1,\n      \"path\": \"/home/ubuntu/apex-spiral\",\n      \"r_runtime\": 0.1,\n      \"risk_score\": 0.24,\n      \"threshold_block\": 0.65,\n      \"threshold_warn\": 0.35,\n      \"timestamp\": \"2026-06-07T05:52:39.618305+00:00\"\n    },\n    \"indicator\": {\n      \"I_continue\": false,\n      \"V_H\": true,\n      \"evm\": {\n        \"defect_rate\": 0.0,\n        \"evm\": 0.7691,\n        \"ok\": true\n      },\n      \"registry\": {\n        \"bad_json\": [],\n        \"ok\": true,\n        \"orphaned\": [],\n        \"registry_without_file\": []\n      },\n      \"timestamp\": \"2026-06-07T05:52:39.701591+00:00\"\n    },\n    \"omega\": {\n      \"anchor\": {\n        \"active_task\": \"ApexAGI round3: Vt sudo Docker replay and Pi T-layer auth boundary probe\",\n        \"error\": null,\n        \"last_updated\": \"2026-06-07T13:36:58+08:00\",\n        \"ok\": true,\n        \"path\": \"/tmp/hermes_session_anchor.json\",\n        \"phase\": \"completed_pending_pi_provider_auth_and_hot_switch_authorization\"\n      },\n      \"genes\": {\n        \"bad_json\": [],\n        \"file_count\": 28,\n        \"orphaned_file_ids\": [],\n        \"registry_ids\": 20,\n        \"registry_without_file\": [],\n        \"unique_gene_ids\": 20\n      },\n      \"memory\": {\n        \"exists\": true,\n        \"path\": \"/home/ubuntu/apex-spiral/memory\",\n        \"size_kb\": 12.76\n      },\n      \"registry\": {\n        \"cycle_count\": 31,\n        \"error\": null,\n        \"head_cycle\": \"cycle_124\",\n        \"head_delta_g\": 1.404,\n        \"ok\": true,\n        \"path\": \"/home/ubuntu/apex-spiral/evolution/registry.json\"\n      },\n      \"root\": \"/home/ubuntu/apex-spiral\",\n      \"timestamp\": \"2026-06-07T05:52:39.565360+00:00\"\n    }\n  },\n  \"timestamp\": \"2026-06-07T05:52:39.710161+00:00\"\n}",
+    "stderr": ""
+  },
+  "apex_gate": {
+    "cmd": [
+      "./apex_devour/target/release/apex_devour",
+      "gate"
+    ],
+    "returncode": 0,
+    "stdout": "APEX Gate Report v0.1.0\nΔG_current      = 1.0581\nG_neuro         = 1.1142\nG_self          = 1.0908\nG_evm           = 1.0600\nG_devour        = 1.0000\nΔG_candidate    = 1.4040\ngate_open       = true\ngates_passed:\n  ✓ G_neuro ≥ 1.0 (actual: 1.1142)\n  ✓ G_self ≥ 1.0 (actual: 1.0908)\n  ✓ G_evm ≥ 1.0 (actual: 1.0600)\n  ✓ G_devour ≥ 0.95 (actual: 1.0000)\n  ✓ G_apex_ib ≥ 0.99 (actual: 1.0300)",
+    "stderr": ""
+  },
+  "vt_replay_check": {
+    "cmd": [
+      "python3",
+      "scripts/apex_agi_vt_replay_check.py"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"ok\": true,\n  \"decision\": \"replay_possible_with_docker_group_new_session\",\n  \"blockers\": [],\n  \"report_path\": \"/home/ubuntu/apex-spiral/evolution/reports/apex_agi_vt_replay_check.json\"\n}",
+    "stderr": ""
+  },
+  "hot_switch": {
+    "authorized_flag": false,
+    "effective": false,
+    "reason": "Separate explicit user authorization and successful Vt replay are required before any hot switch."
+  }
+}
