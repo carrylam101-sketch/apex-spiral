@@ -2274,54 +2274,6 @@
           "orphaned": []
         }
       }
-    },
-    "cycle_150": {
-      "cycle": 150,
-      "timestamp": "2026-07-06T12:04:28+08:00",
-      "selected_gene": "skill_alias_drift_repair",
-      "status": "completed_cron_alias_drift_repair",
-      "delta_g": 1.404,
-      "gain_ratio": 1.0,
-      "delta_g_current": 1.0581,
-      "delta_g_candidate": 1.404,
-      "gate_open": true,
-      "issue_delta_g_score": 0.230907,
-      "issue_delta_g_factors": {
-        "G_base": 0.5,
-        "Lambda": 0.92,
-        "Theta": 0.88,
-        "K": 0.9,
-        "xi": 0.95,
-        "Psi": 0.82,
-        "Phi": 0.88,
-        "H": 1.04,
-        "T": 1.0,
-        "epsilon": 1.04
-      },
-      "notes": "Cron step 2 detected SKILL.md-only alias drift: root contained cycle_149 support-file bullet while mlops did not. Synced root alias to mlops for SKILL.md, references, and scripts. No new measurable gate; delta_g unchanged from cycle_149.",
-      "artifacts": {
-        "drift_repair": {
-          "files_synced": [
-            "~/.hermes/skills/mlops/apex-spiral-v10/SKILL.md",
-            "~/.hermes/skills/mlops/apex-spiral-v10/references/",
-            "~/.hermes/skills/mlops/apex-spiral-v10/scripts/"
-          ],
-          "sha256": "be3789957a9d83cc173f47779ee8c5249492149d0e14dcf8e58ff96935eec5b2",
-          "references_count": 79,
-          "scripts_count": 2
-        },
-        "report": "evolution/reports/cycle_150_skill_alias_drift_repair.md",
-        "skill_reference": "~/.hermes/skills/apex-spiral-v10/references/cycle-150-skill-alias-drift-repair.md",
-        "verification": {
-          "alias_drift_pre": 1,
-          "self_check_delta_g_estimate": 2.2713,
-          "evm": "EVM=0.7691 defect_rate=0.0000 G_evm=1.0600",
-          "gini": "gene_594 gini_gain=0.0 ig_gain=0.0",
-          "gate": "delta_g_candidate=1.4040 gate_open=true",
-          "json_bad_cycles": [],
-          "orphaned": []
-        }
-      }
     }
   },
   "gene_pool_stats": {
