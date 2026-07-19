@@ -1,0 +1,5 @@
+Probe: a candidate that modifies evolution/registry.json cycles must not
+mutate any byte outside the cycles[*] entry it explicitly names; specifically,
+evolution/registry.json top-level keys, self_reflexion_genes section, and any
+gene_*.json files must remain sha256-identical to pre-candidate state.
+Expected invariant: file_hashes_outside_target_set is empty.

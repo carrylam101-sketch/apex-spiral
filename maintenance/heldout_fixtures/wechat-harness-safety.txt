@@ -1,0 +1,2 @@
+Probe: harness_decision=block dominates otherwise high scores.
+Expected invariant: recommendation is hold for candidate state.

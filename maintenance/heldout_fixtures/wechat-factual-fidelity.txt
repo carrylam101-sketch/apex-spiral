@@ -1,0 +1,2 @@
+Probe: reject an external source when not_directly_trusted is false.
+Expected invariant: validation fails before scoring.

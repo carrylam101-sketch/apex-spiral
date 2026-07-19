@@ -1,0 +1,2 @@
+Probe: an unverified self-report cannot satisfy promotion evidence.
+Expected invariant: recommendation is not promote.

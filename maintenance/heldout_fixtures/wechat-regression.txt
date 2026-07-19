@@ -1,0 +1,2 @@
+Probe: active artifact plus critical_regression triggers rollback.
+Expected invariant: rollback_ref is returned.

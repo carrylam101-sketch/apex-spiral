@@ -1,0 +1,34 @@
+{
+  "boundary": "governance recommendation only; no model-weight training or automatic skill/cron/registry mutation",
+  "checks": {
+    "V_H_true": true,
+    "acceptance_pass": true,
+    "evidence_completeness_at_least_0.75": true,
+    "final_score_at_least_0.78": false,
+    "harness_not_blocked": true,
+    "heldout_pass_rate_at_least_0.80": true,
+    "no_critical_regression": true,
+    "risk_at_most_0.20": true
+  },
+  "current_state": "candidate",
+  "eval_version": "apex_anchor_eval_v1.0.0",
+  "evaluator_mode": "deterministic_script",
+  "failed_gates": [
+    "final_score_below_0.78"
+  ],
+  "independence_claim": "not self-proving; separation must be supported by evidence outside this report",
+  "mutation_applied": false,
+  "recommendation": "candidate",
+  "rollback_ref": "remove only the four new anchor-eval artifacts and this sample/report; no prior tracked file was overwritten",
+  "schema_version": "apex_anchor_eval_v1",
+  "scores": {
+    "anchor_score": 0.571824,
+    "evidence_completeness": 1.0,
+    "final_score": 0.768956,
+    "heldout_pass_rate": 1.0,
+    "regression_safety": 1.0,
+    "risk": 0.12,
+    "task_quality_delta": 0.5
+  },
+  "task_id": "wechat-self-evolution-architecture-20260714"
+}

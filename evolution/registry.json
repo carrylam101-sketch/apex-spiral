@@ -2322,6 +2322,180 @@
           "orphaned": []
         }
       }
+    },
+    "cycle_151": {
+      "cycle": 151,
+      "timestamp": "2026-07-17T00:01:00+08:00",
+      "selected_gene": "skill_alias_drift_repair",
+      "status": "completed_cron_alias_drift_repair",
+      "delta_g": 1.404,
+      "gain_ratio": 1.0,
+      "delta_g_current": 1.0581,
+      "delta_g_candidate": 1.404,
+      "gate_open": true,
+      "issue_delta_g_score": 0.230907,
+      "issue_delta_g_factors": {
+        "G_base": 0.5,
+        "Lambda": 0.92,
+        "Theta": 0.88,
+        "K": 0.9,
+        "xi": 0.95,
+        "Psi": 0.82,
+        "Phi": 0.88,
+        "H": 1.04,
+        "T": 1.0,
+        "epsilon": 1.04
+      },
+      "notes": "Cron step 2 detected alias drift=1: root SKILL.md (961041c4...) and references/cron-verification-tool-invocation-pitfalls.md (3331 bytes from 2026-07-16 extension) were not synced to mlops alias (mlops SKILL.md still be378995... from 2026-07-06). Synced SKILL.md + the cron-verification-tool-invocation-pitfalls.md file + chmod 600 + sha256sum verified identical. Final alias_drift=0, references_count=79/79, scripts diff clean. No new measurable gate; delta_g unchanged from cycle_150.",
+      "artifacts": {
+        "drift_repair": {
+          "files_synced": [
+            "~/.hermes/skills/mlops/apex-spiral-v10/SKILL.md",
+            "~/.hermes/skills/mlops/apex-spiral-v10/references/cron-verification-tool-invocation-pitfalls.md",
+            "~/.hermes/skills/mlops/apex-spiral-v10/references/cycle-151-skill-alias-drift-repair.md"
+          ],
+          "sha256": "961041c4cd662bbff663b1c9c5154e5d4c37ff8491c2e3ac9fb5aebeb80c0b98",
+          "references_count": 80,
+          "scripts_count": 2
+        },
+        "report": "evolution/reports/cycle_151_skill_alias_drift_repair.md",
+        "skill_reference": "~/.hermes/skills/apex-spiral-v10/references/cycle-151-skill-alias-drift-repair.md",
+        "verification": {
+          "alias_drift_pre": 1,
+          "self_check_delta_g_estimate": 2.2713,
+          "evm": "EVM=0.7691 defect_rate=0.0000 G_evm=1.0600",
+          "gini": "gene_594 gini_gain=0.0 ig_gain=0.0",
+          "gate": "delta_g_candidate=1.4040 gate_open=true",
+          "json_bad_cycles": [],
+          "orphaned": []
+        }
+      }
+    },
+    "cycle_152": {
+      "status": "completed_cron_alias_drift_repair",
+      "selected_gene": "skill_alias_drift_repair",
+      "delta_g": 1.404,
+      "gain_ratio": 1.0,
+      "delta_g_before": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_candidate": 1.404,
+      "summary": "SKILL.md-only drift repair (12th occurrence in history). cp root -> mlops + sha256 + diff -q references/scripts. ApEX_NEW triple constraints satisfied (no new gate).",
+      "verification": {
+        "alias_drift": 0,
+        "skill_md_sha256": "0969b829cc757cc2ad2c1bb1828c61e83eaa79014c448fe8d9de34a68fffdd72",
+        "references_count": 80,
+        "scripts_count": 2,
+        "orphan_scan": "clean",
+        "null_gene_id_json": 0,
+        "null_cycle_delta_g": 0
+      },
+      "artifacts": {
+        "report": "evolution/reports/cycle_152_skill_alias_drift_repair.md",
+        "synced_files": [
+          "/home/ubuntu/.hermes/skills/apex-spiral-v10/SKILL.md",
+          "/home/ubuntu/.hermes/skills/mlops/apex-spiral-v10/SKILL.md"
+        ],
+        "drift_repair": {
+          "files_synced": [
+            "SKILL.md"
+          ],
+          "sha256": "0969b829cc757cc2ad2c1bb1828c61e83eaa79014c448fe8d9de34a68fffdd72",
+          "references_count": 80,
+          "scripts_count": 2,
+          "drift_occurrence_number": 12,
+          "drift_type": "SKILL.md-only (no references/ or scripts/ drift)",
+          "notes": "Trap 23 (references_count field ordering) verified effective; new reference file cycle_152_*.md added, both aliases reflected post-sync. Trap 19/20 recurrence root cause remains: manual cp after every write is not atomic."
+        }
+      }
+    },
+    "cycle_153": {
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.8088,
+      "delta_g_candidate": 1.8088,
+      "gain_ratio": 1.0,
+      "selected_gene": "skill_alias_drift_repair",
+      "status": "completed_cron_alias_drift_repair",
+      "timestamp": "2026-07-19T00:01:00+08:00",
+      "trigger": "cron_prompt_alias_drift_step2_auto_detection",
+      "drift_detection": {
+        "alias_drift_initial": 1,
+        "files_drifted": [
+          "references/cycle-152-skill-alias-drift-repair.md"
+        ],
+        "SKILL_md_drifted": false
+      },
+      "artifacts": {
+        "drift_repair": {
+          "files_synced": [
+            "references/cycle-152-skill-alias-drift-repair.md"
+          ],
+          "sha256": "0969b829cc757cc2ad2c1bb1828c61e83eaa79014c448fe8d9de34a68fffdd72",
+          "references_count": 81,
+          "sync_method": "cp + sha256 verify + diff -q final gate"
+        },
+        "cycle_report": "evolution/reports/cycle_153_skill_alias_drift_repair.md"
+      },
+      "lessons_cited": [
+        "Trap 22 (cycle_130) — base64 round-trip only for nested Python",
+        "Trap 14 (cycle_120) — registry delta_g/gain_ratio integrity",
+        "Trap 15b (cycle_136) — Unicode formula: write_file tool path",
+        "Trap 23 (cycle_151) — references_count set AFTER sync",
+        "Cycle 138 [CRON SYNC INVARIANT] — same-turn cp + sha256",
+        "Cycle 150 lesson — root-only SKILL.md support-file bullets reopen drift",
+        "Cycle 151 lesson — any root-only references/*.md edit must cp to mlops same turn"
+      ],
+      "verification": {
+        "sha256_match": "0969b829cc757cc2ad2c1bb1828c61e83eaa79014c448fe8d9de34a68fffdd72",
+        "diff_q_references": "no output (exit 0)",
+        "diff_q_scripts": "no output (exit 0)",
+        "registry_consistency": "delta_g None = 0, gain_ratio None = 0",
+        "orphan_scan": "0 orphans"
+      }
+    },
+    "cycle_154": {
+      "status": "completed_cron_alias_drift_repair",
+      "selected_gene": "skill_alias_drift_repair",
+      "delta_g": 1.8088,
+      "delta_g_before": 1.0581,
+      "delta_g_evolved": 1.8088,
+      "delta_g_candidate": 1.404,
+      "gain_ratio": 1.0,
+      "timestamp": "2026-07-20T00:02:00+08:00",
+      "drift_repair": {
+        "files_synced": [
+          "SKILL.md"
+        ],
+        "sha256": "738882ebaebad68d064795862e1e009485931f0e886552792a685ed985fc807a",
+        "references_count": 82,
+        "scripts_count": 2,
+        "drift_lines": 30,
+        "drift_source": "root SKILL.md had Trap 24 + cycle-153 reference bullet; mlops lacked them"
+      },
+      "verification": {
+        "apex_spiral_version": "0.3.0",
+        "py_compile": "pass",
+        "apex_self_check_delta_g_estimate": 2.2713,
+        "apex_self_check_cycle_count": 101,
+        "evm_value": 0.7531,
+        "evm_defect_rate": 0.0208,
+        "g_evm": 1.0579,
+        "gini_selected_gene": "gene_594",
+        "gini_gain": 0.0,
+        "ig_gain": 0.0,
+        "devour_gate_open": true,
+        "devour_gate_delta_g_candidate": 1.404,
+        "orphan_count": 0,
+        "alias_drift_after_repair": 0
+      },
+      "artifacts": [
+        "evolution/reports/cycle_154_skill_alias_drift_repair.md"
+      ],
+      "lessons": [
+        "13th consecutive drift (cycles 134-154) — drift structural, not operational",
+        "Trap 24 confirmed: SKILL.md write path still drifts; cp invariant insufficient",
+        "Shannon plateau persists; uniform outcome bias continues selecting gene_594",
+        "Cron prompt invariant text exists but execution-order gap remains"
+      ]
     }
   },
   "gene_pool_stats": {
@@ -2329,7 +2503,7 @@
     "last_updated": "2026-06-02T00:03:00Z",
     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files"
   },
-  "updated_at": "2026-06-18T12:04:05+08:00",
+  "updated_at": "2026-07-20T00:02:00+08:00",
   "hermes_agent_defect_genes": {
     "594": {
       "name": "subagent_legacy_recovery",

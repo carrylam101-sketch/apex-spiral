@@ -1,0 +1,2 @@
+Probe: CLI evaluation on a different temporary input does not mutate source bytes.
+Expected invariant: input SHA-256 is unchanged.

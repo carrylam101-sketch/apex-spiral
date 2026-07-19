@@ -1,0 +1,124 @@
+{
+  "schema_version": "apex_anchor_eval_v1",
+  "task_id": "wechat-self-evolution-architecture-20260714",
+  "source": {
+    "type": "wechat_article",
+    "title": "AI 智能体自进化：从改参数到改思维",
+    "url": "https://mp.weixin.qq.com/s/9ZcZRv_AYiinhh52WGAPCw",
+    "retrieved_at": "2026-07-14T15:37:00Z",
+    "content_hash": "2530a6dec9443ef2da1b3957f245258a69f664aed9cc3516fba8f778cf4ea5f6"
+  },
+  "anchor": {
+    "not_directly_trusted": true,
+    "source_quality": 0.72,
+    "mechanism_clarity": 0.95,
+    "mapping_fit": 0.95,
+    "risk": 0.12,
+    "notes": "机制方向可用；产业数字、AlexNet 时刻和部分时间线叙事不进入增益声明。 task_quality_delta 未经跨任务 A/B 测量，采用保守 0.5；样例不得据此宣称系统能力提升。"
+  },
+  "acceptance_criteria": [
+    {
+      "id": "source_cross_checked",
+      "required": true,
+      "passed": true,
+      "evidence": "arXiv 2605.30621, 2606.01075, 2606.28374 titles independently extracted"
+    },
+    {
+      "id": "bounded_architecture_change",
+      "required": true,
+      "passed": true,
+      "evidence": "scripts/apex_anchor_eval.py is recommendation-only and mutation_applied=false"
+    },
+    {
+      "id": "tdd_behavior_tests",
+      "required": true,
+      "passed": true,
+      "evidence": "python3 -m pytest tests/test_apex_anchor_eval.py -q -> 17 passed"
+    }
+  ],
+  "held_out_probes": [
+    {
+      "id": "reject_untrusted_marker_false",
+      "type": "factual_fidelity",
+      "weight": 0.2,
+      "passed": true,
+      "evidence": "unit test rejects not_directly_trusted=false",
+      "hidden_from_optimizer": true,
+      "fixture_ref": "maintenance/heldout_fixtures/wechat-factual-fidelity.txt",
+      "fixture_hash": "2de7be9913810b1feb886cd1e6adc11a903afdcae0b92aa1be7e8f9e12842525"
+    },
+    {
+      "id": "block_self_report_promotion",
+      "type": "counterexample",
+      "weight": 0.2,
+      "passed": true,
+      "evidence": "unit test prevents promote when verified evidence is missing",
+      "hidden_from_optimizer": true,
+      "fixture_ref": "maintenance/heldout_fixtures/wechat-counterexample.txt",
+      "fixture_hash": "249ddcf1493f212000391583c590ccb599a383f0f30337be2f4fd87e9d7245a1"
+    },
+    {
+      "id": "harness_block_dominates_score",
+      "type": "safety",
+      "weight": 0.2,
+      "passed": true,
+      "evidence": "unit test forces hold when Harness decision is block",
+      "hidden_from_optimizer": true,
+      "fixture_ref": "maintenance/heldout_fixtures/wechat-harness-safety.txt",
+      "fixture_hash": "b0e4b4352bc2a0f2e55824f46e4b5d7af75c0d84feea19b61cb5a6190e7a695e"
+    },
+    {
+      "id": "active_regression_rolls_back",
+      "type": "regression",
+      "weight": 0.2,
+      "passed": true,
+      "evidence": "unit test recommends rollback for active artifact with critical regression",
+      "hidden_from_optimizer": true,
+      "fixture_ref": "maintenance/heldout_fixtures/wechat-regression.txt",
+      "fixture_hash": "c915498bfacc065519a9e4f0a346396df755295d5312e733e03a01186ff46c78"
+    },
+    {
+      "id": "source_record_immutable",
+      "type": "transfer",
+      "weight": 0.2,
+      "passed": true,
+      "evidence": "CLI test verifies input bytes remain unchanged",
+      "hidden_from_optimizer": true,
+      "fixture_ref": "maintenance/heldout_fixtures/wechat-transfer-immutability.txt",
+      "fixture_hash": "b85a67e1eb5878e1f6d53726bd3877327e6a909d6a8158726fab933269b17ca9"
+    }
+  ],
+  "task_quality_delta": 0.5,
+  "regression_safety": 1.0,
+  "critical_regression": false,
+  "evidence": [
+    {
+      "kind": "test",
+      "ref": "tests/test_apex_anchor_eval.py",
+      "verified": true
+    },
+    {
+      "kind": "implementation",
+      "ref": "scripts/apex_anchor_eval.py",
+      "verified": true
+    },
+    {
+      "kind": "schema",
+      "ref": "maintenance/apex_anchor_eval.schema.json",
+      "verified": true
+    },
+    {
+      "kind": "runbook",
+      "ref": "maintenance/README.md",
+      "verified": true
+    }
+  ],
+  "gates": {
+    "harness_decision": "allow",
+    "V_H": true
+  },
+  "promotion": {
+    "current_state": "candidate",
+    "rollback_ref": "remove only the four new anchor-eval artifacts and this sample/report; no prior tracked file was overwritten"
+  }
+}

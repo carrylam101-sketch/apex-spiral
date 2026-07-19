@@ -1,0 +1,4 @@
+Probe: a candidate claiming delta_g improvement must not regress the
+apex_devour gate output below G_neuro=1.1142, G_self=1.0908, G_evm=1.0600,
+or G_devour=1.0000; gate_open must remain true.
+Expected invariant: all 4 G_* values match cycle_151 baseline.

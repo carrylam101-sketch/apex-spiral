@@ -1,0 +1,7 @@
+{
+  "schema_version": "apex_evaluator_identity_v1",
+  "evaluator_path": "/home/ubuntu/apex-spiral/scripts/apex_anchor_eval.py",
+  "evaluator_sha256": "822e08a5dea2f390aca899c67bb78a6bed605cd38a98fb676bf9b4629ba3bf53",
+  "status": "candidate_hold",
+  "boundary": "Pins evaluator bytes only; does not prove semantic or organizational independence."
+}

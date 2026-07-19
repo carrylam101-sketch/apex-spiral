@@ -1,0 +1,91 @@
+"""Tests for the candidate process-boundary evaluator runner."""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+RUNNER = ROOT / "maintenance" / "independent_evaluator" / "cycle153" / "runner.py"
+SOURCE = ROOT / "maintenance" / "sample_wechat_anchor_eval.json"
+IDENTITY = ROOT / "maintenance" / "independent_evaluator" / "cycle153" / "evaluator_identity.json"
+
+
+def run_candidate(tmp_path: Path, evaluator: Path | None = None) -> tuple[subprocess.CompletedProcess[str], dict]:
+    output = tmp_path / "attestation.json"
+    command = [
+        sys.executable,
+        str(RUNNER),
+        "--input",
+        str(SOURCE),
+        "--output",
+        str(output),
+    ]
+    if evaluator is not None:
+        command.extend(["--evaluator", str(evaluator)])
+    completed = subprocess.run(command, cwd=ROOT, text=True, capture_output=True, timeout=10)
+    report = json.loads(output.read_text(encoding="utf-8")) if output.exists() else {}
+    return completed, report
+
+
+def test_runner_attests_process_boundary_and_input_immutability(tmp_path: Path) -> None:
+    before = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
+    completed, report = run_candidate(tmp_path)
+    after = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
+
+    assert completed.returncode == 0, completed.stderr
+    assert before == after == report["input_sha256_before"] == report["input_sha256_after"]
+    assert report["child_exit_code"] == 0
+    assert report["process_boundary"] is True
+    assert report["timeout_enforced"] is True
+    assert report["environment_allowlist"] is True
+    assert report["identity_pinned"] is True
+    assert report["identity_match"] is True
+    assert report["evaluator_sha256"]
+    assert report["recommendation"] in {"promote", "candidate", "hold", "rollback"}
+    assert report["independence_level"] == "process_isolated_candidate"
+    assert report["semantic_independence_verified"] is False
+    assert report["promotion_allowed"] is False
+
+
+def test_runner_fails_closed_when_evaluator_identity_changes(tmp_path: Path) -> None:
+    failing = tmp_path / "failing_evaluator.py"
+    failing.write_text("raise SystemExit(7)\n", encoding="utf-8")
+    completed, report = run_candidate(tmp_path, failing)
+
+    assert completed.returncode == 2
+    assert report["promotion_allowed"] is False
+    assert report["identity_match"] is False
+    assert report["failure_mode"] == "evaluator_identity_mismatch"
+
+
+def test_runner_fails_closed_when_identity_digest_is_wrong(tmp_path: Path) -> None:
+    identity = json.loads(IDENTITY.read_text(encoding="utf-8"))
+    identity["evaluator_sha256"] = "0" * 64
+    wrong_identity = tmp_path / "wrong_identity.json"
+    wrong_identity.write_text(json.dumps(identity), encoding="utf-8")
+    output = tmp_path / "attestation.json"
+    completed = subprocess.run(
+        [
+            sys.executable,
+            str(RUNNER),
+            "--input",
+            str(SOURCE),
+            "--output",
+            str(output),
+            "--identity-file",
+            str(wrong_identity),
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        timeout=10,
+    )
+    report = json.loads(output.read_text(encoding="utf-8"))
+    assert completed.returncode == 2
+    assert report["identity_pinned"] is True
+    assert report["identity_match"] is False
+    assert report["failure_mode"] == "evaluator_identity_mismatch"

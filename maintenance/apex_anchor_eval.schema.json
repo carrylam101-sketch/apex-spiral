@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apex.local/schema/apex_anchor_eval_v1.json",
+  "title": "APEX external anchor evaluation record",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "task_id",
+    "source",
+    "anchor",
+    "acceptance_criteria",
+    "held_out_probes",
+    "task_quality_delta",
+    "regression_safety",
+    "critical_regression",
+    "evidence",
+    "gates",
+    "promotion"
+  ],
+  "properties": {
+    "schema_version": {"const": "apex_anchor_eval_v1"},
+    "task_id": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "required": ["type", "title", "retrieved_at", "content_hash"],
+      "properties": {
+        "type": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "url": {"type": ["string", "null"]},
+        "retrieved_at": {"type": "string", "minLength": 1},
+        "content_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"}
+      }
+    },
+    "anchor": {
+      "type": "object",
+      "required": ["not_directly_trusted", "source_quality", "mechanism_clarity", "mapping_fit", "risk"],
+      "properties": {
+        "not_directly_trusted": {"const": true},
+        "source_quality": {"type": "number", "minimum": 0, "maximum": 1},
+        "mechanism_clarity": {"type": "number", "minimum": 0, "maximum": 1},
+        "mapping_fit": {"type": "number", "minimum": 0, "maximum": 1},
+        "risk": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "passed", "evidence"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "required": {"type": "boolean", "default": true},
+          "passed": {"type": "boolean"},
+          "evidence": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "held_out_probes": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "weight", "passed", "hidden_from_optimizer", "fixture_ref", "fixture_hash"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "type": {"enum": ["factual_fidelity", "counterexample", "transfer", "regression", "executable", "safety"]},
+          "weight": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+          "passed": {"type": "boolean"},
+          "hidden_from_optimizer": {"const": true},
+          "fixture_ref": {"type": "string", "pattern": "^maintenance/heldout_fixtures/[^/]+$"},
+          "fixture_hash": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "task_quality_delta": {"type": "number", "minimum": 0, "maximum": 1},
+    "regression_safety": {"type": "number", "minimum": 0, "maximum": 1},
+    "critical_regression": {"type": "boolean"},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["kind", "ref", "verified"],
+        "properties": {
+          "kind": {"type": "string", "minLength": 1},
+          "ref": {"type": "string", "minLength": 1},
+          "verified": {"type": "boolean"}
+        }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "required": ["harness_decision", "V_H"],
+      "properties": {
+        "harness_decision": {"enum": ["allow", "warn", "block"]},
+        "V_H": {"type": "boolean"}
+      }
+    },
+    "promotion": {
+      "type": "object",
+      "required": ["current_state", "rollback_ref"],
+      "properties": {
+        "current_state": {"enum": ["draft", "candidate", "active", "held", "rolled_back"]},
+        "rollback_ref": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

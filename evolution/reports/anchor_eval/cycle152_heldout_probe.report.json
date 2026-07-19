@@ -1,0 +1,36 @@
+{
+  "boundary": "governance recommendation only; no model-weight training or automatic skill/cron/registry mutation",
+  "checks": {
+    "V_H_true": true,
+    "acceptance_pass": true,
+    "evidence_completeness_at_least_0.75": true,
+    "final_score_at_least_0.78": false,
+    "harness_not_blocked": true,
+    "heldout_pass_rate_at_least_0.80": false,
+    "no_critical_regression": true,
+    "risk_at_most_0.20": false
+  },
+  "current_state": "candidate",
+  "eval_version": "apex_anchor_eval_v1.0.0",
+  "evaluator_mode": "deterministic_script",
+  "failed_gates": [
+    "heldout_pass_rate_below_0.80",
+    "risk_above_0.20",
+    "final_score_below_0.78"
+  ],
+  "independence_claim": "not self-proving; separation must be supported by evidence outside this report",
+  "mutation_applied": false,
+  "recommendation": "hold",
+  "rollback_ref": "delete maintenance/heldout_fixtures/cycle152/ (3 files) and /tmp/_cycle152_candidate_input.json only; no prior tracked file modified",
+  "schema_version": "apex_anchor_eval_v1",
+  "scores": {
+    "anchor_score": 0.231,
+    "evidence_completeness": 1.0,
+    "final_score": 0.56275,
+    "heldout_pass_rate": 0.65,
+    "regression_safety": 1.0,
+    "risk": 0.25,
+    "task_quality_delta": 0.55
+  },
+  "task_id": "cycle152-heldout-probe-for-delta-g-plateau"
+}

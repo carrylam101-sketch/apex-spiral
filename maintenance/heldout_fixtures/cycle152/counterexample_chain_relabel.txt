@@ -1,0 +1,6 @@
+Probe: a candidate that increases claimed delta_g by changing factor constants
+(e.g. tweaking G_neuro, G_self, G_evm by a fixed multiplier) without changing
+observable behavior on apex_devour/target/release/apex_devour gate output bytes
+should not satisfy the held-out transfer threshold.
+Expected invariant: heldout_pass_rate for counterexample-type probe = 0.0.
+Fixture bytes_sha256_marker: a1b2c3d4e5f6
