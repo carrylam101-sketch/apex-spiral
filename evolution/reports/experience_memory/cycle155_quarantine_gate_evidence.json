@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-07-21T03:00:51+08:00",
+  "mechanism": "provenance_bound_experience_memory_quarantine",
+  "status": "candidate_hold",
+  "formula": "M_clean = V_verified * I_integrity * E_independent * H_heldout * S_scoped * (1 - C_conflict)",
+  "unknowns": [
+    "real-world false-admit rate",
+    "real-world false-quarantine rate",
+    "cross-task retention utility",
+    "semantic conflict detection quality"
+  ],
+  "problem_found": "The existing Reflexion gate can keep memory from aggregate outcome credit but does not require payload integrity, independent evidence, held-out evidence, scoped applicability, or active-memory conflict isolation.",
+  "candidate_files": [
+    "maintenance/experience_memory/cycle155/quarantine_gate.py",
+    "maintenance/experience_memory/cycle155/README.md",
+    "tests/test_experience_memory_quarantine_gate.py"
+  ],
+  "verification": {
+    "command": "python3.12 -m py_compile maintenance/experience_memory/cycle155/quarantine_gate.py tests/test_experience_memory_quarantine_gate.py && python3.12 -m pytest tests/test_experience_memory_quarantine_gate.py -q",
+    "result": "5 passed in 0.02s",
+    "counterexamples": [
+      "missing independent and held-out evidence -> quarantine",
+      "active-memory conflict -> quarantine without overwrite",
+      "post-attestation payload mutation -> reject",
+      "global scope -> quarantine"
+    ]
+  },
+  "boundaries": {
+    "writes_active_memory": false,
+    "promotion_allowed": false,
+    "modified_cron": false,
+    "modified_registry": false,
+    "modified_genes": false,
+    "modified_skill": false,
+    "modified_model_weights": false
+  },
+  "promotion_decision": "本轮无晋升"
+}

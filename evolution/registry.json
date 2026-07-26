@@ -2496,6 +2496,203 @@
         "Shannon plateau persists; uniform outcome bias continues selecting gene_594",
         "Cron prompt invariant text exists but execution-order gap remains"
       ]
+    },
+    "cycle_155": {
+      "status": "completed_cron_alias_drift_repair",
+      "selected_gene": "skill_alias_drift_repair",
+      "delta_g": 1.8088,
+      "delta_g_before": 1.8088,
+      "delta_g_evolved": 1.8088,
+      "delta_g_candidate": 1.404,
+      "gain_ratio": 1.0,
+      "timestamp": "2026-07-22T00:11:00+08:00",
+      "drift_repair": {
+        "files_synced": [
+          "SKILL.md",
+          "references/cycle-155-verification-watch-drift-free.md",
+          "references/cycle-155-skill-alias-drift-repair.md",
+          "reports/cycle_155_skill_alias_drift_repair.md",
+          "references/cycle-155-skill-alias-drift-repair.md (this cycle)"
+        ],
+        "sha256": "bcfef5ddd02a8021c37e2c4cdeeff6ae95905bdbeca0d84ada748d637ea51999",
+        "references_count": 84
+      },
+      "verification": {
+        "root_sha256": "bcfef5ddd02a8021c37e2c4cdeeff6ae95905bdbeca0d84ada748d637ea51999",
+        "mlops_sha256": "bcfef5ddd02a8021c37e2c4cdeeff6ae95905bdbeca0d84ada748d637ea51999",
+        "refs_diff": "",
+        "scripts_diff": "",
+        "alias_drift": 0
+      },
+      "artifacts": {
+        "cycle_report": "evolution/reports/cycle_155_skill_alias_drift_repair.md",
+        "reference_doc": "~/.hermes/skills/apex-spiral-v10/references/cycle-155-skill-alias-drift-repair.md"
+      },
+      "lessons": [
+        "13th consecutive drift cycle (134→155). Drift source is previous cron run reference write, not the repair cycle itself.",
+        "Trap 24 latency pattern confirmed: drift latency can span multiple cycles; cp invariant must apply to every references/*.md write, not just drift-repair cycles."
+      ]
+    },
+    "cycle_156": {
+      "cycle_number": 156,
+      "date": "2026-07-23",
+      "status": "completed_cron_alias_drift_repair",
+      "selected_gene": "skill_alias_drift_repair",
+      "delta_g": 1.8088,
+      "delta_g_candidate": 1.404,
+      "gain_ratio": 1.0,
+      "artifacts": {
+        "drift_repair": {
+          "files_synced": [
+            "SKILL.md",
+            "references/cycle-155-skill-alias-drift-repair.md",
+            "scripts/detect_skill_alias_drift.sh"
+          ],
+          "sha256": "b420765ab35386f0b2972fdd7aa8db78dc105b3705de533cda8e04236d993969",
+          "references_count": 84,
+          "scripts_count": 3
+        },
+        "report_path": "evolution/reports/cycle_156_skill_alias_drift_repair.md",
+        "verification": {
+          "alias_drift": 0,
+          "apex_version": "0.3.0",
+          "self_check": {
+            "delta_g_estimate": 2.2713,
+            "healthy": true,
+            "shannon_plateau": true
+          },
+          "evm": {
+            "evm_value": 0.7531,
+            "defect_rate": 0.0208,
+            "G_evm": 1.0579
+          },
+          "apex_gate_health": {
+            "delta_g_current": 1.0581,
+            "G_neuro": 1.1142,
+            "G_self": 1.0908,
+            "G_evm": 1.06,
+            "G_devour": 1.0,
+            "delta_g_candidate": 1.404,
+            "gate_open": true
+          },
+          "orphaned_genes": 0,
+          "cycles_count": 62
+        }
+      },
+      "notes": "14th consecutive drift occurrence (cycles 134→156). Drift source = cycle_155 follow-up writes (SKILL.md bullet + reference expansion + detector script). Trap 24 latency confirmed: drift lives until next detector-capable cron run. Repair executed per cycle_134+ SOP. No new measurable gate this cycle. delta_g carried forward from cycle_155 (1.8088). gain_ratio=1.0 (paradigm-only)."
+    },
+    "cycle_158": {
+      "delta_g": 1.8088,
+      "delta_g_before": 1.8088,
+      "delta_g_evolved": 1.8088,
+      "delta_g_candidate": 1.404,
+      "gain_ratio": 1.0,
+      "selected_gene": "skill_alias_drift_repair",
+      "status": "completed_cron_alias_drift_repair",
+      "timestamp": "2026-07-25T00:10:00+08:00",
+      "trigger": "alias_drift=1 from cycle_157 reference file root-only",
+      "verification": {
+        "skill_md_sha256": "fc70ce05ee658d119ba8121c75ebbac49edc289b83f40e4226927eace0b4faf9",
+        "references_root_count": 85,
+        "references_mlops_count": 85,
+        "scripts_root_count": 3,
+        "scripts_mlops_count": 3,
+        "apex_self_check": "cycle 101, ΔG 2.2713, HEALTHY",
+        "evm": "EVM=0.7531, defect_rate=0.0208, G_evm=1.0579",
+        "gini_selector": "gene_594, gini_gain=0, ig_gain=0, n_candidates=21",
+        "apex_devour_gate": "gate_open=true, ΔG_candidate=1.4040",
+        "registry_null_orphan": "clean"
+      },
+      "artifacts": {
+        "report": "evolution/reports/cycle_158_skill_alias_drift_repair.md",
+        "drift_repair": {
+          "files_synced": [
+            "SKILL.md",
+            "references/cycle-157-verification-watch-drift-free.md"
+          ],
+          "sha256": "fc70ce05ee658d119ba8121c75ebbac49edc289b83f40e4226927eace0b4faf9",
+          "references_count": 85
+        }
+      },
+      "cron_run_at": "2026-07-25T00:00:00+08:00",
+      "sequence": 158
+    },
+    "cycle_159": {
+      "delta_g": 1.8088,
+      "delta_g_before": 1.8088,
+      "delta_g_evolved": 1.8088,
+      "delta_g_candidate": 1.404,
+      "gain_ratio": 1.0,
+      "selected_gene": "skill_alias_drift_repair",
+      "status": "completed_cron_alias_drift_repair",
+      "timestamp": "2026-07-26T00:01:30+08:00",
+      "trigger": "alias_drift=1 from cycle_158 reference file root-only (SKILL.md bullet + references/cycle-158-skill-alias-drift-repair.md)",
+      "verification": {
+        "skill_md_sha256": "e1c39bee9426314e72b8a0cbb2e20225f435046444dd645fdf91876006a621cf",
+        "references_root_count": 86,
+        "references_mlops_count": 86,
+        "scripts_root_count": 3,
+        "scripts_mlops_count": 3,
+        "apex_self_check": "cycle 101, delta_g 2.2713, HEALTHY",
+        "evm": "EVM=0.7531, defect_rate=0.0208, G_evm=1.0579",
+        "gini_selector": "gene_594, gini_gain=0, ig_gain=0, n_candidates=21",
+        "apex_devour_gate": "gate_open=true, delta_g_candidate=1.4040",
+        "registry_null_orphan": "clean"
+      },
+      "artifacts": {
+        "report": "evolution/reports/cycle_159_skill_alias_drift_repair.md",
+        "drift_repair": {
+          "files_synced": [
+            "SKILL.md",
+            "references/cycle-158-skill-alias-drift-repair.md"
+          ],
+          "sha256": "e1c39bee9426314e72b8a0cbb2e20225f435046444dd645fdf91876006a621cf",
+          "references_count": 86
+        }
+      },
+      "cron_run_at": "2026-07-26T00:00:00+08:00",
+      "sequence": 159,
+      "lesson_ref": "references/cycle-134-skill-alias-drift-repair.md, references/cycle-158-skill-alias-drift-repair.md (Trap 26)"
+    },
+    "cycle_160": {
+      "status": "completed_cron_alias_drift_repair",
+      "selected_gene": "skill_alias_drift_repair",
+      "delta_g": 1.8088,
+      "gain_ratio": 1.0,
+      "delta_g_before": 1.8088,
+      "delta_g_evolved": 1.8088,
+      "delta_g_candidate": 1.404,
+      "artifacts": {
+        "drift_repair": {
+          "files_synced": [
+            "SKILL.md",
+            "references/cycle-160-skill-alias-drift-repair.md"
+          ],
+          "sha256": "1058d3f08bdf466ee329e60f7224e09a3f6b374d98aa68c1c084eb62551d8923",
+          "references_count": 88,
+          "scripts_count": 3
+        },
+        "verification": {
+          "alias_drift_detected": true,
+          "steps_passed": 9,
+          "delta_g_self_check": 2.2713,
+          "evm_value": 0.7531,
+          "evm_defect_rate": 0.0208,
+          "g_neuro": 1.1142,
+          "g_self": 1.0908,
+          "g_evm": 1.06,
+          "g_devour": 1.0,
+          "delta_g_candidate_gate": 1.404,
+          "gate_open": true,
+          "harness_decision": "allow",
+          "harness_risk": 0.24,
+          "V_H": true,
+          "I_continue": false,
+          "omega_ok": true
+        }
+      },
+      "timestamp": "2026-07-27T00:02:00+08:00",
+      "cycle_index": 160
     }
   },
   "gene_pool_stats": {
@@ -2503,7 +2700,7 @@
     "last_updated": "2026-06-02T00:03:00Z",
     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files"
   },
-  "updated_at": "2026-07-20T00:02:00+08:00",
+  "updated_at": "2026-07-27T00:02:00+08:00",
   "hermes_agent_defect_genes": {
     "594": {
       "name": "subagent_legacy_recovery",

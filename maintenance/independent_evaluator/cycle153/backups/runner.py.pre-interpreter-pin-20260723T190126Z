@@ -36,22 +36,11 @@ def load_expected_identity(path: Path) -> dict[str, str]:
     raw = json.loads(path.read_text(encoding="utf-8"))
     expected_path = raw.get("evaluator_path")
     expected_sha256 = raw.get("evaluator_sha256")
-    interpreter_path = raw.get("interpreter_path")
-    interpreter_sha256 = raw.get("interpreter_sha256")
     if not isinstance(expected_path, str) or not expected_path:
         raise ValueError("identity evaluator_path must be a non-empty string")
     if not isinstance(expected_sha256, str) or len(expected_sha256) != 64:
         raise ValueError("identity evaluator_sha256 must be a 64-character digest")
-    if not isinstance(interpreter_path, str) or not interpreter_path:
-        raise ValueError("identity interpreter_path must be a non-empty string")
-    if not isinstance(interpreter_sha256, str) or len(interpreter_sha256) != 64:
-        raise ValueError("identity interpreter_sha256 must be a 64-character digest")
-    return {
-        "evaluator_path": expected_path,
-        "evaluator_sha256": expected_sha256,
-        "interpreter_path": interpreter_path,
-        "interpreter_sha256": interpreter_sha256,
-    }
+    return {"evaluator_path": expected_path, "evaluator_sha256": expected_sha256}
 
 
 def main() -> int:
@@ -60,7 +49,6 @@ def main() -> int:
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--evaluator", type=Path, default=DEFAULT_EVALUATOR)
     parser.add_argument("--identity-file", type=Path, default=IDENTITY_FILE)
-    parser.add_argument("--interpreter", type=Path)
     parser.add_argument("--timeout-seconds", type=float, default=5.0)
     args = parser.parse_args()
 
@@ -69,13 +57,9 @@ def main() -> int:
     before = sha256(source)
     expected_identity = load_expected_identity(args.identity_file.resolve(strict=True))
     evaluator_digest = sha256(evaluator)
-    interpreter = (args.interpreter or Path(expected_identity["interpreter_path"])).resolve(strict=True)
-    interpreter_digest = sha256(interpreter)
     identity_match = (
         str(evaluator) == expected_identity["evaluator_path"]
         and evaluator_digest == expected_identity["evaluator_sha256"]
-        and str(interpreter) == expected_identity["interpreter_path"]
-        and interpreter_digest == expected_identity["interpreter_sha256"]
     )
     if not identity_match:
         write_report(
@@ -92,10 +76,6 @@ def main() -> int:
                 "expected_evaluator_sha256": expected_identity["evaluator_sha256"],
                 "evaluator_path": str(evaluator),
                 "evaluator_sha256": evaluator_digest,
-                "expected_interpreter_path": expected_identity["interpreter_path"],
-                "expected_interpreter_sha256": expected_identity["interpreter_sha256"],
-                "interpreter_path": str(interpreter),
-                "interpreter_sha256": interpreter_digest,
                 "input_path": str(source),
                 "input_sha256_before": before,
                 "input_sha256_after": before,
@@ -107,7 +87,7 @@ def main() -> int:
         )
         return 2
     child_env = {key: os.environ[key] for key in ALLOWED_ENV if key in os.environ}
-    command = [str(interpreter), str(evaluator), "--input", str(source)]
+    command = [sys.executable, str(evaluator), "--input", str(source)]
     process = subprocess.Popen(
         command,
         cwd=ROOT,
@@ -145,10 +125,6 @@ def main() -> int:
         "expected_evaluator_sha256": expected_identity["evaluator_sha256"],
         "evaluator_path": str(evaluator),
         "evaluator_sha256": evaluator_digest,
-        "expected_interpreter_path": expected_identity["interpreter_path"],
-        "expected_interpreter_sha256": expected_identity["interpreter_sha256"],
-        "interpreter_path": str(interpreter),
-        "interpreter_sha256": interpreter_digest,
         "input_path": str(source),
         "input_sha256_before": before,
         "input_sha256_after": after,

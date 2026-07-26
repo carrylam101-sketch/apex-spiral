@@ -1,0 +1,32 @@
+{
+  "task_id": "daily.verify-json-output",
+  "scope": "json-output-verification",
+  "criteria": [
+    {
+      "id": "schema-valid",
+      "requirement": "Output parses against the declared JSON schema.",
+      "verifier": "python3 -m json.tool artifact.json",
+      "exit_code": 0,
+      "passed": true,
+      "evidence_ref": "reports/artifact-json-tool.txt",
+      "evidence_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": "negative-malformed-input",
+      "requirement": "Malformed input is rejected without changing production state.",
+      "verifier": "pytest -q tests/test_malformed_input.py",
+      "exit_code": 0,
+      "passed": true,
+      "evidence_ref": "reports/malformed-input.txt",
+      "evidence_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "negative_case": true
+    }
+  ],
+  "rollback": {
+    "snapshot_ref": "backups/daily.verify-json-output.pre-change",
+    "restore_command": "restore daily.verify-json-output.pre-change",
+    "tested": true
+  },
+  "side_effects_declared": true,
+  "record_sha256": "29ba96058809e0510f63f49b714270f1be9f3fe3e889481bc7b80ddb6aa424ae"
+}

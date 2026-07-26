@@ -1,0 +1,23 @@
+{
+  "skill_id": "candidate.atomic-json-validator",
+  "version": "0.0.1-candidate",
+  "capabilities": [
+    "validate-one-json-contract"
+  ],
+  "scope": "json-contract-validation",
+  "artifact_hashes": {
+    "candidate.py": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "test.py": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "rollback": {
+    "snapshot_ref": "backup/candidate.atomic-json-validator-0.0.0",
+    "restore_command": "restore candidate.atomic-json-validator 0.0.0",
+    "tested": true
+  },
+  "evidence_types": [
+    "unit_tests",
+    "held_out",
+    "independent_eval"
+  ],
+  "manifest_sha256": "bde9cf81eb0bd54aa230a8cf141733ae50eaa68715ebc095aefdca06c45bb1cc"
+}

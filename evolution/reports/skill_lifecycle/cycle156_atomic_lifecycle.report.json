@@ -1,0 +1,13 @@
+{
+  "decision": "candidate_ready",
+  "reasons": [],
+  "atomic": true,
+  "bounded_scope": true,
+  "rollback_ready": true,
+  "evidence_complete": true,
+  "manifest_sha256_actual": "bde9cf81eb0bd54aa230a8cf141733ae50eaa68715ebc095aefdca06c45bb1cc",
+  "manifest_sha256_expected": "bde9cf81eb0bd54aa230a8cf141733ae50eaa68715ebc095aefdca06c45bb1cc",
+  "writes_skill": false,
+  "promotion_allowed": false,
+  "status": "candidate_hold"
+}

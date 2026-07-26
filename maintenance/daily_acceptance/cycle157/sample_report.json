@@ -1,0 +1,14 @@
+{
+  "decision": "candidate_pass",
+  "reasons": [],
+  "criteria_total": 2,
+  "criteria_passed": 2,
+  "criteria_pass_rate": 1.0,
+  "negative_case_present": true,
+  "rollback_ready": true,
+  "record_sha256_actual": "29ba96058809e0510f63f49b714270f1be9f3fe3e889481bc7b80ddb6aa424ae",
+  "record_sha256_expected": "29ba96058809e0510f63f49b714270f1be9f3fe3e889481bc7b80ddb6aa424ae",
+  "writes_production": false,
+  "promotion_allowed": false,
+  "status": "candidate_hold"
+}
