@@ -2903,6 +2903,105 @@
         "P0 escalate: write_file post-action auto-cp wrapper hook at Hermes tool level",
         "Monitor Shannon plateau - P-INNOVATE plan outstanding"
       ]
+    },
+    "cycle_167": {
+      "status": "completed_cron_alias_drift_repair",
+      "selected_gene": "skill_alias_drift_repair",
+      "delta_g": 1.404,
+      "gain_ratio": 1.0,
+      "timestamp": "2026-08-05T00:03:00+08:00",
+      "summary": "Drift detected in 9-step verification step 2: alias_drift=1 (root refs=95, mlops=94, drift source=cycle-166-verification-watch-clean.md). Repaired via cp root→mlops, sha256 verify identical, post-sync refs=96/96, scripts diff empty, SKILL.md sha unchanged. Trap 24+26 reaffirmed: structural endemic; cron prompt [CRON SYNC INVARIANT] text-only enforcement is necessary but insufficient.",
+      "artifacts": {
+        "drift_repair": {
+          "files_synced": [
+            "references/cycle-166-verification-watch-clean.md"
+          ],
+          "sha256": "52108f12941fd063ab07383047791a3ebcadc0ca2b32a9b82f48abde1872189b",
+          "references_count": 96,
+          "pre_sync_root_count": 95,
+          "pre_sync_mlops_count": 94,
+          "post_sync_root_count": 96,
+          "post_sync_mlops_count": 96,
+          "skill_md_sha256": "2ef380379e243c10a313a7f3e6945540b63eab4934d2cf7f8b305e4a47f35192",
+          "scripts_diff": "empty",
+          "alias_drift_after": 0
+        },
+        "new_reference": {
+          "path": "references/cycle-167-skill-alias-drift-repair.md",
+          "sha256": "a414bc5632d537062e75a21a722d379dc9fe96f690f279bdc7527087f830781b",
+          "synced_to_mlops": true
+        },
+        "cycle_report": "evolution/reports/cycle_167_skill_alias_drift_repair.md"
+      },
+      "verification_gates": {
+        "alias_drift_detector": "pass (alias_drift=1 → repaired → alias_drift=0)",
+        "apex_spiral_import": "pass (version 0.3.0)",
+        "apex_self_check": "pass (ΔG=2.2713, HEALTHY, Shannon plateau persists)",
+        "evm_health": "pass (EVM=0.7531, defect_rate=0.0208, G_evm=1.0579)",
+        "gini_selector": "pass (gene_594, n_candidates=21, uniform fallback)",
+        "apex_devour_gate": "pass (ΔG_candidate=1.4040, 5/5 gates, gate_open=true)",
+        "registry_orphan_scan": "pass (0 orphaned, 0 unregistered)",
+        "registry_null_scan": "pass (0 null delta_g, 0 null gain_ratio)",
+        "dashboard_refresh": "pass (apex_dashboard.md/html updated)"
+      },
+      "boundary_declarations": [
+        "This cycle is drift-repair, not a new measurable gate",
+        "ΔG_candidate=1.4040 is the verified gate baseline from cycle_162, not a new measurement",
+        "Trap 24+26 structural endemic: cp invariant text-only enforcement is necessary but not sufficient",
+        "gain_ratio=1.0 reflects paradigm-only/hygiene nature, not actual gain",
+        "This reference document is append-only"
+      ]
+    },
+    "cycle_168": {
+      "status": "completed_cron_alias_drift_repair",
+      "selected_gene": "skill_alias_drift_repair",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_candidate": 1.404,
+      "gain_ratio": 1.0,
+      "timestamp": "2026-08-10T00:03:00+08:00",
+      "summary": "Drift detected at 9-step verification step 2: alias_drift=1 (root refs=97, mlops=97, drift source=cron-canonical-detector-and-execute-code-pattern.md sha diverged: root bd6dd.../10635B vs mlops 52ab3.../6288B; cycle_168 extension section missing from mlops). Repair SOP: cp root->mlops, post-sync sha256 identical (bd6dd... both sides), final alias_drift=0, 97/97 references, 3/3 scripts, SKILL.md sha unchanged. 19th consecutive drift occurrence (cycles 134->168). Trap 24+26 reaffirmed: drift latency = 1 cron interval, drift source = root-only reference write from a previous cron run, structural endemic persists.",
+      "artifacts": {
+        "drift_repair": {
+          "files_synced": [
+            "references/cron-canonical-detector-and-execute-code-pattern.md"
+          ],
+          "sha256": "bd6dd4515ed5ae611c0fb705d75a56956ef09f870b2cf329e2cbb163aeb02a3b",
+          "references_count": 97,
+          "pre_sync_root_count": 97,
+          "pre_sync_mlops_count": 97,
+          "post_sync_root_count": 97,
+          "post_sync_mlops_count": 97,
+          "skill_md_sha256": "2ef380379e243c10a313a7f3e6945540b63eab4934d2cf7f8b305e4a47f35192",
+          "scripts_diff": "empty",
+          "alias_drift_after": 0
+        },
+        "new_reference": {
+          "path": "references/cycle-168-skill-alias-drift-repair.md",
+          "sha256": "f923949d2c1a0ce343c2f53a9035cc5b3218f12d602024681c10a04ed6b596b8",
+          "synced_to_mlops": true
+        },
+        "cycle_report": "evolution/reports/cycle_168_skill_alias_drift_repair.md"
+      },
+      "verification_gates": {
+        "alias_drift_detector": "pass (alias_drift=1 -> repair -> alias_drift=0)",
+        "apex_spiral_version": "0.3.0",
+        "apex_self_check": "cycle 101, delta_g=2.2713, HEALTHY",
+        "evm_status": "EVM=0.7531, defect_rate=0.0208, G_evm=1.0579",
+        "gini_selector": "gene_594, n_candidates=21, n_outcome_history=67, source=gene_pool",
+        "apex_devour_gate": "gate_open=true, delta_g_candidate=1.4040, 5/5 gates",
+        "registry_parse": "clean (no null delta_g, no null gain_ratio)",
+        "orphan_scan": "clean (0 orphans)",
+        "dashboard_refresh": "pass (reports/apex_dashboard.{md,html} updated)"
+      },
+      "carry_forward_lessons": [
+        "Trap 24: drift source = previously-successful cycle's own reference write (same pattern as cycle_153, 158, 162, 163)",
+        "Trap 26: drift latency >= 1 cron interval confirmed",
+        "Trap 23: references_count=97 set post-sync (file count 97/97 both sides, but content hash diverged — first cycle where drift = content-only, not file-presence)",
+        "Trap 27: canonical detector `verify_apex_alias_sync.sh` ran cleanly with post-sync state",
+        "Trap 28: cycle_168 (predecessor) was first verification/watch-mode entry using execute_code to chain write-cp-verify",
+        "P0 backlog: Hermes tool-level write_file post-action auto-cp + sha256 verify hook (only structural fix)"
+      ]
     }
   },
   "gene_pool_stats": {
@@ -2910,7 +3009,7 @@
     "last_updated": "2026-06-02T00:03:00Z",
     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files"
   },
-  "updated_at": "2026-08-03T00:04:00+08:00",
+  "updated_at": "2026-08-05T00:03:00+08:00",
   "hermes_agent_defect_genes": {
     "594": {
       "name": "subagent_legacy_recovery",
