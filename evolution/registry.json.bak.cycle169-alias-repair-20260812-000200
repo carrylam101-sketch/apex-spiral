@@ -3002,99 +3002,6 @@
         "Trap 28: cycle_168 (predecessor) was first verification/watch-mode entry using execute_code to chain write-cp-verify",
         "P0 backlog: Hermes tool-level write_file post-action auto-cp + sha256 verify hook (only structural fix)"
       ]
-    },
-    "cycle_169": {
-      "timestamp": "2026-08-12T00:01:30+08:00",
-      "model": "gpt-5.5",
-      "selected_gene": "skill_alias_drift_repair",
-      "delta_g_before": 1.0581,
-      "delta_g_evolved": 1.0581,
-      "delta_g_candidate": 1.404,
-      "delta_g": 1.404,
-      "gain_ratio": 1.0,
-      "G_neuro": 1.1142,
-      "G_self": 1.0908,
-      "G_evm": 1.06,
-      "G_devour": 1.0,
-      "status": "completed_cron_alias_drift_repair",
-      "verification_watch_rejected_reason": "alias_drift=1 detected in step 2 (Trap 24+26 latency from cycle_168's own reference write)",
-      "artifacts": {
-        "drift_repair": {
-          "files_synced": [
-            "references/cycle-169-verification-watch-clean-post-drift-repair.md"
-          ],
-          "sha256": "3896a025697f685ee64d490604a0fa99e8db519a0e039543d6859905a9b2e8d6",
-          "skill_md_sha256": "2ef380379e243c10a313a7f3e6945540b63eab4934d2cf7f8b305e4a47f35192",
-          "references_count": 99,
-          "scripts_count": 3,
-          "drift_origin": "cycle_168's own repair-cycle reference write was root-only (Trap 24+26: drift latency > 1 cron interval); detected at cycle_169 step 2 alias_drift=1"
-        }
-      },
-      "verification": {
-        "step1_stash": "empty (no uncommitted improvements in stash)",
-        "step2_alias_drift": "DRIFT=1 → cp to mlops → re-verify hash+diff",
-        "step3_version": "apex_version=0.3.0 py_compile PASS",
-        "step4_self_check": "ΔG_estimate=2.2713 HEALTHY Shannon_plateau=True (cycle 101, expected)",
-        "step5_evm": "EVM=0.7531 defect_rate=0.0208 G_evm=1.0579",
-        "step6_gini": "selected=gene_594 gini_gain=0.0 ig_gain=0.0 (uniform fallback, Trap 17)",
-        "step7_apex_gate": "G_neuro=1.1142 G_self=1.0908 G_evm=1.0600 G_devour=1.0000 ΔG_candidate=1.4040 gate_open=true (5/5 gates pass)",
-        "step8_registry": "72 cycles, no null delta_g/gain_ratio, 0 orphaned genes (21 reg / 21 files match)",
-        "step9_dashboard": "reports/apex_dashboard.{md,html} refreshed (3809 + 1079 bytes)"
-      },
-      "boundary_statements": [
-        "skill_alias_drift_repair is structural maintenance, not new measurable gate — delta_g and gain_ratio unchanged from cycle_168",
-        "alias_drift=1 → status MUST be completed_cron_alias_drift_repair (Trap 24/26 enforcement); verification/watch is forbidden when drift exists",
-        "APEX_NEW remains philosophy wrapper only (cycle_125 §11 SOUL §0 covenant)",
-        "G_devour=1.0 persists (no active devour gene selected — Gini uniform fallback, Trap 17)"
-      ]
-    },
-    "cycle_170": {
-      "delta_g": 1.404,
-      "delta_g_before": 1.404,
-      "delta_g_candidate": 1.404,
-      "delta_g_evolved": 1.404,
-      "gain_ratio": 1.0,
-      "status": "completed_cron_alias_drift_repair",
-      "selected_gene": "skill_alias_drift_repair",
-      "timestamp": "2026-08-13T00:01:00+08:00",
-      "artifacts": {
-        "drift_repair": {
-          "files_synced": [
-            "SKILL.md",
-            "references/cycle-169-skill-alias-drift-repair.md"
-          ],
-          "sha256": "c9985708986979f9d787b5c85dcc018752c7a721dabff1ad2bc1857657a50df5",
-          "references_count": 101,
-          "drift_source": "cycle-169-skill-alias-drift-repair.md (root-only write, Trap 24+26 latency)"
-        },
-        "report": "evolution/reports/cycle_170_skill_alias_drift_repair.md",
-        "report_sha256": "77bf7fd1d897b8aafc046ff688db5f91414e206ecdbdf9237d4793023fb0d113",
-        "verification": {
-          "step_2_alias_drift_auto_detect": "0 (post-sync)",
-          "step_3_apex_version": "0.3.0",
-          "step_4_self_check": "delta_g_estimate=2.2713 healthy",
-          "step_5_evm": "0.7531 defect_rate=0.0208 G_evm=1.0579",
-          "step_6_gini": "selected_gene_id=gene_594 gini_gain=0 ig_gain=0 n_candidates=21 n_outcome_history=69",
-          "step_7_gate": "gate_open=true 5/5 delta_g_candidate=1.4040",
-          "step_8_registry_consistency": "73 cycles 0 bad",
-          "step_9_orphan_scan": "21 reg 21 files 0 orphans",
-          "dashboard_refresh": "apex_dashboard.md=1079B apex_dashboard.html=3809B"
-        }
-      },
-      "trap_compliance": {
-        "trap_15b_greek_chars": "write_file used, no heredoc",
-        "trap_23_count_order": "set after filesystem write completed",
-        "trap_24_26_drift_latency": "Trap 24+26 confirmed: cycle_169 reference write root-only, latency=1 cron interval",
-        "trap_27_canonical_detector": "verify_apex_alias_sync.sh used (no bash chain short-circuit)",
-        "trap_28_execute_code": "registry JSON mutation via execute_code JSON arg"
-      },
-      "boundary_statements": [
-        "structural drift repair, not a new measurable gate",
-        "delta_g = 1.404 carried forward from cycle_169 (paradigm-only)",
-        "gain_ratio = 1.0 reflects no new APEX factor activated",
-        "drift is endemic; only Hermes write_file post-action auto-cp hook will mechanically fix",
-        "this report only adds content; previous drift-repair reports unmodified"
-      ]
     }
   },
   "gene_pool_stats": {
@@ -3102,7 +3009,7 @@
     "last_updated": "2026-06-02T00:03:00Z",
     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files"
   },
-  "updated_at": "2026-08-12T00:02:00+08:00",
+  "updated_at": "2026-08-05T00:03:00+08:00",
   "hermes_agent_defect_genes": {
     "594": {
       "name": "subagent_legacy_recovery",
@@ -3504,8 +3411,5 @@
   },
   "head_cycle": "cycle_136",
   "last_cycle": "cycle_138",
-  "last_updated": "2026-06-20T04:05:00+00:00",
-  "drift_repair_cycles": [
-    "cycle_170"
-  ]
+  "last_updated": "2026-06-20T04:05:00+00:00"
 }
