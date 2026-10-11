@@ -3114,11 +3114,224 @@
         "gate_status": "ΔG_current=1.0581 G_neuro=1.1142 G_self=1.0908 G_evm=1.0600 G_devour=1.0000 ΔG_candidate=1.4040 gate_open=true"
       },
       "rationale": "9-step verification fully passed (alias_drift=0, references 108/108, scripts 4/4, SKILL.md hash match c9985708..., ApexCalculator 0.3.0 OK, EVM healthy, Gini n_candidates=21, apex_devour gate 5/5 pass, orphan=0, dashboard refreshed). No new measurable gate introduced; self-check still at Shannon plateau (ΔG=2.2713). Continue watch-mode to avoid forcing delta_g inflation without new evidence."
+    },
+    "cycle_181": {
+      "cycle": "cycle_181",
+      "timestamp": "2026-10-08T00:05:51+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "artifacts": {
+        "self_check": "/tmp/apex_self_check_history.json",
+        "dashboard": "/home/ubuntu/apex-spiral/reports/apex_dashboard.md",
+        "evm_status": "EVM=0.7691 defect_rate=0.0 G_evm=1.0600",
+        "gate_status": "ΔG_current=1.0581 G_neuro=1.1142 G_self=1.0908 G_evm=1.0600 G_devour=1.0000 ΔG_candidate=1.4040 gate_open=true",
+        "harness": "V_H=true I_continue=false",
+        "apex_devour_tests": "60 passed / 0 failed"
+      },
+      "rationale": "9-step verification fully passed (alias_drift=0, references 114/114, scripts 5/5, SKILL.md hash match a60d61db..., ApexCalculator 0.3.0 OK, EVM=0.7691 defect_rate=0.0, Gini n_candidates=21 n_outcome_history=71, apex_devour gate 5/5 pass, orphan=0, dashboard refreshed). No new measurable gate introduced; self-check still at Shannon plateau (ΔG=2.2713). Continue watch-mode to avoid forcing delta_g inflation without new evidence.",
+      "9_step_results": {
+        "1_git_stash": "empty",
+        "2_alias_drift": "0 (root==mlops, 114/114 references, 5/5 scripts, SKILL.md sha a60d61db... match)",
+        "3_apex_version": "0.3.0 PASS",
+        "4_self_check": "ΔG_estimate=2.2713, C_shannon=0.5541, HEALTHY (Shannon plateau persistent)",
+        "5_evm": "EVM=0.7691, defect_rate=0.0, V_H=true, I_continue=false",
+        "6_gini": "uniform fallback, selected=gene_594, n_outcome_history=71, n_candidates=21",
+        "6b_apex_devour_cargo_test": "60 passed / 0 failed (gate_open=true, ΔG_candidate=1.4040)",
+        "7_registry_scan": "0 null, 0 orphans, 0 bad_json (29 gene files / 6 sections, 75 cycle entries / head=cycle_171)",
+        "8_dashboard": "reports/apex_dashboard.md + .html regenerated 2026-10-08 00:04",
+        "9_cron_prompt": "job 2ea5e66b83df enabled, skills=[apex-spiral-v10, system-evm, apex-devour-evolution-engine], prompt contains [CRON SYNC INVARIANT], repeat.completed=176"
+      }
+    },
+    "cycle_182": {
+      "cycle": "cycle_182",
+      "timestamp": "2026-10-09T00:01:47.350478+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "artifacts": {
+        "self_check": "/tmp/apex_self_check_history.json",
+        "dashboard_md": "reports/apex_dashboard.md",
+        "dashboard_html": "reports/apex_dashboard.html",
+        "indicator": "scripts/indicator.py",
+        "gini_selector": "py/apex_spiral/gini_gene_selector.py",
+        "alias_sync": "~/.hermes/skills/apex-spiral-v10/scripts/verify_apex_alias_sync.sh",
+        "cargo_test": "apex_devour/ (60 passed / 0 failed)"
+      },
+      "delta_g_factors": {
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "G_apex_ib": 1.03,
+        "delta_g_candidate": 1.404
+      },
+      "evm": {
+        "evm": 0.7691,
+        "defect_rate": 0.0
+      },
+      "self_check": {
+        "delta_g_estimate": 2.2713,
+        "c_shannon": 0.5541,
+        "healthy": true
+      },
+      "skill_sha_root": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+      "skill_sha_mlops": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+      "reference_count": 114,
+      "notes": "Pure verification/watch tick. No drift detected. No repair needed. No CRON SYNC INVARIANT activation."
+    },
+    "cycle_183": {
+      "cycle": "cycle_183",
+      "timestamp": "2026-10-10T00:02:56+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "artifacts": {
+        "self_check": "/tmp/apex_self_check_history.json",
+        "dashboard_md": "reports/apex_dashboard.md",
+        "dashboard_html": "reports/apex_dashboard.html",
+        "indicator": "scripts/indicator.py",
+        "gini_selector": "py/apex_spiral/gini_gene_selector.py",
+        "alias_sync": "~/.hermes/skills/apex-spiral-v10/scripts/verify_apex_alias_sync.sh",
+        "cargo_test": "apex_devour/ (60 passed / 0 failed)",
+        "harness": "scripts/apex_harness_cycle.py (V_H=true I_continue=false)"
+      },
+      "delta_g_factors": {
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "G_apex_ib": 1.03,
+        "delta_g_candidate": 1.404
+      },
+      "evm": {
+        "evm": 0.7691,
+        "defect_rate": 0.0
+      },
+      "self_check": {
+        "delta_g_estimate": 2.2713,
+        "c_shannon": 0.5541,
+        "healthy": true
+      },
+      "skill_sha_root": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+      "skill_sha_mlops": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+      "reference_count": 114,
+      "script_count": 5,
+      "cron_job_id": "2ea5e66b83df",
+      "cron_enabled": true,
+      "cron_prompt_len": 2542,
+      "cron_prompt_has_invariant": true,
+      "cron_repeat_completed": 178,
+      "9_step_results": {
+        "1_git_stash": "empty",
+        "2_alias_drift": "0 (root==mlops, 114/114 references, 5/5 scripts, SKILL.md sha a60d61dbc2... match)",
+        "3_apex_version": "0.3.0 PASS",
+        "4_self_check": "ΔG_estimate=2.2713, C_shannon=0.5541, HEALTHY (Shannon plateau persistent)",
+        "5_evm": "EVM=0.7691, defect_rate=0.0, V_H=true, I_continue=false",
+        "6_gini": "uniform fallback, selected=gene_594, n_candidates=21",
+        "6b_apex_devour_cargo_test": "60 passed / 0 failed (gate_open=true, ΔG_candidate=1.4040)",
+        "7_registry_scan": "0 null, 0 orphans, 0 bad_json (29 gene files / 6 sections, 75 cycle entries)",
+        "8_dashboard": "reports/apex_dashboard.md + .html refreshed",
+        "9_cron_prompt": "job 2ea5e66b83df enabled, skills=[apex-spiral-v10, system-evm, apex-devour-evolution-engine], prompt contains [CRON SYNC INVARIANT], repeat.completed=178"
+      },
+      "notes": "Pure verification/watch tick. No drift detected. No repair needed. No CRON SYNC INVARIANT activation."
+    },
+    "cycle_184": {
+      "cycle": "cycle_184",
+      "timestamp": "2026-10-11T00:02:10+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "artifacts": {
+        "self_check": "/tmp/apex_self_check_history.json",
+        "dashboard_md": "reports/apex_dashboard.md",
+        "dashboard_html": "reports/apex_dashboard.html",
+        "indicator": "scripts/indicator.py",
+        "gini_selector": "py/apex_spiral/gini_gene_selector.py",
+        "alias_sync": "~/.hermes/skills/apex-spiral-v10/scripts/verify_apex_alias_sync.sh",
+        "cargo_test": "apex_devour/ (60 passed / 0 failed)",
+        "harness": "scripts/apex_harness_cycle.py (V_H=true I_continue=false risk_score=0.24)"
+      },
+      "delta_g_factors": {
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "G_apex_ib": 1.03,
+        "delta_g_candidate": 1.404
+      },
+      "evm": {
+        "evm": 0.7691,
+        "defect_rate": 0.0,
+        "ok": true
+      },
+      "harness_decision": "allow",
+      "risk_score": 0.24,
+      "notes": "carry-forward from cycle_183; SOUL.md §11 refreshed to current verified state (head advanced cycle_171→cycle_183); no new measurable gate; watch-mode maintenance only"
+    },
+    "cycle_185": {
+      "cycle": "cycle_185",
+      "timestamp": "2026-10-12T00:03:02+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "artifacts": {
+        "self_check": "/tmp/apex_self_check_history.json",
+        "dashboard_md": "reports/apex_dashboard.md",
+        "dashboard_html": "reports/apex_dashboard.html",
+        "indicator": "scripts/indicator.py",
+        "gini_selector": "py/apex_spiral/gini_gene_selector.py",
+        "alias_sync": "~/.hermes/skills/apex-spiral-v10/scripts/verify_apex_alias_sync.sh",
+        "cargo_test": "apex_devour/ (60 passed / 0 failed)",
+        "harness": "scripts/apex_harness_cycle.py"
+      },
+      "live_gate_baseline": {
+        "delta_g_current": 1.0581,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "delta_g_candidate": 1.404,
+        "gate_open": true,
+        "evm_value": 0.7691,
+        "defect_rate": 0.0
+      },
+      "sync_check": {
+        "skill_md_root_sha256": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+        "skill_md_mlops_sha256": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+        "references_diff_empty": true
+      },
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt"
     }
   },
   "gene_pool_stats": {
     "total_genes": 19,
-    "last_updated": "2026-06-02T00:03:00Z",
+    "last_updated": "2026-10-10T00:02:56+08:00",
     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files",
     "total_cycles": 75
   },
@@ -3522,10 +3735,12 @@
       "verification": "cycle_129 report"
     }
   },
-  "head_cycle": "cycle_136",
-  "last_cycle": "cycle_138",
-  "last_updated": "2026-06-20T04:05:00+00:00",
+  "head_cycle": "cycle_185",
+  "last_cycle": "cycle_185",
+  "last_updated": "2026-10-12T00:03:02+08:00",
   "drift_repair_cycles": [
     "cycle_170"
-  ]
+  ],
+  "head": "cycle_185",
+  "last_verified": "2026-10-12T00:03:02+08:00"
 }
