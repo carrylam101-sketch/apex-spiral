@@ -3327,6 +3327,285 @@
         "references_diff_empty": true
       },
       "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt"
+    },
+    "cycle_186": {
+      "cycle": "cycle_186",
+      "timestamp": "2026-10-13T00:01:48+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "artifacts": {
+        "self_check": "/tmp/apex_self_check_history.json",
+        "dashboard_md": "reports/apex_dashboard.md",
+        "dashboard_html": "reports/apex_dashboard.html",
+        "indicator": "scripts/indicator.py",
+        "gini_selector": "py/apex_spiral/gini_gene_selector.py",
+        "alias_sync": "~/.hermes/skills/apex-spiral-v10/scripts/verify_apex_alias_sync.sh",
+        "cargo_test": "apex_devour/ (60 passed / 0 failed)",
+        "harness": "scripts/apex_harness_cycle.py"
+      },
+      "live_gate_baseline": {
+        "delta_g_current": 1.0581,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "delta_g_candidate": 1.404,
+        "gate_open": true,
+        "evm_value": 0.7691,
+        "defect_rate": 0.0
+      },
+      "sync_check": {
+        "skill_md_root_sha256": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+        "skill_md_mlops_sha256": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+        "references_diff_empty": true
+      },
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "soul_md_head_advance": "SOUL.md §11 lines 264/266/268/270 refreshed: head 183→185, dates 2026-10-11→2026-10-13, ΔG_cycle_186=0.2846 (housekeeping, no new measurable gate)",
+      "delta_g_self_repair": 0.2846
+    },
+    "cycle_187": {
+      "cycle": "cycle_187",
+      "timestamp": "2026-10-14T00:00:39+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "artifacts": {
+        "self_check": "/tmp/apex_self_check_history.json",
+        "dashboard_md": "reports/apex_dashboard.md",
+        "dashboard_html": "reports/apex_dashboard.html",
+        "indicator": "scripts/indicator.py",
+        "gini_selector": "py/apex_spiral/gini_gene_selector.py",
+        "alias_sync": "~/.hermes/skills/apex-spiral-v10/scripts/verify_apex_alias_sync.sh",
+        "cargo_test": "apex_devour/ (60 passed / 0 failed)",
+        "harness": "scripts/apex_harness_cycle.py"
+      },
+      "live_gate_baseline": {
+        "delta_g_current": 1.0581,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "delta_g_candidate": 1.404,
+        "gate_open": true,
+        "evm_value": 0.7691,
+        "defect_rate": 0.0
+      },
+      "sync_check": {
+        "skill_md_root_sha256": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+        "skill_md_mlops_sha256": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+        "references_diff_empty": true
+      },
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "registry top-level metadata head/last_updated rolled cycle_185->cycle_186, SOUL.md §11 head prose advanced 185->186, cycle_187 watch entry appended. No new measurable gate, alias_drift=0, Shannon plateau persists.",
+      "delta_g_self_repair": 0.2846
+    },
+    "cycle_188": {
+      "cycle": "cycle_188",
+      "timestamp": "2026-10-15T00:03:01+08:00",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "gain_ratio": 1.0,
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "Standard watch-mode housekeeping tick: roll registry top-level head/last_updated cycle_186->cycle_187, advance SOUL.md §11 prose (head 186->187, dates 2026-10-14->2026-10-15). No new measurable gate, no drift-repair branch (alias_drift=0).",
+      "artifacts": {
+        "alias_sync": "~/.hermes/skills/apex-spiral-v10/scripts/verify_apex_alias_sync.sh",
+        "cargo_test": "apex_devour/ (60 passed / 0 failed)",
+        "dashboard_html": "reports/apex_dashboard.html",
+        "dashboard_md": "reports/apex_dashboard.md",
+        "gini_selector": "py/apex_spiral/gini_gene_selector.py",
+        "harness": "scripts/apex_harness_cycle.py",
+        "indicator": "scripts/indicator.py",
+        "self_check": "/tmp/apex_self_check_history.json"
+      },
+      "live_gate_baseline": {
+        "G_devour": 1.0,
+        "G_evm": 1.06,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "defect_rate": 0.0,
+        "delta_g_candidate": 1.404,
+        "delta_g_current": 1.0581,
+        "evm_value": 0.7691,
+        "gate_open": true
+      },
+      "sync_check": {
+        "references_diff_empty": true,
+        "skill_md_mlops_sha256": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c",
+        "skill_md_root_sha256": "a60d61dbc26cf2ef75d8eaa89610df438d15b1a5ad53c71f147c3bd1f8b7486c"
+      }
+    },
+    "cycle_189": {
+      "cycle": "cycle_189",
+      "timestamp": "2026-10-16T00:00:19+08:00",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "gain_ratio": 1.0,
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "Standard watch-mode housekeeping tick: roll registry top-level head/last_updated cycle_188->cycle_189, advance SOUL.md §11 prose (head 188->189, dates 2026-10-15->2026-10-16). No new measurable gate, no drift-repair branch (alias_drift=0). Prior cycle_188 was a Variant B self-repair tick that closed the cycle_187 metadata gap; cycle_189 is Variant A (clean forward roll).",
+      "artifacts": {
+        "registry_path": "evolution/registry.json",
+        "report_path": "evolution/reports/cycle_189_verification_watch_drift_free.md",
+        "soul_md_path": "~/.hermes/SOUL.md"
+      },
+      "live_gate_baseline": {
+        "G_devour": 1.0,
+        "G_evm": 1.06,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "defect_rate": 0.0,
+        "delta_g_candidate": 1.404,
+        "delta_g_current": 1.0581,
+        "evm_value": 0.7691,
+        "gate_open": true
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "32942f1a04093d0db5a54300efa9b487f65b56ced0915329d33b307ef308e330",
+        "mlops_skill_md_sha256": "32942f1a04093d0db5a54300efa9b487f65b56ced0915329d33b307ef308e330",
+        "references_count_root": 116,
+        "references_count_mlops": 116,
+        "scripts_count": 5,
+        "alias_drift": 0
+      }
+    },
+    "cycle_190": {
+      "cycle": "cycle_190",
+      "timestamp": "2026-10-17T00:00:00+08:00",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "gain_ratio": 1.0,
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "Combined Variant B gap-closure + Variant A forward-roll in one tick. Variant B gap-closure work: top-level registry head/head_cycle/last_cycle rolled 188->189 (cycle_189 had been registered in dict but top-level head still said cycle_188, a metadata gap left over from the 2026-10-16 cycle_189 walkthrough). SOUL.md §11 prose also re-aligned (head pointer 'cycle_188' -> 'cycle_189', 'cycle_189 tick' label preserved because the new tick is built on top of the already-registered cycle_189). Variant A forward roll: this entry (cycle_190) is a clean watch-mode tick, delta_g_self_repair=0.0. cron marker present, alias_drift=0, 9/9 gates pass, cargo 60/60, EVM=0.7691.",
+      "artifacts": {
+        "registry_path": "evolution/registry.json",
+        "report_path": "evolution/reports/cycle_190_verification_watch_drift_free.md",
+        "soul_md_path": "~/.hermes/SOUL.md"
+      },
+      "live_gate_baseline": {
+        "G_devour": 1.0,
+        "G_evm": 1.06,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "defect_rate": 0.0,
+        "delta_g_candidate": 1.404,
+        "delta_g_current": 1.0581,
+        "evm_value": 0.7691,
+        "gate_open": true
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "32942f1a04093d0db5a54300efa9b487f65b56ced0915329d33b307ef308e330",
+        "mlops_skill_md_sha256": "32942f1a04093d0db5a54300efa9b487f65b56ced0915329d33b307ef308e330",
+        "references_count_root": 116,
+        "references_count_mlops": 116,
+        "scripts_count": 5,
+        "alias_drift": 0
+      }
+    },
+    "cycle_191": {
+      "cycle": "cycle_191",
+      "timestamp": "2026-10-18T00:00:00+08:00",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "gain_ratio": 1.0,
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "Standard watch-mode housekeeping tick (Variant A): roll registry top-level head/last_updated cycle_190->cycle_191, advance SOUL.md section 11 prose (head 190->191, dates 2026-10-17->2026-10-18). No new measurable gate, no drift-repair branch (alias_drift=0). Prior cycle_190 was a combined Variant B + Variant A tick that closed the residual metadata gap left by cycle_189; cycle_191 is a clean Variant A forward roll on top of cycle_190.",
+      "artifacts": {
+        "registry_path": "evolution/registry.json",
+        "report_path": "evolution/reports/cycle_191_verification_watch_drift_free.md",
+        "soul_md_path": "~/.hermes/SOUL.md"
+      },
+      "live_gate_baseline": {
+        "G_devour": 1.0,
+        "G_evm": 1.06,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "defect_rate": 0.0,
+        "delta_g_candidate": 1.404,
+        "delta_g_current": 1.0581,
+        "evm_value": 0.7691,
+        "gate_open": true
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "32942f1a04093d0db5a54300efa9b487f65b56ced0915329d33b307ef308e330",
+        "mlops_skill_md_sha256": "32942f1a04093d0db5a54300efa9b487f65b56ced0915329d33b307ef308e330",
+        "references_count_root": 116,
+        "references_count_mlops": 116,
+        "scripts_count": 5,
+        "alias_drift": 0
+      }
+    },
+    "cycle_192": {
+      "cycle": "cycle_192",
+      "timestamp": "2026-10-19T00:03:57+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "Standard watch-mode housekeeping tick (Variant A): roll registry top-level head/last_updated cycle_191->cycle_192, advance SOUL.md section 11 prose (head 191->192, dates 2026-10-18->2026-10-19). No new measurable gate, no drift-repair branch (alias_drift=0). Prior cycle_191 was a clean Variant A forward roll; cycle_192 is another clean Variant A forward roll on top of cycle_191. Live verification: SKILL.md sha256 b7269d91... matches between root and mlops alias copies; diff -q on references/ produces no output; cron job 2ea5e66b83df prompt contains exact [CRON SYNC INVARIANT] marker; cargo test apex_impl 95/95 + apex_devour 60/60 + evomaster 3/3 = 158/158; EVM=0.7691, defect_rate=0.0, G_neuro=1.1142, G_self=1.0908, G_evm=1.06, delta_g_current=1.0581, delta_g_candidate=1.404, gate_open=true. No metadata gap; head/head_cycle/last_cycle all align on cycle_192 after roll.",
+      "artifacts": {
+        "registry_path": "evolution/registry.json",
+        "report_path": "evolution/reports/cycle_192_verification_watch_drift_free.md",
+        "soul_md_path": "~/.hermes/SOUL.md"
+      },
+      "live_gate_baseline": {
+        "G_devour": 1.0,
+        "G_evm": 1.06,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "defect_rate": 0.0,
+        "delta_g_candidate": 1.404,
+        "delta_g_current": 1.0581,
+        "evm_value": 0.7691,
+        "gate_open": true
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "b7269d91698dea66ed4d375b0823685ccd25d4eb2d4a107bd53d0fad33905bee",
+        "mlops_skill_md_sha256": "b7269d91698dea66ed4d375b0823685ccd25d4eb2d4a107bd53d0fad33905bee",
+        "references_count_root": 116,
+        "references_count_mlops": 116,
+        "scripts_count": 5,
+        "alias_drift": 0
+      }
     }
   },
   "gene_pool_stats": {
@@ -3335,7 +3614,7 @@
     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files",
     "total_cycles": 75
   },
-  "updated_at": "2026-09-18T00:01:30+08:00",
+  "updated_at": "2026-10-19T00:03:57+08:00",
   "hermes_agent_defect_genes": {
     "594": {
       "name": "subagent_legacy_recovery",
@@ -3735,12 +4014,12 @@
       "verification": "cycle_129 report"
     }
   },
-  "head_cycle": "cycle_185",
-  "last_cycle": "cycle_185",
-  "last_updated": "2026-10-12T00:03:02+08:00",
+  "head_cycle": "cycle_192",
+  "last_cycle": "cycle_192",
+  "last_updated": "2026-10-19T00:03:57+08:00",
   "drift_repair_cycles": [
     "cycle_170"
   ],
-  "head": "cycle_185",
-  "last_verified": "2026-10-12T00:03:02+08:00"
+  "head": "cycle_192",
+  "last_verified": "2026-10-19T00:03:57+08:00"
 }
