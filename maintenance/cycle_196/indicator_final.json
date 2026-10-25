@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "scripts/indicator.py",
+    "--json"
+  ],
+  "cwd": "/home/ubuntu/apex-spiral",
+  "returncode": 0,
+  "stdout": "{\n  \"I_continue\": false,\n  \"V_H\": true,\n  \"evm\": {\n    \"defect_rate\": 0.0,\n    \"evm\": 0.7691,\n    \"ok\": true\n  },\n  \"registry\": {\n    \"bad_json\": [],\n    \"ok\": true,\n    \"orphaned\": [],\n    \"registry_without_file\": []\n  },\n  \"timestamp\": \"2026-10-25T16:07:41.306868+00:00\"\n}\n",
+  "stderr": ""
+}

@@ -1,0 +1,11 @@
+test_denied (test_apex_harness_exit_gate.HarnessExitGate.test_denied) ... ok
+test_healthy (test_apex_harness_exit_gate.HarnessExitGate.test_healthy) ... ok
+test_malformed_json (test_apex_harness_exit_gate.HarnessExitGate.test_malformed_json) ... ok
+test_nonzero_child_with_valid_json (test_apex_harness_exit_gate.HarnessExitGate.test_nonzero_child_with_valid_json) ... ok
+test_registry_failure (test_apex_harness_exit_gate.HarnessExitGate.test_registry_failure) ... ok
+test_unhealthy_indicator (test_apex_harness_exit_gate.HarnessExitGate.test_unhealthy_indicator) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.004s
+
+OK

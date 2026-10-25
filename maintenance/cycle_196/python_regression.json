@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_*.py"
+  ],
+  "cwd": "/home/ubuntu/apex-spiral",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "[APEX-DL] WARNING: PyTorch 未安装，APEX-DL 将以纯 Python 模式运行\n......\n----------------------------------------------------------------------\nRan 6 tests in 0.004s\n\nOK\n"
+}

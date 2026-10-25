@@ -1,0 +1,103 @@
+--- before/evolution/registry.json
++++ after/evolution/registry.json
+@@ -3798,6 +3798,73 @@
+           "side_effect": "SKILL.md sha changed b7269d91... -> 8f9eb24e...; the live sha is recorded in sync_check (pitfall #12: never carry over the previous tick's recorded sha)"
+         }
+       }
++    },
++    "cycle_196": {
++      "cycle": "cycle_196",
++      "timestamp": "2026-10-26T00:05:34+08:00",
++      "status": "completed_cron_verification_watch",
++      "overall_status": "partial_pending_skill_baseline_review",
++      "variant": "A",
++      "selected_gene": "verification_watch_no_gate",
++      "verification_mode": "watch_with_bounded_verifier_repair",
++      "delta_g": 1.404,
++      "delta_g_evolved": 1.404,
++      "delta_g_self_repair": 0.0,
++      "delta_g_housekeeping": null,
++      "measured_capability_gain": "unknown",
++      "formula_factors": "G_base=0.50 policy default; Lambda,Theta,K,xi,Psi,Phi,H,T,epsilon=unknown",
++      "runtime_value_caveat": "CLI recomputed configured baseline, not a fresh capability benchmark",
++      "live_gate_baseline": {
++        "delta_g_current": 1.0581,
++        "G_neuro": 1.1142,
++        "G_self": 1.0908,
++        "G_evm": 1.06,
++        "G_devour": 1.0,
++        "G_apex_ib": 1.03,
++        "delta_g_candidate": 1.404,
++        "gate_open": true,
++        "evm_value": 0.7691199999999999,
++        "defect_total": 0.0
++      },
++      "sync_check": {
++        "root_skill_md_sha256": "ee6fc831609d4a039999f49d7ea487ae06c3260ce6fb1fff6d24948531941d53",
++        "mlops_skill_md_sha256": "ee6fc831609d4a039999f49d7ea487ae06c3260ce6fb1fff6d24948531941d53",
++        "last_known_good_sha256": "8f9eb24e5d59e696c4b99570fc27fd1b00fd4f4bf36dad984b5c3d6f460a22e6",
++        "baseline_matches": false,
++        "baseline_review_status": "pending; observed SHA is NOT an approved replacement baseline",
++        "alias_mode": "symlink_farm",
++        "alias_farm_structural_check": "ALIAS_FARM_OK",
++        "references_count_root": 118,
++        "references_count_mlops": 118,
++        "scripts_count": 6,
++        "sha_gate_note": "Self-comparison is not independent evidence; previous recorded baseline mismatch retained explicitly"
++      },
++      "verification": {
++        "cargo_root": "95 passed, 0 failed",
++        "cargo_devour": "60 passed, 0 failed",
++        "cargo_evomaster": "3 passed, 0 failed",
++        "pytest": "198 passed",
++        "harness_regression": "RED 6 failures then GREEN 6 passes",
++        "verifier_fixture_checks": "6 passed",
++        "harness": "verification_ok=true; V_H=true; I_continue=false; risk=0.24",
++        "runtime_gate": "5 sub-gates passed"
++      },
++      "defect_repairs_this_cycle": {
++        "harness_fail_open_exit": "Require successful child exit codes AND semantic gate acceptance; emit verification_ok and exit nonzero on rejection"
++      },
++      "unresolved": [
++        "Skill entrypoint differs from prior known-good SHA; no skill changes or automatic baseline approval",
++        "Skill preflight cargo exception aggregation accepts missing returncode; reproduced, not modified",
++        "gene_pool_stats legacy counters remain semantically ambiguous",
++        "SOUL.md and shared /tmp anchor not modified: outside declared local write scope"
++      ],
++      "artifacts": {
++        "report_path": "evolution/reports/cycle_196_verification_watch.md",
++        "evidence_dir": "maintenance/cycle_196",
++        "backup_dir": "maintenance/cycle_196/backup",
++        "experiments": "evolution/experiments.jsonl",
++        "archive": "evolution/watch_archive.sqlite"
++      }
+     }
+   },
+   "gene_pool_stats": {
+@@ -3806,7 +3873,7 @@
+     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files",
+     "total_cycles": 75
+   },
+-  "updated_at": "2026-10-22T00:18:10+08:00",
++  "updated_at": "2026-10-26T00:05:34+08:00",
+   "hermes_agent_defect_genes": {
+     "594": {
+       "name": "subagent_legacy_recovery",
+@@ -4206,12 +4273,12 @@
+       "verification": "cycle_129 report"
+     }
+   },
+-  "head_cycle": "cycle_195",
+-  "last_cycle": "cycle_195",
+-  "last_updated": "2026-10-22T00:18:10+08:00",
++  "head_cycle": "cycle_196",
++  "last_cycle": "cycle_196",
++  "last_updated": "2026-10-26T00:05:34+08:00",
+   "drift_repair_cycles": [
+     "cycle_170"
+   ],
+-  "head": "cycle_195",
+-  "last_verified": "2026-10-22T00:18:10+08:00"
++  "head": "cycle_196",
++  "last_verified": "2026-10-26T00:05:34+08:00"
+ }

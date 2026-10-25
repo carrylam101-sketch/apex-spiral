@@ -1,0 +1,72 @@
+test_denied (test_apex_harness_exit_gate.HarnessExitGate.test_denied) ... FAIL
+test_healthy (test_apex_harness_exit_gate.HarnessExitGate.test_healthy) ... FAIL
+test_malformed_json (test_apex_harness_exit_gate.HarnessExitGate.test_malformed_json) ... FAIL
+test_nonzero_child_with_valid_json (test_apex_harness_exit_gate.HarnessExitGate.test_nonzero_child_with_valid_json) ... FAIL
+test_registry_failure (test_apex_harness_exit_gate.HarnessExitGate.test_registry_failure) ... FAIL
+test_unhealthy_indicator (test_apex_harness_exit_gate.HarnessExitGate.test_unhealthy_indicator) ... FAIL
+
+======================================================================
+FAIL: test_denied (test_apex_harness_exit_gate.HarnessExitGate.test_denied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 36, in test_denied
+    self.check_case(lambda r: r[1].update(stdout='{"decision":"deny"}'), 1)
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 27, in check_case
+    self.assertEqual(code, expected)
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_healthy (test_apex_harness_exit_gate.HarnessExitGate.test_healthy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 30, in test_healthy
+    def test_healthy(self): self.check_case()
+                            ^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 27, in check_case
+    self.assertEqual(code, expected)
+AssertionError: None != 0
+
+======================================================================
+FAIL: test_malformed_json (test_apex_harness_exit_gate.HarnessExitGate.test_malformed_json)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 34, in test_malformed_json
+    self.check_case(lambda r: r[2].update(stdout='broken JSON'), 1)
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 27, in check_case
+    self.assertEqual(code, expected)
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_nonzero_child_with_valid_json (test_apex_harness_exit_gate.HarnessExitGate.test_nonzero_child_with_valid_json)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 32, in test_nonzero_child_with_valid_json
+    self.check_case(lambda r: r[1].update(returncode=7), 1)
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 27, in check_case
+    self.assertEqual(code, expected)
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_registry_failure (test_apex_harness_exit_gate.HarnessExitGate.test_registry_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 40, in test_registry_failure
+    self.check_case(lambda r: r[0].update(stdout='{"registry":{"ok":false}}'), 1)
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 27, in check_case
+    self.assertEqual(code, expected)
+AssertionError: None != 1
+
+======================================================================
+FAIL: test_unhealthy_indicator (test_apex_harness_exit_gate.HarnessExitGate.test_unhealthy_indicator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 38, in test_unhealthy_indicator
+    self.check_case(lambda r: r[2].update(stdout='{"V_H":false,"I_continue":true}'), 1)
+  File "/home/ubuntu/apex-spiral/tests/test_apex_harness_exit_gate.py", line 27, in check_case
+    self.assertEqual(code, expected)
+AssertionError: None != 1
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.005s
+
+FAILED (failures=6)

@@ -1,13 +1,20 @@
 {
-  "cycle": 80,
+  "cycle": 101,
   "status": "HEALTHY",
   "delta_g": 2.2713,
-  "warnings": [],
-  "actions": [],
+  "warnings": [
+    "ΔG plateau: last 5 cycles unchanged"
+  ],
+  "actions": [
+    "Introduce one controlled micro-mutation per cycle for exploration (prompt/validation policy)."
+  ],
   "policy": {
-    "enable_micro_mutation": false,
-    "mutation_intensity": 0.0,
-    "targets": []
+    "enable_micro_mutation": true,
+    "mutation_intensity": 0.003,
+    "targets": [
+      "DRT3.T_prot",
+      "DRT3.D_dup"
+    ]
   },
-  "ok": true
+  "ok": false
 }

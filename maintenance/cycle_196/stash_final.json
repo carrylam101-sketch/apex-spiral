@@ -1,0 +1,11 @@
+{
+  "command": [
+    "git",
+    "stash",
+    "list"
+  ],
+  "cwd": "/home/ubuntu/apex-spiral",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": ""
+}

@@ -15,7 +15,7 @@ def run(cmd: list[str]) -> dict:
     return {'cmd': cmd, 'returncode': cp.returncode, 'stdout': cp.stdout.strip(), 'stderr': cp.stderr.strip()}
 
 
-def main() -> None:
+def main() -> int:
     omega = run(['python3', 'scripts/omega_a_loader.py'])
     harness = run(['python3', 'scripts/harness_gate.py', '--action', 'APEX cron read-only verification with report write', '--path', str(ROOT), '--writes-files', '--has-tests'])
     indicator = run(['python3', 'scripts/indicator.py', '--json'])
@@ -36,8 +36,17 @@ def main() -> None:
         'raw': {'omega': parsed.get('omega'), 'harness': parsed.get('harness'), 'indicator': parsed.get('indicator')},
         'commands': {'omega': omega, 'harness': harness, 'indicator': indicator},
     }
+    # Process success alone does not prove that the child gates accepted.
+    report['verification_ok'] = bool(
+        all(result['returncode'] == 0 for result in (omega, harness, indicator))
+        and report['omega_ok']
+        and report['harness_decision'] == 'allow'
+        and report['V_H'] is True
+        and report['I_continue'] is False
+    )
     print(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True))
+    return 0 if report['verification_ok'] else 1
 
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main())

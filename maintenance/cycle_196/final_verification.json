@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-10-26T00:07:41.398042+08:00",
+  "status": "partial",
+  "head_aliases": {
+    "head": "cycle_196",
+    "head_cycle": "cycle_196",
+    "last_cycle": "cycle_196"
+  },
+  "cycle_count": 91,
+  "checks": {
+    "cargo_root": true,
+    "cargo_devour": true,
+    "cargo_evomaster": true,
+    "pytest_regression": true,
+    "harness_final": true,
+    "indicator_final": true,
+    "runtime_gate": true,
+    "evm": true
+  },
+  "old_registry_content_preserved": true,
+  "changed_preexisting_files": [
+    "scripts/apex_harness_cycle.py",
+    "evolution/registry.json"
+  ],
+  "archive_roundtrip": true,
+  "sqlite_integrity": "ok",
+  "stash_unchanged": true,
+  "skill_baseline_matches": false,
+  "report_sha256": "b3df69d405bc67a69d231d005ac6ee5f05c9630d3089542c548a2132fc0714b2"
+}

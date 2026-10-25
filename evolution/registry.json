@@ -3606,6 +3606,265 @@
         "scripts_count": 5,
         "alias_drift": 0
       }
+    },
+    "cycle_193": {
+      "cycle": "cycle_193",
+      "timestamp": "2026-10-20T00:02:06+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "Standard watch-mode housekeeping tick (Variant A): roll registry top-level head/last_updated cycle_192->cycle_193, advance SOUL.md section 11 prose (head 192->193, dates 2026-10-19->2026-10-20). No new measurable gate, no drift-repair branch (alias_drift=0). Prior cycle_192 was a clean Variant A forward roll; cycle_193 is another clean Variant A forward roll on top of cycle_192. Live verification: SKILL.md sha256 b7269d91... matches between root and mlops alias copies; diff -q on references/ produces no output; cron job 2ea5e66b83df prompt contains exact [CRON SYNC INVARIANT] marker; cargo test apex_impl 95/95 + apex_devour 60/60 + evomaster 3/3 = 158/158; EVM=0.7691, defect_rate=0.0, G_neuro=1.1142, G_self=1.0908, G_evm=1.06, delta_g_current=1.0581, delta_g_candidate=1.404, gate_open=true. No metadata gap; head/head_cycle/last_cycle all align on cycle_193 after roll.",
+      "artifacts": {
+        "registry_path": "evolution/registry.json",
+        "report_path": "evolution/reports/cycle_193_verification_watch_drift_free.md",
+        "soul_md_path": "~/.hermes/SOUL.md"
+      },
+      "live_gate_baseline": {
+        "G_devour": 1.0,
+        "G_evm": 1.06,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "defect_rate": 0.0,
+        "delta_g_candidate": 1.404,
+        "delta_g_current": 1.0581,
+        "evm_value": 0.7691,
+        "gate_open": true
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "b7269d91698dea66ed4d375b0823685ccd25d4eb2d4a107bd53d0fad33905bee",
+        "mlops_skill_md_sha256": "b7269d91698dea66ed4d375b0823685ccd25d4eb2d4a107bd53d0fad33905bee",
+        "references_count_root": 116,
+        "references_count_mlops": 116,
+        "scripts_count": 5,
+        "alias_drift": 0
+      }
+    },
+    "cycle_194": {
+      "cycle": "cycle_194",
+      "timestamp": "2026-10-21T00:25:49+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "delta_g_housekeeping": 0.301725,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "Standard watch-mode housekeeping tick (Variant A) on top of cycle_193, PLUS 6 bounded repairs to the housekeeping machinery itself, each evidence-backed and reversible. F1: reference count was stale at 116 for two ticks (cycle_192, cycle_193); live detector count is 117 (watch-mode-housekeeping-migration.md added 2026-10-18T11:52, after the cycle_191 tick that measured 116). F2: the SOUL.md 'drift-repair cycles' count was mechanically incremented per tick to 41; evidence-derived value over cycles 134->193 is 36 (34 alias-drift-repair by status + 2 self-repair by delta_g_self_repair>0). F3: housekeeping dG arithmetic was wrong in the recipe table and in the cycle_191/192/193 reports (published numer 0.561602 -> 0.267279; true numer 0.58592268 -> 0.2788514563, understated 4.15%). F4: 'apex_impl/' is not a directory - apex_impl is the ROOT package (Cargo.toml, lib apex_v10.rs); 'cd apex_impl' fails. F5: the alias sha256/diff gates are tautological because mlops/apex-spiral-v10 is a symlink farm into the root tree (readlink -f identical; 'cp' exits 1 with 'are the same file'); alias_drift=0 could not have reported drift. F6: the cron prompt's [CRON SYNC INVARIANT] cp+rsync recipe is unrunnable under the symlink farm - reported with corrected logic, prompt NOT edited (pitfall #7: housekeeping ticks never rewrite the cron prompt). Live verification: SKILL.md sha256 b7269d91... root==mlops (and ALIAS_FARM_OK structural check passes); diff -r references/ empty; cron job 2ea5e66b83df enabled with exact [CRON SYNC INVARIANT] marker; cargo test apex_impl(root) 95/95 + apex_devour 60/60 + evomaster_claw_core 3/3 = 158/158; EVM=0.7691 defect_total=0.0; indicator V_H=true I_continue=false orphan=[]; harness risk_score=0.24 decision=allow; apex_devour gate 5/5 sub-gates delta_g_candidate=1.4040 gate_open=true; gini selector n_candidates=21 gene_594; git stash list empty (nothing popped). No metadata gap; head/head_cycle/last_cycle all align on cycle_194 after roll.",
+      "artifacts": {
+        "registry_path": "evolution/registry.json",
+        "report_path": "evolution/reports/cycle_194_verification_watch_drift_free.md",
+        "soul_md_path": "~/.hermes/SOUL.md",
+        "walkthrough_ref": "references/modules/apex-cron-watch-mode-housekeeping/references/cycle-194-walkthrough.md",
+        "recipe_ref": "references/modules/apex-cron-watch-mode-housekeeping/REFERENCE.md"
+      },
+      "live_gate_baseline": {
+        "G_devour": 1.0,
+        "G_evm": 1.06,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "defect_rate": 0.0,
+        "delta_g_candidate": 1.404,
+        "delta_g_current": 1.0581,
+        "evm_value": 0.7691,
+        "gate_open": true
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "b7269d91698dea66ed4d375b0823685ccd25d4eb2d4a107bd53d0fad33905bee",
+        "mlops_skill_md_sha256": "b7269d91698dea66ed4d375b0823685ccd25d4eb2d4a107bd53d0fad33905bee",
+        "references_count_root": 117,
+        "references_count_mlops": 117,
+        "scripts_count": 5,
+        "alias_drift": 0,
+        "alias_mode": "symlink_farm",
+        "alias_farm_structural_check": "ALIAS_FARM_OK",
+        "sha_gate_note": "sha256/diff gates are tautological under the symlink farm (F5); the load-bearing checks are alias_farm_structural_check and the live-sha-vs-previous-sync_check comparison",
+        "count_convention": "references_count = find -L <ref> -maxdepth 1 -type f | wc -l (detector convention; ls -1 gives 118 including modules/, recursive gives 124)"
+      },
+      "defect_repairs_this_cycle": {
+        "F1_reference_count_stale": {
+          "was": 116,
+          "now": 117,
+          "root_cause": "curator umbrella pass added watch-mode-housekeeping-migration.md 2026-10-18T11:52; cycles 192/193 copied the value forward"
+        },
+        "F2_drift_repair_count_incremented": {
+          "was": 41,
+          "now": 36,
+          "root_cause": "mechanical +1 per clean tick instead of re-derivation from registry status/dsr"
+        },
+        "F3_delta_g_arithmetic": {
+          "was": 0.267279,
+          "now": 0.2788514563,
+          "root_cause": "numerator mis-multiplied (0.561602 claimed vs 0.58592268 true)"
+        },
+        "F4_apex_impl_path": {
+          "was": "cd apex_impl (nonexistent)",
+          "now": "cd /home/ubuntu/apex-spiral && cargo test (root package)",
+          "root_cause": "apex_impl is the root Cargo package name, not a directory"
+        },
+        "F5_vacuous_alias_gate": {
+          "was": "sha/diff gates reported alias_drift=0",
+          "now": "structural readlink -f check (ALIAS_FARM_OK) + live-sha-vs-registry comparison",
+          "root_cause": "mlops tree is a symlink farm into root, so the gates compare a file with itself"
+        },
+        "F6_cron_prompt_cp_unrunnable": {
+          "was": "cp + rsync --delete recipe",
+          "now": "reported with corrected no-op-guard logic; cron prompt NOT edited (needs separate authorization)",
+          "root_cause": "cp exits 1 'are the same file' under the symlink farm"
+        }
+      }
+    },
+    "cycle_195": {
+      "cycle": "cycle_195",
+      "timestamp": "2026-10-22T00:18:10+08:00",
+      "status": "completed_cron_verification_watch",
+      "selected_gene": "verification_watch_no_gate",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "delta_g_housekeeping": 0.29154,
+      "gain_ratio": 1.0,
+      "alias_drift": 0,
+      "gates_passed": "9/9",
+      "verification_mode": "watch",
+      "cron_marker": "[CRON SYNC INVARIANT] present in cron job 2ea5e66b83df prompt",
+      "self_repair_scope": "Standard watch-mode housekeeping tick (Variant A) on top of cycle_194, PLUS 3 bounded repairs to the housekeeping machinery itself, each evidence-backed and reversible. F7: the scripts/ tree was never re-counted per tick - the registry sync_check.scripts_count and the SOUL.md prose both carried a stale 5 for every tick since cycle_194, while the live detector count was already 6 (apex_housekeeping_preflight.py was added 2026-10-21T00:32:42, AFTER the cycle_194 tick measured 5 at 00:25:49). This tick re-counted it live (=6) and added a count_script_files() probe to the preflight script so the blind spot cannot recur, plus a prose-scripts-count warning. F8: the preflight SOUL.md staleness check compared the bare label 'Current registry head is `cycle_N`' against the registry head, but the house convention is that the bare label names head-1 and the parenthetical '(cycle_N registered this tick)' names the cycle actually registered. Under that convention prose_head == registry_head is NEVER true, so the check fired on every tick (including ticks whose prose was already correct) and could never converge - a never-converging false positive. The check now parses the parenthetical and compares that against the registry head; it reports stale=false on the pre-cycle_195 prose, which was in fact already correct. F9: registry gene_pool_stats is frozen at 2026-10-10 and diverges from live artifacts (total_genes=19 vs live gene_pool=21; total_cycles=75 vs live cycles=89). NOT auto-mutated: the field's semantics are documented as ambiguous in references/cycle-96-registry-consistency-lessons.md lesson 3 (total_genes was already untrustworthy at cycle_96) and no writer is known to maintain it. A gene_pool_stats_divergence() probe was added to the preflight script to report the divergence every tick until a separately-authorized tick establishes the correct semantics. Live verification: SKILL.md sha256 b7269d91... root==mlops (ALIAS_FARM_OK structural check passes); diff -r references/ empty; cron job 2ea5e66b83df enabled with exact [CRON SYNC INVARIANT] marker; cargo test apex_impl(root) 95/95 + apex_devour 60/60 + evomaster_claw_core 3/3 = 158/158; EVM=0.7691 defect_total=0.0 defect_nonzero=0; indicator V_H=true I_continue=false orphan=[]; harness risk_score=0.24 decision=allow; apex_devour gate 5/5 sub-gates delta_g_candidate=1.4040 gate_open=true; gini selector n_candidates=21 gene_594 gini_gain=0.0; git stash list empty (nothing popped); registry JSON parse clean. No metadata gap; head/head_cycle/last_cycle all align on cycle_195 after roll.",
+      "artifacts": {
+        "registry_path": "evolution/registry.json",
+        "report_path": "evolution/reports/cycle_195_verification_watch_drift_free.md",
+        "soul_md_path": "~/.hermes/SOUL.md",
+        "walkthrough_ref": "references/modules/apex-cron-watch-mode-housekeeping/references/cycle-195-walkthrough.md",
+        "recipe_ref": "references/modules/apex-cron-watch-mode-housekeeping/REFERENCE.md",
+        "preflight_script": "~/.hermes/skills/apex-spiral-v10/scripts/apex_housekeeping_preflight.py",
+        "preflight_script_backup": "~/.hermes/skills/apex-spiral-v10/apex_housekeeping_preflight.py.bak.cycle195"
+      },
+      "live_gate_baseline": {
+        "G_devour": 1.0,
+        "G_evm": 1.06,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "defect_rate": 0.0,
+        "delta_g_candidate": 1.404,
+        "delta_g_current": 1.0581,
+        "evm_value": 0.7691,
+        "gate_open": true
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "8f9eb24e5d59e696c4b99570fc27fd1b00fd4f4bf36dad984b5c3d6f460a22e6",
+        "mlops_skill_md_sha256": "8f9eb24e5d59e696c4b99570fc27fd1b00fd4f4bf36dad984b5c3d6f460a22e6",
+        "references_count_root": 117,
+        "references_count_mlops": 117,
+        "scripts_count": 6,
+        "alias_drift": 0,
+        "alias_mode": "symlink_farm",
+        "alias_farm_structural_check": "ALIAS_FARM_OK",
+        "sha_gate_note": "sha256/diff gates are tautological under the symlink farm (F5, cycle_194); the load-bearing checks are alias_farm_structural_check and the live-sha-vs-previous-sync_check comparison",
+        "count_convention": "references_count / scripts_count = find -L <dir> -maxdepth 1 -type f | wc -l (detector convention; re-counted live this tick - F7). references: ls -1 gives 118 (counts modules/), recursive gives 126",
+        "skill_md_edited_this_cycle": "umbrella SKILL.md L261 walkthrough range rolled from 'cycle-188 through cycle-191' to 'cycle-188 through cycle-195' (F10 - the range was stale after cycles 192-195 were added); sha therefore changed from b7269d91... to 8f9eb24e..."
+      },
+      "defect_repairs_this_cycle": {
+        "F7_scripts_count_stale": {
+          "was": 5,
+          "now": 6,
+          "root_cause": "the scripts/ tree was never re-counted per tick; apex_housekeeping_preflight.py was added 2026-10-21T00:32:42, after the cycle_194 tick measured 5 at 00:25:49",
+          "fix": "added count_script_files() probe + prose-scripts-count warning + registry-vs-live scripts_count warning to apex_housekeeping_preflight.py; re-counted live (=6) into sync_check and SOUL.md prose"
+        },
+        "F8_soul_staleness_never_converging": {
+          "was": "stale check compared the bare 'Current registry head is `cycle_N`' label (names head-1 by house convention) against the registry head -> always unequal -> warning fired every tick",
+          "now": "check parses the '(cycle_N registered this tick)' parenthetical and compares that against the registry head; reports stale=false on prose that was already correct",
+          "root_cause": "the check was written against the wrong half of the two-part convention, so it could never converge"
+        },
+        "F9_gene_pool_stats_stale": {
+          "was": "total_genes=19, total_cycles=75 (frozen 2026-10-10)",
+          "now": "reported, NOT mutated",
+          "root_cause": "no writer maintains this legacy accumulator; semantics documented as ambiguous in cycle-96-registry-consistency-lessons.md lesson 3",
+          "fix": "added gene_pool_stats_divergence() probe so the divergence surfaces on every tick until a separately-authorized tick establishes the correct semantics"
+        },
+        "F10_skill_md_walkthrough_range_stale": {
+          "was": "'its nested `references/cycle-188-walkthrough.md` through `cycle-191-walkthrough.md`'",
+          "now": "'its nested `references/cycle-188-walkthrough.md` through `references/cycle-195-walkthrough.md`'",
+          "root_cause": "the umbrella SKILL.md was last rolled at cycle_191; cycles 192-195 each added a walkthrough to the module's references/ dir, so the advertised range was stale by four entries",
+          "fix": "rolled the range to the live set (188-195, 8 files verified present) and made both ends fully-qualified module-relative paths",
+          "side_effect": "SKILL.md sha changed b7269d91... -> 8f9eb24e...; the live sha is recorded in sync_check (pitfall #12: never carry over the previous tick's recorded sha)"
+        }
+      }
+    },
+    "cycle_196": {
+      "cycle": "cycle_196",
+      "timestamp": "2026-10-26T00:05:34+08:00",
+      "status": "completed_cron_verification_watch",
+      "overall_status": "partial_pending_skill_baseline_review",
+      "variant": "A",
+      "selected_gene": "verification_watch_no_gate",
+      "verification_mode": "watch_with_bounded_verifier_repair",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "delta_g_housekeeping": null,
+      "measured_capability_gain": "unknown",
+      "formula_factors": "G_base=0.50 policy default; Lambda,Theta,K,xi,Psi,Phi,H,T,epsilon=unknown",
+      "runtime_value_caveat": "CLI recomputed configured baseline, not a fresh capability benchmark",
+      "live_gate_baseline": {
+        "delta_g_current": 1.0581,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "G_apex_ib": 1.03,
+        "delta_g_candidate": 1.404,
+        "gate_open": true,
+        "evm_value": 0.7691199999999999,
+        "defect_total": 0.0
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "ee6fc831609d4a039999f49d7ea487ae06c3260ce6fb1fff6d24948531941d53",
+        "mlops_skill_md_sha256": "ee6fc831609d4a039999f49d7ea487ae06c3260ce6fb1fff6d24948531941d53",
+        "last_known_good_sha256": "8f9eb24e5d59e696c4b99570fc27fd1b00fd4f4bf36dad984b5c3d6f460a22e6",
+        "baseline_matches": false,
+        "baseline_review_status": "pending; observed SHA is NOT an approved replacement baseline",
+        "alias_mode": "symlink_farm",
+        "alias_farm_structural_check": "ALIAS_FARM_OK",
+        "references_count_root": 118,
+        "references_count_mlops": 118,
+        "scripts_count": 6,
+        "sha_gate_note": "Self-comparison is not independent evidence; previous recorded baseline mismatch retained explicitly"
+      },
+      "verification": {
+        "cargo_root": "95 passed, 0 failed",
+        "cargo_devour": "60 passed, 0 failed",
+        "cargo_evomaster": "3 passed, 0 failed",
+        "pytest": "198 passed",
+        "harness_regression": "RED 6 failures then GREEN 6 passes",
+        "verifier_fixture_checks": "6 passed",
+        "harness": "verification_ok=true; V_H=true; I_continue=false; risk=0.24",
+        "runtime_gate": "5 sub-gates passed"
+      },
+      "defect_repairs_this_cycle": {
+        "harness_fail_open_exit": "Require successful child exit codes AND semantic gate acceptance; emit verification_ok and exit nonzero on rejection"
+      },
+      "unresolved": [
+        "Skill entrypoint differs from prior known-good SHA; no skill changes or automatic baseline approval",
+        "Skill preflight cargo exception aggregation accepts missing returncode; reproduced, not modified",
+        "gene_pool_stats legacy counters remain semantically ambiguous",
+        "SOUL.md and shared /tmp anchor not modified: outside declared local write scope"
+      ],
+      "artifacts": {
+        "report_path": "evolution/reports/cycle_196_verification_watch.md",
+        "evidence_dir": "maintenance/cycle_196",
+        "backup_dir": "maintenance/cycle_196/backup",
+        "experiments": "evolution/experiments.jsonl",
+        "archive": "evolution/watch_archive.sqlite"
+      }
     }
   },
   "gene_pool_stats": {
@@ -3614,7 +3873,7 @@
     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files",
     "total_cycles": 75
   },
-  "updated_at": "2026-10-19T00:03:57+08:00",
+  "updated_at": "2026-10-26T00:05:34+08:00",
   "hermes_agent_defect_genes": {
     "594": {
       "name": "subagent_legacy_recovery",
@@ -4014,12 +4273,12 @@
       "verification": "cycle_129 report"
     }
   },
-  "head_cycle": "cycle_192",
-  "last_cycle": "cycle_192",
-  "last_updated": "2026-10-19T00:03:57+08:00",
+  "head_cycle": "cycle_196",
+  "last_cycle": "cycle_196",
+  "last_updated": "2026-10-26T00:05:34+08:00",
   "drift_repair_cycles": [
     "cycle_170"
   ],
-  "head": "cycle_192",
-  "last_verified": "2026-10-19T00:03:57+08:00"
+  "head": "cycle_196",
+  "last_verified": "2026-10-26T00:05:34+08:00"
 }
