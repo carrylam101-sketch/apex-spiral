@@ -3939,6 +3939,80 @@
         "experiments": "evolution/experiments.jsonl",
         "archive": "evolution/watch_archive.sqlite"
       }
+    },
+    "cycle_198": {
+      "cycle": "cycle_198",
+      "timestamp": "2026-11-09T00:02:44.614366+08:00",
+      "status": "completed_cron_verification_watch",
+      "overall_status": "partial_pending_skill_baseline_review",
+      "variant": "A",
+      "selected_gene": "verification_watch_no_gate",
+      "verification_mode": "watch",
+      "delta_g": 1.404,
+      "delta_g_evolved": 1.404,
+      "delta_g_self_repair": 0.0,
+      "delta_g_housekeeping": null,
+      "measured_capability_gain": "unknown",
+      "formula_factors": {
+        "G_base": "0.50 policy default",
+        "Lambda": "unknown",
+        "Theta": "unknown",
+        "K": "unknown",
+        "xi": "unknown",
+        "Psi": "unknown",
+        "Phi": "unknown",
+        "H": "unknown",
+        "T": "unknown",
+        "epsilon": "unknown",
+        "measured_delta_g": "unknown"
+      },
+      "runtime_value_caveat": "Recomputed configured gate, not a fresh capability benchmark",
+      "live_gate_baseline": {
+        "delta_g_current": 1.0581,
+        "G_neuro": 1.1142,
+        "G_self": 1.0908,
+        "G_evm": 1.06,
+        "G_devour": 1.0,
+        "delta_g_candidate": 1.404,
+        "gate_open": true,
+        "evm_value": 0.7691199999999999,
+        "defect_total": 0.0
+      },
+      "sync_check": {
+        "root_skill_md_sha256": "7d6ff8614055fc4dc7a0b51f44338f9e572b9cbe2ed7288c0b113709750cff1f",
+        "mlops_skill_md_sha256": "7d6ff8614055fc4dc7a0b51f44338f9e572b9cbe2ed7288c0b113709750cff1f",
+        "last_known_good_sha256": "8f9eb24e5d59e696c4b99570fc27fd1b00fd4f4bf36dad984b5c3d6f460a22e6",
+        "baseline_matches": false,
+        "baseline_review_status": "pending; observed SHA does not replace approved baseline",
+        "alias_mode": "symlink_farm",
+        "alias_farm_structural_check": "ALIAS_FARM_OK",
+        "references_count_root": 119,
+        "references_count_mlops": 119,
+        "scripts_count": 6
+      },
+      "verification": {
+        "cargo_counts": {
+          "cargo_root": 95,
+          "cargo_devour": 60,
+          "cargo_evomaster": 3
+        },
+        "pytest_passed": 198,
+        "verifier_fixture_checks": 8,
+        "runtime_subgates_passed": 5,
+        "harness_verification_ok": true
+      },
+      "unresolved": [
+        "Skill SHA pending approved-baseline review",
+        "External preflight cargo exception aggregation remains fail-open",
+        "gene_pool_stats ambiguous; SOUL stale and outside local write scope"
+      ],
+      "artifacts": {
+        "report_path": "evolution/reports/cycle_198_verification_watch.md",
+        "evidence_dir": "maintenance/cycle_198",
+        "backup_dir": "maintenance/cycle_198/backup",
+        "experiments": "evolution/experiments.jsonl",
+        "archive": "evolution/watch_archive.sqlite"
+      }
     }
   },
   "gene_pool_stats": {
@@ -3947,7 +4021,7 @@
     "note": "gene_pool array reflects registry gene IDs, not evolution/genes/*.json files",
     "total_cycles": 75
   },
-  "updated_at": "2026-11-02T00:03:47.949060+08:00",
+  "updated_at": "2026-11-09T00:02:44.614366+08:00",
   "hermes_agent_defect_genes": {
     "594": {
       "name": "subagent_legacy_recovery",
@@ -4347,12 +4421,12 @@
       "verification": "cycle_129 report"
     }
   },
-  "head_cycle": "cycle_197",
-  "last_cycle": "cycle_197",
-  "last_updated": "2026-11-02T00:03:47.949060+08:00",
+  "head_cycle": "cycle_198",
+  "last_cycle": "cycle_198",
+  "last_updated": "2026-11-09T00:02:44.614366+08:00",
   "drift_repair_cycles": [
     "cycle_170"
   ],
-  "head": "cycle_197",
-  "last_verified": "2026-11-02T00:03:47.949060+08:00"
+  "head": "cycle_198",
+  "last_verified": "2026-11-09T00:02:44.614366+08:00"
 }

@@ -1,0 +1,24 @@
+{
+  "session_id": "15adca1e-a8d6-4396-bc3c-6a9925aa71a8",
+  "last_updated": "2026-11-09T00:02:45.044684+08:00",
+  "active_task": {
+    "what": "APEX weekly cycle_198",
+    "phase": "completed",
+    "status": "partial",
+    "done_steps": [
+      "runtime tests and verifier audit",
+      "Variant A registration; all head aliases consistent",
+      "archives roundtrip and prior-file preservation verified"
+    ],
+    "pending_steps": [
+      "approved skill baseline review",
+      "external preflight cargo aggregation repair",
+      "external SOUL continuity update"
+    ],
+    "key_files": [
+      "evolution/reports/cycle_198_verification_watch.md",
+      "maintenance/cycle_198/final_verification.json"
+    ]
+  },
+  "scope_note": "Local anchor only; shared /tmp and SOUL untouched"
+}
