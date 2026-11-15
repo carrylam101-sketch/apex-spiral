@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/home/ubuntu/.hermes/venv-evm/bin/python",
+    "-B",
+    "-c",
+    "import sys,json; sys.path.insert(0,'/home/ubuntu/EVM-Entropy-Vibe-Mathing'); from CoreFormula.EVM_FORMULA import EVMCore; e=EVMCore(); print(json.dumps({'evm':e.calculate_evm(),'defects':e.defects,'defect_total':sum(e.defects.values()),'nonzero':sum(v>0 for v in e.defects.values())}))"
+  ],
+  "cwd": "/home/ubuntu/apex-spiral",
+  "returncode": 0,
+  "stdout": "{\"evm\": 0.7691199999999999, \"defects\": {\"Tok\": 0.0, \"Clw\": 0.0, \"Agt\": 0.0, \"Pan\": 0.0, \"Prm\": 0.0, \"Soul\": 0.0, \"Run\": 0.0, \"Net\": 0.0, \"Err\": 0.0, \"Mem\": 0.0, \"Res\": 0.0, \"Log\": 0.0}, \"defect_total\": 0.0, \"nonzero\": 0}\n",
+  "stderr": ""
+}

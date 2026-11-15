@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-11-16T00:12:03.307951+08:00",
+  "status": "partial",
+  "head_aliases": {
+    "head": "cycle_199",
+    "head_cycle": "cycle_199",
+    "last_cycle": "cycle_199"
+  },
+  "cycle_count": 94,
+  "checks": {
+    "cargo_root": true,
+    "cargo_devour": true,
+    "cargo_evomaster": true,
+    "pytest": true,
+    "harness": true,
+    "indicator": true,
+    "evm": true,
+    "runtime_gate": true,
+    "preflight": true
+  },
+  "cargo_counts": {
+    "cargo_root": 95,
+    "cargo_devour": 60,
+    "cargo_evomaster": 3
+  },
+  "rust_total": 158,
+  "pytest_passed": 198,
+  "fixture_checks": 8,
+  "old_registry_preserved": true,
+  "old_sqlite_rows_preserved": true,
+  "archive_roundtrip": true,
+  "sqlite_integrity": "ok",
+  "stash_unchanged": true,
+  "changed_preexisting_files": [
+    "evolution/registry.json",
+    "evolution/experiments.jsonl",
+    "evolution/watch_archive.sqlite"
+  ],
+  "skill_baseline_matches": false,
+  "report_sha256": "147d0c8e53204b43bf08bccfa2ae39bb9e120447d3cf32ac763015f73261dfb4",
+  "measured_capability_gain": "unknown"
+}
